@@ -79,6 +79,38 @@ a { color: var(--primary); }
 .sizeseg button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; border-radius: 8px; background: transparent; color: var(--primary); cursor: pointer; font-weight: 800; line-height: 1; padding: 0; }
 .sizeseg .g1 { font-size: 12px; } .sizeseg .g2 { font-size: 15px; } .sizeseg .g3 { font-size: 19px; }
 .sizeseg button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); }
+.set-btn { display: none; align-items: center; gap: 6px; flex: none; height: 40px; padding: 0 8px 0 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); color: var(--primary); cursor: pointer; font-weight: 800; }
+.set-flag .flag { width: 24px; height: 16px; }
+.set-g { font-size: 17px; line-height: 1; }
+.set-gear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; display: block; }
+@media (max-width: 719px) {
+  .controls { display: none; }
+  .set-btn { display: inline-flex; }
+  .topbar-inner { flex-wrap: nowrap; }
+  .brand { flex: 1 1 auto; }
+  .brand > div { min-width: 0; }
+  .brand-name, .brand-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+/* 설정 창 (휴대폰: 아래에서 올라옴) */
+dialog.sheet { width: 100%; max-width: 560px; margin: auto auto 0; border-radius: 22px 22px 0 0; padding: 0; }
+dialog.sheet[open] { animation: sheetUp .22s ease-out; }
+@keyframes sheetUp { from { transform: translateY(40px); opacity: .4; } to { transform: none; opacity: 1; } }
+@media (min-width: 720px) { dialog.sheet { margin: auto; border-radius: 22px; } }
+.sheet-box { padding: 10px 18px calc(18px + env(safe-area-inset-bottom)); display: grid; gap: 4px; max-height: 92dvh; overflow: auto; }
+.sheet-grip { width: 44px; height: 5px; border-radius: 3px; background: var(--line); justify-self: center; margin-bottom: 6px; }
+.sheet-title { margin: 0; font-size: 1.2rem; font-weight: 800; text-align: center; }
+.sheet-welcome { margin: .3rem 0 0; padding: .6rem .8rem; border-radius: 12px; background: #fff3c4; color: #3b2f00; font-weight: 700; font-size: 1rem; text-align: center; }
+.sheet-h { margin: .9rem 0 .4rem; font-size: 1rem; color: var(--ink-2); }
+.set-langs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.set-sizes, .set-themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.set-langs button, .set-sizes button, .set-themes button { display: flex; align-items: center; justify-content: center; gap: .55rem; min-height: 58px; padding: .4rem .5rem; border-radius: 14px; border: 2px solid var(--line); background: var(--surface-2); color: var(--ink); font-weight: 700; font-size: 1.05rem; cursor: pointer; }
+.set-langs .flag { width: 30px; height: 20px; flex: none; }
+.set-sizes button { flex-direction: column; gap: 2px; min-height: 76px; font-size: .85rem; }
+.set-sizes .sz { color: var(--primary); font-weight: 800; line-height: 1.1; }
+.set-themes button { flex-direction: column; gap: 2px; font-size: .9rem; }
+.set-themes svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.set-langs button[aria-pressed="true"], .set-sizes button[aria-pressed="true"], .set-themes button[aria-pressed="true"] { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); box-shadow: 0 0 0 1px var(--primary); }
+#setDone { margin-top: 1rem; min-height: 54px; font-size: 1.1rem; }
 .size-hint { position: sticky; top: var(--topbar-h, 66px); z-index: 18; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; background: #fff3c4; color: #3b2f00; font-weight: 700; font-size: 16px; line-height: 1.4; border-bottom: 1px solid #e6d58a; }
 .size-hint button { flex: none; min-height: 40px; padding: 0 14px; border-radius: 10px; border: 0; background: #3b2f00; color: #fff3c4; font-weight: 800; cursor: pointer; }
 @media (max-width: 420px) { .brand-sub { display: none; } }
@@ -288,6 +320,7 @@ html[data-size="3"] .bar span { font-size: .62rem; }
 .bottomnav .ico svg { width: 25px; height: 25px; }
 .bottomnav a:active, .bottomnav button:active { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
 
+dialog[open] { position: fixed; inset: 0; z-index: 100; }
 dialog { border: 0; border-radius: 20px; padding: 0; background: var(--surface); color: var(--ink); max-width: min(92vw, 380px); }
 dialog::backdrop { background: rgba(0,0,0,.6); }
 .artdlg { max-width: min(96vw, 1100px); background: #000; padding: 8px; }

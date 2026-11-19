@@ -15,6 +15,8 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="build" content="20261119092827">
   <meta name="theme-color" content="#1f2a44">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -27,11 +29,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@400;500;700;800&family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261119092827">
   <script>
     (function () { try { var m = localStorage.getItem('cal_theme') || ((document.cookie.match(/(?:^|;\s*)cal_theme=(light|dark)/) || [])[1]); if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m); } catch (e) {} })();
   </script>
-  <script src="data.js"></script>
+  <script src="data.js?v=20261119092827"></script>
 </head>
 <body>
   <a class="skip" href="#main">본문으로</a>
@@ -45,12 +47,13 @@
           <div class="brand-sub" data-i18n="appSub"></div>
         </div>
       </div>
+      <button type="button" class="set-btn" id="setBtn" aria-haspopup="dialog"><span class="set-flag" id="setFlag"></span><span class="set-g" id="setG">가</span><span class="set-gear" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
       <div class="controls">
         <div class="seg" role="group" aria-label="Language" id="langSeg">
-          <button type="button" data-lang="ko" lang="ko" aria-label="한국어" title="한국어"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g transform="translate(15 10) rotate(33.7)"><path d="M-5 0a5 5 0 0 1 10 0z" fill="#cd2e3a"/><path d="M-5 0a5 5 0 0 0 10 0z" fill="#0047a0"/><circle cx="-2.5" r="2.5" fill="#cd2e3a"/><circle cx="2.5" r="2.5" fill="#0047a0"/></g><g fill="#111"><g transform="translate(6.3 4.3) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g><g transform="translate(23.7 15.7) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(23.7 4.3) rotate(56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(6.3 15.7) rotate(56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g></g></svg></button>
-          <button type="button" data-lang="en" lang="en" aria-label="English" title="English"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="0.00" width="30" height="1.54" fill="#b22234"/><rect y="3.08" width="30" height="1.54" fill="#b22234"/><rect y="6.15" width="30" height="1.54" fill="#b22234"/><rect y="9.23" width="30" height="1.54" fill="#b22234"/><rect y="12.31" width="30" height="1.54" fill="#b22234"/><rect y="15.38" width="30" height="1.54" fill="#b22234"/><rect y="18.46" width="30" height="1.54" fill="#b22234"/><rect width="13" height="10.77" fill="#3c3b6e"/><circle cx="1.6" cy="1.4" r=".45" fill="#fff"/><circle cx="4.0" cy="1.4" r=".45" fill="#fff"/><circle cx="6.4" cy="1.4" r=".45" fill="#fff"/><circle cx="8.8" cy="1.4" r=".45" fill="#fff"/><circle cx="11.2" cy="1.4" r=".45" fill="#fff"/><circle cx="2.8" cy="3.4" r=".45" fill="#fff"/><circle cx="5.2" cy="3.4" r=".45" fill="#fff"/><circle cx="7.6" cy="3.4" r=".45" fill="#fff"/><circle cx="10.0" cy="3.4" r=".45" fill="#fff"/><circle cx="1.6" cy="5.4" r=".45" fill="#fff"/><circle cx="4.0" cy="5.4" r=".45" fill="#fff"/><circle cx="6.4" cy="5.4" r=".45" fill="#fff"/><circle cx="8.8" cy="5.4" r=".45" fill="#fff"/><circle cx="11.2" cy="5.4" r=".45" fill="#fff"/><circle cx="2.8" cy="7.4" r=".45" fill="#fff"/><circle cx="5.2" cy="7.4" r=".45" fill="#fff"/><circle cx="7.6" cy="7.4" r=".45" fill="#fff"/><circle cx="10.0" cy="7.4" r=".45" fill="#fff"/><circle cx="1.6" cy="9.4" r=".45" fill="#fff"/><circle cx="4.0" cy="9.4" r=".45" fill="#fff"/><circle cx="6.4" cy="9.4" r=".45" fill="#fff"/><circle cx="8.8" cy="9.4" r=".45" fill="#fff"/><circle cx="11.2" cy="9.4" r=".45" fill="#fff"/></svg></button>
-          <button type="button" data-lang="es" lang="es" aria-label="Español" title="Español"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ce1126"/><circle cx="15" cy="10" r="2.7" fill="#8c5a2b"/><path d="M12.6 11.4q2.4 2.2 4.8 0" fill="none" stroke="#2e7d32" stroke-width=".7"/></svg></button>
-          <button type="button" data-lang="zh" lang="zh" aria-label="中文" title="中文"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#de2910"/><polygon fill="#ffde00" points="5.00,2.00 5.67,4.08 7.85,4.07 6.08,5.35 6.76,7.43 5.00,6.14 3.24,7.43 3.92,5.35 2.15,4.07 4.33,4.08"/><polygon fill="#ffde00" points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63"/><polygon fill="#ffde00" points="12.72,3.31 12.38,3.95 12.88,4.47 12.17,4.34 11.83,4.98 11.73,4.26 11.01,4.14 11.66,3.82 11.56,3.10 12.07,3.63"/><polygon fill="#ffde00" points="12.94,6.66 12.37,7.10 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.77,6.70 11.97,6.00 12.21,6.68"/><polygon fill="#ffde00" points="10.36,8.07 10.32,8.79 11.00,9.05 10.30,9.24 10.26,9.97 9.86,9.35 9.16,9.54 9.62,8.98 9.22,8.37 9.90,8.63"/></svg></button>
+          <button type="button" data-lang="ko" lang="ko" aria-label="한국어" title="한국어"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g transform="translate(15 10) rotate(33.7)"><path d="M-5 0a5 5 0 0 1 10 0z" fill="#cd2e3a"/><path d="M-5 0a5 5 0 0 0 10 0z" fill="#0047a0"/><circle cx="-2.5" r="2.5" fill="#cd2e3a"/><circle cx="2.5" r="2.5" fill="#0047a0"/></g><g fill="#111"><g transform="translate(6.3 4.3) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g><g transform="translate(23.7 15.7) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(23.7 4.3) rotate(56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(6.3 15.7) rotate(56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g></g></svg></button>
+          <button type="button" data-lang="en" lang="en" aria-label="English" title="English"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="0.00" width="30" height="1.54" fill="#b22234"/><rect y="3.08" width="30" height="1.54" fill="#b22234"/><rect y="6.15" width="30" height="1.54" fill="#b22234"/><rect y="9.23" width="30" height="1.54" fill="#b22234"/><rect y="12.31" width="30" height="1.54" fill="#b22234"/><rect y="15.38" width="30" height="1.54" fill="#b22234"/><rect y="18.46" width="30" height="1.54" fill="#b22234"/><rect width="13" height="10.77" fill="#3c3b6e"/><circle cx="1.6" cy="1.4" r=".45" fill="#fff"/><circle cx="4.0" cy="1.4" r=".45" fill="#fff"/><circle cx="6.4" cy="1.4" r=".45" fill="#fff"/><circle cx="8.8" cy="1.4" r=".45" fill="#fff"/><circle cx="11.2" cy="1.4" r=".45" fill="#fff"/><circle cx="2.8" cy="3.4" r=".45" fill="#fff"/><circle cx="5.2" cy="3.4" r=".45" fill="#fff"/><circle cx="7.6" cy="3.4" r=".45" fill="#fff"/><circle cx="10.0" cy="3.4" r=".45" fill="#fff"/><circle cx="1.6" cy="5.4" r=".45" fill="#fff"/><circle cx="4.0" cy="5.4" r=".45" fill="#fff"/><circle cx="6.4" cy="5.4" r=".45" fill="#fff"/><circle cx="8.8" cy="5.4" r=".45" fill="#fff"/><circle cx="11.2" cy="5.4" r=".45" fill="#fff"/><circle cx="2.8" cy="7.4" r=".45" fill="#fff"/><circle cx="5.2" cy="7.4" r=".45" fill="#fff"/><circle cx="7.6" cy="7.4" r=".45" fill="#fff"/><circle cx="10.0" cy="7.4" r=".45" fill="#fff"/><circle cx="1.6" cy="9.4" r=".45" fill="#fff"/><circle cx="4.0" cy="9.4" r=".45" fill="#fff"/><circle cx="6.4" cy="9.4" r=".45" fill="#fff"/><circle cx="8.8" cy="9.4" r=".45" fill="#fff"/><circle cx="11.2" cy="9.4" r=".45" fill="#fff"/></svg></button>
+          <button type="button" data-lang="es" lang="es" aria-label="Español" title="Español"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ce1126"/><circle cx="15" cy="10" r="2.7" fill="#8c5a2b"/><path d="M12.6 11.4q2.4 2.2 4.8 0" fill="none" stroke="#2e7d32" stroke-width=".7"/></svg></button>
+          <button type="button" data-lang="zh" lang="zh" aria-label="中文" title="中文"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#de2910"/><polygon fill="#ffde00" points="5.00,2.00 5.67,4.08 7.85,4.07 6.08,5.35 6.76,7.43 5.00,6.14 3.24,7.43 3.92,5.35 2.15,4.07 4.33,4.08"/><polygon fill="#ffde00" points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63"/><polygon fill="#ffde00" points="12.72,3.31 12.38,3.95 12.88,4.47 12.17,4.34 11.83,4.98 11.73,4.26 11.01,4.14 11.66,3.82 11.56,3.10 12.07,3.63"/><polygon fill="#ffde00" points="12.94,6.66 12.37,7.10 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.77,6.70 11.97,6.00 12.21,6.68"/><polygon fill="#ffde00" points="10.36,8.07 10.32,8.79 11.00,9.05 10.30,9.24 10.26,9.97 9.86,9.35 9.16,9.54 9.62,8.98 9.22,8.37 9.90,8.63"/></svg></button>
         </div>
         <button type="button" class="theme-btn" id="themeBtn"><span class="ico" id="themeIco" aria-hidden="true"></span><span class="sr" id="themeLabel"></span></button>
         <div class="sizeseg" role="group" id="sizeSeg">
@@ -62,10 +65,6 @@
     </div>
   </header>
 
-  <div class="size-hint" id="sizeHint" hidden>
-    <span id="sizeHintText"></span>
-    <button type="button" id="sizeHintClose" data-i18n="ok"></button>
-  </div>
 
   <div class="monthbar">
     <div class="monthbar-inner">
@@ -233,6 +232,21 @@
     </div>
   </dialog>
 
+  <dialog id="setDialog" class="sheet" aria-labelledby="setTitle">
+    <div class="sheet-box">
+      <div class="sheet-grip" aria-hidden="true"></div>
+      <p class="sheet-title" id="setTitle"></p>
+      <p class="sheet-welcome" id="setWelcome" hidden></p>
+      <h3 class="sheet-h" id="setHLang"></h3>
+      <div class="set-langs" id="setLangs"></div>
+      <h3 class="sheet-h" id="setHSize"></h3>
+      <div class="set-sizes" id="setSizes"></div>
+      <h3 class="sheet-h" id="setHTheme"></h3>
+      <div class="set-themes" id="setThemes"></div>
+      <button type="button" class="btn primary wide" id="setDone"></button>
+    </div>
+  </dialog>
+
   <dialog id="installDialog">
     <div class="ins-box">
       <p class="ins-title" id="insTitle"></p>
@@ -243,8 +257,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="icshelp.js"></script>
-  <script src="wallpaper.js"></script>
-  <script src="app.js"></script>
+  <script src="icshelp.js?v=20261119092827"></script>
+  <script src="wallpaper.js?v=20261119092827"></script>
+  <script src="app.js?v=20261119092827"></script>
 </body>
 </html>

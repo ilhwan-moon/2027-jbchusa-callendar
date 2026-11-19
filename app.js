@@ -8,7 +8,7 @@
   var T = {
     ko: {
       church: '생명의말씀선교회 USA', appSub: '2027 선교회 달력', appName: '2027 달력', calendar: '달력', prevMonth: '이전 달', nextMonth: '다음 달',
-      textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
+      settings: '언어·글씨 설정', setTitle: '설정', welcome: '처음 오셨네요! 편한 언어와 글씨 크기를 골라 주세요.', langLbl: '언어', screenLbl: '화면', done: '완료', themeShort: { auto: '자동', light: '밝게', dark: '어둡게' }, textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
       themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' }, textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'],
       swipeHint: '옆으로 밀면 다른 달로 넘어갑니다', monthEvents: '이달의 행사', holidays: '공휴일·기념일', upcoming: '다가오는 행사',
       noEvents: '이달에는 선교회 행사가 없습니다.', noDay: '이날은 행사가 없습니다.', today: '오늘', dday: 'D-{n}', ongoing: '진행 중',
@@ -41,7 +41,7 @@
     },
     en: {
       church: 'Life Word Mission USA', appSub: '2027 Mission Calendar', appName: 'Calendar 2027', calendar: 'Calendar', prevMonth: 'Previous month', nextMonth: 'Next month',
-      textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
+      settings: 'Language & text settings', setTitle: 'Settings', welcome: 'Welcome! Choose your language and text size.', langLbl: 'Language', screenLbl: 'Screen', done: 'Done', themeShort: { auto: 'Auto', light: 'Light', dark: 'Dark' }, textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
       themeN: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' }, textSizeN: ['Normal text', 'Large text', 'Extra large text'],
       swipeHint: 'Swipe sideways to change the month', monthEvents: 'Events this month', holidays: 'Holidays', upcoming: 'Coming up',
       noEvents: 'No mission events this month.', noDay: 'No events on this day.', today: 'Today', dday: 'In {n} days', ongoing: 'Happening now',
@@ -74,7 +74,7 @@
     },
     es: {
       church: 'Life Word Mission USA', appSub: 'Calendario 2027 de la Misión', appName: 'Calendario 2027', calendar: 'Calendario', prevMonth: 'Mes anterior', nextMonth: 'Mes siguiente',
-      textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
+      settings: 'Idioma y tamaño de letra', setTitle: 'Configuración', welcome: '¡Bienvenido! Elija su idioma y tamaño de letra.', langLbl: 'Idioma', screenLbl: 'Pantalla', done: 'Listo', themeShort: { auto: 'Auto', light: 'Claro', dark: 'Oscuro' }, textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
       themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' }, textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'],
       swipeHint: 'Deslice de lado para cambiar de mes', monthEvents: 'Eventos del mes', holidays: 'Días festivos', upcoming: 'Próximos eventos',
       noEvents: 'No hay eventos de la misión este mes.', noDay: 'No hay eventos este día.', today: 'Hoy', dday: 'En {n} días', ongoing: 'En curso',
@@ -107,7 +107,7 @@
     },
     zh: {
       church: 'Life Word Mission USA', appSub: '2027 宣教会日历', appName: '2027 日历', calendar: '日历', prevMonth: '上个月', nextMonth: '下个月',
-      textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
+      settings: '语言和字体设置', setTitle: '设置', welcome: '欢迎！请选择语言和字体大小。', langLbl: '语言', screenLbl: '画面', done: '完成', themeShort: { auto: '自动', light: '明亮', dark: '深色' }, textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
       themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' }, textSizeN: ['普通字体', '大字体', '特大字体'],
       swipeHint: '左右滑动可切换月份', monthEvents: '本月活动', holidays: '节假日', upcoming: '即将到来的活动',
       noEvents: '本月没有宣教会活动。', noDay: '这一天没有活动。', today: '今天', dday: '{n}天后', ongoing: '进行中',
@@ -239,7 +239,6 @@
       bt.setAttribute('aria-pressed', String(n === state.size)); bt.setAttribute('aria-label', L().textSizeN[n - 1]);
       bt.querySelector('.g').textContent = Lg === 'ko' ? '가' : Lg === 'zh' ? '字' : 'A';
     });
-    $('sizeHintText').textContent = L().sizeHint;
     document.documentElement.setAttribute('data-size', String(state.size));
     $('bottomnav').innerHTML = [['cal', '#sec-cal', 'calendar'], ['events', '#sec-events', 'bell'], ['wall', '#sec-wall', 'image'], ['today', '', 'today']].map(function (n) {
       return n[0] === 'today'
@@ -679,7 +678,7 @@
   /* ── 주소 (언어는 항상 남김) ── */
   function syncUrl() {
     var p = new URLSearchParams(location.search);
-    p.set('lang', state.lang); p.delete('source');
+    p.set('lang', state.lang); p.delete('source'); p.delete('_v');
     if (state.month !== defaultMonth()) p.set('m', String(state.month)); else p.delete('m');
     try { history.replaceState(null, '', location.pathname + '?' + p.toString() + location.hash); } catch (e) {}
   }
@@ -695,30 +694,52 @@
   function measure() { document.documentElement.style.setProperty('--topbar-h', document.querySelector('.topbar').offsetHeight + 'px'); }
   function shareUrl() { return location.origin + location.pathname + '?lang=' + state.lang; }
 
-  document.querySelectorAll('#langSeg button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      state.lang = b.getAttribute('data-lang'); saveLang(state.lang);
-      if (goWithLang()) return;
-      renderStatic(); render(); measure();
-    });
-  });
-  document.querySelectorAll('#sizeSeg button').forEach(function (bt) {
-    bt.addEventListener('click', function () {
-      state.size = Number(bt.getAttribute('data-size')); store('cal_size', String(state.size));
-      store('cal_hint', '1'); $('sizeHint').hidden = true;
-      renderStatic(); measure(); toast(L().textSizeN[state.size - 1]);
-    });
-  });
-  if (!store('cal_hint') && state.size === 1) {
-    $('sizeHint').hidden = false;
-    setTimeout(function () { store('cal_hint', '1'); }, 5000);
-    setTimeout(function () { $('sizeHint').hidden = true; }, 12000);
+  /* ── 언어·글씨·화면 바꾸기 (상단 버튼과 설정 창이 같이 씀) ── */
+  function setLang(l) {
+    if (l === state.lang) return;
+    state.lang = l; saveLang(l); store('cal_setup', '1');
+    // 카톡 등에서는 언어를 바꾸면 페이지를 다시 여므로, 처음 설정 중이었다면 설정 창을 다시 띄움
+    if ($('setDialog').open && !$('setWelcome').hidden) { try { sessionStorage.setItem('cal_reopen', '1'); } catch (e) {} }
+    if (goWithLang()) return;
+    try { sessionStorage.removeItem('cal_reopen'); } catch (e) {}
+    renderStatic(); render(); measure(); renderSettings();
   }
-  $('sizeHintClose').addEventListener('click', function () { $('sizeHint').hidden = true; store('cal_hint', '1'); });
+  function setSize(n) {
+    state.size = n; store('cal_size', String(n));
+    renderStatic(); measure(); renderSettings(); toast(L().textSizeN[n - 1]);
+  }
+  function setTheme(m) {
+    store('cal_theme', m); try { document.cookie = 'cal_theme=' + m + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
+    applyTheme(m); renderSettings();
+  }
+  document.querySelectorAll('#langSeg button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
+  document.querySelectorAll('#sizeSeg button').forEach(function (bt) { bt.addEventListener('click', function () { setSize(Number(bt.getAttribute('data-size'))); }); });
+  var LANG_NAME = { ko: '한국어', en: 'English', es: 'Español', zh: '中文' };
+  function flagSvg(l) { var b = document.querySelector('#langSeg [data-lang="' + l + '"]'); return b ? b.innerHTML : ''; }
+  function sizeGlyph() { return state.lang === 'ko' ? '가' : state.lang === 'zh' ? '字' : 'A'; }
+  function renderSettings() {
+    var Lg = L();
+    $('setFlag').innerHTML = flagSvg(state.lang); $('setG').textContent = sizeGlyph();
+    $('setBtn').setAttribute('aria-label', Lg.settings); $('setBtn').title = Lg.settings;
+    $('setTitle').textContent = Lg.setTitle; $('setWelcome').textContent = Lg.welcome;
+    $('setHLang').textContent = Lg.langLbl; $('setHSize').textContent = Lg.textSize; $('setHTheme').textContent = Lg.screenLbl;
+    $('setDone').textContent = Lg.done;
+    $('setLangs').innerHTML = LANGS.map(function (l) { return '<button type="button" data-lang="' + l + '" lang="' + l + '" aria-pressed="' + (l === state.lang) + '">' + flagSvg(l) + '<span>' + LANG_NAME[l] + '</span></button>'; }).join('');
+    $('setSizes').innerHTML = [1, 2, 3].map(function (n) { return '<button type="button" data-size="' + n + '" aria-pressed="' + (n === state.size) + '"><span class="sz" style="font-size:' + [18, 25, 33][n - 1] + 'px">' + sizeGlyph() + '</span><span>' + esc(Lg.textSizeN[n - 1]) + '</span></button>'; }).join('');
+    var tm = themeMode();
+    $('setThemes').innerHTML = ['auto', 'light', 'dark'].map(function (m) { return '<button type="button" data-theme="' + m + '" aria-pressed="' + (m === tm) + '">' + ICONS[m === 'light' ? 'sun' : m === 'dark' ? 'moon' : 'auto'] + '<span>' + esc(Lg.themeShort[m]) + '</span></button>'; }).join('');
+  }
+  $('setLangs').addEventListener('click', function (e) { var b = e.target.closest('[data-lang]'); if (b) setLang(b.getAttribute('data-lang')); });
+  $('setSizes').addEventListener('click', function (e) { var b = e.target.closest('[data-size]'); if (b) setSize(Number(b.getAttribute('data-size'))); });
+  $('setThemes').addEventListener('click', function (e) { var b = e.target.closest('[data-theme]'); if (b) setTheme(b.getAttribute('data-theme')); });
+  function openSettings(first) { $('setWelcome').hidden = !first; renderSettings(); if (!$('setDialog').open) $('setDialog').showModal(); }
+  $('setBtn').addEventListener('click', function () { openSettings(false); });
+  $('setDone').addEventListener('click', function () { $('setDialog').close(); });
+  $('setDialog').addEventListener('close', function () { store('cal_setup', '1'); });
+  $('setDialog').addEventListener('click', function (e) { if (e.target === $('setDialog')) $('setDialog').close(); });
   $('themeBtn').addEventListener('click', function () {
     var next = { auto: 'light', light: 'dark', dark: 'auto' }[themeMode()];
-    store('cal_theme', next); try { document.cookie = 'cal_theme=' + next + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
-    applyTheme(next); toast(L().themeN[next]);
+    setTheme(next); toast(L().themeN[next]);
   });
   if (window.matchMedia) { var mq = matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', function () { applyTheme(themeMode()); }); }
   $('shareBtn').addEventListener('click', function () {
@@ -737,7 +758,7 @@
   window.addEventListener('resize', measure);
 
   /* ── 다시 열었을 때 사이트가 바뀌었으면 새로고침 (ETag 확인) ── */
-  var APP_FILES = ['index.html', 'app.js', 'styles.css', 'data.js', 'wallpaper.js', 'icshelp.js'];
+  var APP_FILES = ['index.html', 'version.json'];
   var fileSigs = null, lastResume = Date.now(), lastDay = todayISO();
   function readSigs() {
     return Promise.all(APP_FILES.map(function (f) {
@@ -785,10 +806,35 @@
     window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (reg) { if (reg && reg.update) reg.update(); }).catch(function () {}); });
   }
 
+  /* ── 예전 화면이 열렸는지 확인 (카톡 등 앱 안 브라우저가 옛 파일을 보여 주는 경우) ──
+   * version.json 은 항상 서버에서 새로 받아 비교하고, 다르면 버전을 붙인 주소로 다시 엽니다(한 번만). */
+  (function () {
+    var meta = document.querySelector('meta[name="build"]'), mine = meta && meta.content;
+    if (!mine || location.protocol !== 'https:') return;
+    fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !j.v || j.v === mine) return;
+      var tried = null; try { tried = sessionStorage.getItem('cal_vtry'); } catch (e) {}
+      if (tried === j.v) return;
+      try { sessionStorage.setItem('cal_vtry', j.v); } catch (e) {}
+      var p = new URLSearchParams(location.search); p.set('_v', j.v);
+      location.replace(location.pathname + '?' + p.toString() + location.hash);
+    }).catch(function () {});
+  })();
+  // 아주 오래된 브라우저: dialog 기능이 없으면 간단히 대신함
+  if (typeof HTMLDialogElement !== 'function') {
+    document.querySelectorAll('dialog').forEach(function (d) {
+      d.showModal = function () { d.setAttribute('open', ''); };
+      d.close = function () { d.removeAttribute('open'); d.dispatchEvent(new Event('close')); };
+    });
+  }
   if (goWithLang()) return;
   if (todayISO().slice(0, 7) === iso(state.month, 1).slice(0, 7)) state.day = todayISO();   // 이번 달이면 오늘 일정을 바로 보여 줌
   renderStatic();
   render();
   measure();
+  renderSettings();
+  // 처음 방문: 언어·글씨 크기 고르는 창을 한 번 띄움 (홈 화면 앱이거나 전에 고른 적 있으면 생략)
+  if (!store('cal_setup') && !store('cal_hint') && !launchedFromHome()) setTimeout(function () { openSettings(true); }, 400);
+  else { var ro = null; try { ro = sessionStorage.getItem('cal_reopen'); sessionStorage.removeItem('cal_reopen'); } catch (e) {} if (ro) setTimeout(function () { openSettings(true); }, 300); }
   window.Wallpaper.preload(state.month);
 })();
