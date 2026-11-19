@@ -65,8 +65,8 @@ a { color: var(--primary); }
 .topbar-inner { max-width: 1120px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 6px 10px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .brand img { border-radius: 8px; flex: none; width: 32px; height: 32px; }
-.brand-name { font-weight: 800; font-size: 1.02rem; line-height: 1.2; }
-.brand-sub { font-size: .78rem; color: var(--muted); line-height: 1.2; }
+.brand-name { font-weight: 800; font-size: .98rem; line-height: 1.15; letter-spacing: .05em; white-space: nowrap; }
+.brand-sub { font-size: .74rem; color: var(--muted); line-height: 1.2; letter-spacing: .03em; margin-top: 1px; }
 /* 상단 설정 버튼: 작게 (국기 · 화면모드 · 글씨 크기) */
 .controls { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 .seg { display: inline-flex; gap: 2px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 2px; }
@@ -138,7 +138,8 @@ dialog.sheet[open] { animation: sheetUp .22s ease-out; }
 #setDone { margin-top: 1rem; min-height: 54px; font-size: 1.1rem; }
 .size-hint { position: sticky; top: var(--topbar-h, 66px); z-index: 18; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; background: #fff3c4; color: #3b2f00; font-weight: 700; font-size: 16px; line-height: 1.4; border-bottom: 1px solid #e6d58a; }
 .size-hint button { flex: none; min-height: 40px; padding: 0 14px; border-radius: 10px; border: 0; background: #3b2f00; color: #fff3c4; font-weight: 800; cursor: pointer; }
-@media (max-width: 420px) { .brand-sub { display: none; } }
+html[data-size="3"] .brand-name { font-size: .84rem; letter-spacing: .03em; }
+@media (max-width: 360px) { .brand-name { font-size: .86rem; letter-spacing: .03em; } .brand-sub { font-size: .7rem; } html[data-size="3"] .brand-name { font-size: .62rem; letter-spacing: .01em; } html[data-size="3"] .brand-sub { font-size: .56rem; } html[data-size="2"] .brand-name { font-size: .72rem; } }
 @media (max-width: 360px) { .topbar-inner { padding: 6px 10px; } .seg button { width: 34px; } }
 
 /* ── 달 이동 막대 ── */
