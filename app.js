@@ -8,7 +8,7 @@
   var T = {
     ko: {
       church: '생명의말씀선교회 USA', appSub: '2027 선교회 달력', appName: '2027 달력', calendar: '달력', prevMonth: '이전 달', nextMonth: '다음 달',
-      myChurch: '내 교회', noChurch: '선택 안 함 (선교회 일정만)', churchNote: '교회를 고르면 그 교회 일정이 달력에 다른 색으로 함께 보입니다.', churchSoon: '⏳ {c} 일정은 곧 준비됩니다. 준비되면 이 달력에 자동으로 함께 보입니다.', churchLoading: '교회 일정을 불러오는 중…', churchErr: '교회 일정을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.', churchEmpty: '이달에는 교회 일정이 없습니다.', churchUpdated: '{t} 기준', churchSched: '{c} 일정', subscribe: '내 구글 캘린더에서 구독하기', allDay: '종일', settingsPc: '설정', settings: '언어·글씨 설정', setTitle: '설정', welcome: '처음 오셨네요! 편한 언어와 글씨 크기를 골라 주세요.', langLbl: '언어', screenLbl: '화면', done: '완료', themeShort: { auto: '자동', light: '밝게', dark: '어둡게' }, textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
+      todayBefore: '오늘은 {d}입니다. 2027년 달력은 {n}일 뒤에 시작해요.', todayAfter: '2027년 달력이 끝났습니다.', myChurch: '내 교회', noChurch: '선택 안 함 (선교회 일정만)', churchNote: '교회를 고르면 그 교회 일정이 달력에 다른 색으로 함께 보입니다.', churchSoon: '⏳ {c} 일정은 곧 준비됩니다. 준비되면 이 달력에 자동으로 함께 보입니다.', churchLoading: '교회 일정을 불러오는 중…', churchErr: '교회 일정을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.', churchEmpty: '이달에는 교회 일정이 없습니다.', churchUpdated: '{t} 기준', churchSched: '{c} 일정', subscribe: '내 구글 캘린더에서 구독하기', allDay: '종일', settingsPc: '설정', settings: '언어·글씨 설정', setTitle: '설정', welcome: '처음 오셨네요! 편한 언어와 글씨 크기를 골라 주세요.', langLbl: '언어', screenLbl: '화면', done: '완료', themeShort: { auto: '자동', light: '밝게', dark: '어둡게' }, textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
       themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' }, textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'],
       swipeHint: '옆으로 밀면 다른 달로 넘어갑니다', monthEvents: '이달의 행사', holidays: '공휴일·기념일', upcoming: '다가오는 행사',
       noEvents: '이달에는 선교회 행사가 없습니다.', noDay: '이날은 행사가 없습니다.', today: '오늘', dday: 'D-{n}', ongoing: '진행 중',
@@ -41,7 +41,7 @@
     },
     en: {
       church: 'Life Word Mission USA', appSub: '2027 Mission Calendar', appName: 'Calendar 2027', calendar: 'Calendar', prevMonth: 'Previous month', nextMonth: 'Next month',
-      myChurch: 'My church', noChurch: 'None (mission events only)', churchNote: 'Pick your church to see its events on the calendar in another color.', churchSoon: '⏳ {c} events are coming soon. They’ll appear on this calendar automatically once ready.', churchLoading: 'Loading church events…', churchErr: 'Couldn’t load church events. Please check your connection.', churchEmpty: 'No church events this month.', churchUpdated: 'As of {t}', churchSched: '{c} events', subscribe: 'Subscribe in Google Calendar', allDay: 'All day', settingsPc: 'Settings', settings: 'Language & text settings', setTitle: 'Settings', welcome: 'Welcome! Choose your language and text size.', langLbl: 'Language', screenLbl: 'Screen', done: 'Done', themeShort: { auto: 'Auto', light: 'Light', dark: 'Dark' }, textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
+      todayBefore: 'Today is {d}. The 2027 calendar starts in {n} days.', todayAfter: 'The 2027 calendar has ended.', myChurch: 'My church', noChurch: 'None (mission events only)', churchNote: 'Pick your church to see its events on the calendar in another color.', churchSoon: '⏳ {c} events are coming soon. They’ll appear on this calendar automatically once ready.', churchLoading: 'Loading church events…', churchErr: 'Couldn’t load church events. Please check your connection.', churchEmpty: 'No church events this month.', churchUpdated: 'As of {t}', churchSched: '{c} events', subscribe: 'Subscribe in Google Calendar', allDay: 'All day', settingsPc: 'Settings', settings: 'Language & text settings', setTitle: 'Settings', welcome: 'Welcome! Choose your language and text size.', langLbl: 'Language', screenLbl: 'Screen', done: 'Done', themeShort: { auto: 'Auto', light: 'Light', dark: 'Dark' }, textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
       themeN: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' }, textSizeN: ['Normal text', 'Large text', 'Extra large text'],
       swipeHint: 'Swipe sideways to change the month', monthEvents: 'Events this month', holidays: 'Holidays', upcoming: 'Coming up',
       noEvents: 'No mission events this month.', noDay: 'No events on this day.', today: 'Today', dday: 'In {n} days', ongoing: 'Happening now',
@@ -74,7 +74,7 @@
     },
     es: {
       church: 'Life Word Mission USA', appSub: 'Calendario 2027 de la Misión', appName: 'Calendario 2027', calendar: 'Calendario', prevMonth: 'Mes anterior', nextMonth: 'Mes siguiente',
-      myChurch: 'Mi iglesia', noChurch: 'Ninguna (solo eventos de la misión)', churchNote: 'Elija su iglesia para ver sus eventos en otro color.', churchSoon: '⏳ Los eventos de {c} estarán listos pronto. Aparecerán aquí automáticamente.', churchLoading: 'Cargando eventos de la iglesia…', churchErr: 'No se pudieron cargar los eventos de la iglesia. Revise su conexión.', churchEmpty: 'No hay eventos de la iglesia este mes.', churchUpdated: 'Actualizado: {t}', churchSched: 'Eventos de {c}', subscribe: 'Suscribirse en Google Calendar', allDay: 'Todo el día', settingsPc: 'Configuración', settings: 'Idioma y tamaño de letra', setTitle: 'Configuración', welcome: '¡Bienvenido! Elija su idioma y tamaño de letra.', langLbl: 'Idioma', screenLbl: 'Pantalla', done: 'Listo', themeShort: { auto: 'Auto', light: 'Claro', dark: 'Oscuro' }, textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
+      todayBefore: 'Hoy es {d}. El calendario 2027 empieza en {n} días.', todayAfter: 'El calendario 2027 ha terminado.', myChurch: 'Mi iglesia', noChurch: 'Ninguna (solo eventos de la misión)', churchNote: 'Elija su iglesia para ver sus eventos en otro color.', churchSoon: '⏳ Los eventos de {c} estarán listos pronto. Aparecerán aquí automáticamente.', churchLoading: 'Cargando eventos de la iglesia…', churchErr: 'No se pudieron cargar los eventos de la iglesia. Revise su conexión.', churchEmpty: 'No hay eventos de la iglesia este mes.', churchUpdated: 'Actualizado: {t}', churchSched: 'Eventos de {c}', subscribe: 'Suscribirse en Google Calendar', allDay: 'Todo el día', settingsPc: 'Configuración', settings: 'Idioma y tamaño de letra', setTitle: 'Configuración', welcome: '¡Bienvenido! Elija su idioma y tamaño de letra.', langLbl: 'Idioma', screenLbl: 'Pantalla', done: 'Listo', themeShort: { auto: 'Auto', light: 'Claro', dark: 'Oscuro' }, textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
       themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' }, textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'],
       swipeHint: 'Deslice de lado para cambiar de mes', monthEvents: 'Eventos del mes', holidays: 'Días festivos', upcoming: 'Próximos eventos',
       noEvents: 'No hay eventos de la misión este mes.', noDay: 'No hay eventos este día.', today: 'Hoy', dday: 'En {n} días', ongoing: 'En curso',
@@ -107,7 +107,7 @@
     },
     zh: {
       church: 'Life Word Mission USA', appSub: '2027 宣教会日历', appName: '2027 日历', calendar: '日历', prevMonth: '上个月', nextMonth: '下个月',
-      myChurch: '我的教会', noChurch: '不选择（只看宣教会活动）', churchNote: '选择教会后，该教会的活动会以另一种颜色显示在日历上。', churchSoon: '⏳ {c}的日程即将准备好，准备好后会自动显示在这个日历上。', churchLoading: '正在加载教会日程…', churchErr: '无法加载教会日程，请检查网络连接。', churchEmpty: '本月没有教会日程。', churchUpdated: '{t} 更新', churchSched: '{c}日程', subscribe: '在 Google 日历中订阅', allDay: '全天', settingsPc: '设置', settings: '语言和字体设置', setTitle: '设置', welcome: '欢迎！请选择语言和字体大小。', langLbl: '语言', screenLbl: '画面', done: '完成', themeShort: { auto: '自动', light: '明亮', dark: '深色' }, textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
+      todayBefore: '今天是{d}。2027年日历还有{n}天开始。', todayAfter: '2027年日历已经结束。', myChurch: '我的教会', noChurch: '不选择（只看宣教会活动）', churchNote: '选择教会后，该教会的活动会以另一种颜色显示在日历上。', churchSoon: '⏳ {c}的日程即将准备好，准备好后会自动显示在这个日历上。', churchLoading: '正在加载教会日程…', churchErr: '无法加载教会日程，请检查网络连接。', churchEmpty: '本月没有教会日程。', churchUpdated: '{t} 更新', churchSched: '{c}日程', subscribe: '在 Google 日历中订阅', allDay: '全天', settingsPc: '设置', settings: '语言和字体设置', setTitle: '设置', welcome: '欢迎！请选择语言和字体大小。', langLbl: '语言', screenLbl: '画面', done: '完成', themeShort: { auto: '自动', light: '明亮', dark: '深色' }, textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
       themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' }, textSizeN: ['普通字体', '大字体', '特大字体'],
       swipeHint: '左右滑动可切换月份', monthEvents: '本月活动', holidays: '节假日', upcoming: '即将到来的活动',
       noEvents: '本月没有宣教会活动。', noDay: '这一天没有活动。', today: '今天', dday: '{n}天后', ongoing: '进行中',
@@ -731,11 +731,26 @@
     sc.classList.remove('swap-next', 'swap-prev'); void sc.offsetWidth; sc.classList.add(dir);
     window.Wallpaper.preload(m);
   }
+  // 「오늘」: 2027년이면 오늘 날짜를 골라 그날 일정 칸으로, 2027년 전이면 남은 날과 다가오는 행사로
   function goToday() {
-    var td = todayISO(), p = td.split('-');
-    if (+p[0] === Y) { state.month = +p[1]; state.day = td; render(); }
-    else { state.month = defaultMonth(); state.day = todayISO().slice(0, 4) === String(Y) ? todayISO() : null; render(); }
-    $('sec-cal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var td = todayISO(), y = +td.slice(0, 4);
+    if (y === Y) {
+      var m = +td.slice(5, 7); state.day = td;
+      if (m !== state.month) { state.month = m; render(); } else { renderGrid(); renderDay(); }
+      setTimeout(function () { $('dayDetail').scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 30);
+      return;
+    }
+    var loc = state.lang === 'zh' ? 'zh-CN' : state.lang;
+    var dstr = new Date().toLocaleDateString(loc, { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+    if (y < Y) {
+      if (state.month !== 1) { state.month = 1; state.day = null; render(); }
+      toast(fmt(t('todayBefore'), { d: dstr, n: dn(Y + '-01-01') - dn(td) }), 4500);
+      $('sec-upcoming').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      if (state.month !== 12) { state.month = 12; state.day = null; render(); }
+      toast(t('todayAfter'), 4000);
+      $('sec-cal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
   $('prevMonth').addEventListener('click', function () { setMonth(state.month - 1); });
   $('nextMonth').addEventListener('click', function () { setMonth(state.month + 1); });
@@ -784,7 +799,7 @@
     location.replace(location.pathname + '?' + p.toString() + location.hash);
     return true;
   }
-  function toast(msg) { var el = $('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(function () { el.classList.remove('show'); }, 2200); }
+  function toast(msg, ms) { var el = $('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(function () { el.classList.remove('show'); }, ms || 2200); }
   function measure() { document.documentElement.style.setProperty('--topbar-h', document.querySelector('.topbar').offsetHeight + 'px'); }
   function shareUrl() { return location.origin + location.pathname + '?lang=' + state.lang; }
 
