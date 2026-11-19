@@ -174,10 +174,8 @@ main { padding-top: 10px; }
 #sec-cal.swap-prev { animation: swapP .28s ease-out; }
 @keyframes swapN { from { opacity: .3; transform: translateX(24px); } to { opacity: 1; transform: none; } }
 @keyframes swapP { from { opacity: .3; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
-.art { display: block; position: relative; padding: 0; border: 0; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; cursor: zoom-in; background: var(--m-bg); }
+.art { display: block; position: relative; padding: 0; border: 0; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; cursor: pointer; touch-action: pan-y; background: var(--m-bg); }
 .art img { display: block; width: 100%; height: auto; aspect-ratio: 1400 / 913; object-fit: cover; }
-.art-zoom { position: absolute; right: 10px; top: 10px; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,.45); color: #fff; display: grid; place-items: center; }
-.art-zoom svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 
 /* 달 머리 (탁상달력 디자인) */
 .banner { background: var(--m-bg); color: var(--m-on); padding: 1rem 1.15rem 1.2rem; border-radius: 0 0 var(--radius) var(--radius); margin-bottom: 14px; }
@@ -260,6 +258,58 @@ html[data-size="3"] .bar span { font-size: .62rem; }
 .ics-steps li { counter-increment: s; position: relative; padding-left: 2.2rem; line-height: 1.55; font-size: .98rem; }
 .ics-steps li::before { content: counter(s); position: absolute; left: 0; top: .05rem; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--m-acc); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .85rem; }
 .ics-notes { list-style: none; margin: 0; padding: .7rem 0 0; border-top: 1px dashed var(--line); display: grid; gap: .45rem; font-size: .92rem; color: var(--ink-2); }
+
+/* ── 1년 보기 ── */
+.strip .yr-chip { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); display: inline-flex; align-items: center; gap: 4px; }
+.strip .yr-chip svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+dialog.yeardlg { width: min(100vw, 1000px); max-width: 100vw; height: min(100dvh, 920px); max-height: 100dvh; padding: 0; border-radius: 18px; }
+dialog.yeardlg[open] { display: flex; flex-direction: column; }
+@media (max-width: 640px) { dialog.yeardlg { width: 100vw; height: 100dvh; border-radius: 0; margin: 0; } }
+.yr-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.yr-head b { font-size: 1.2rem; }
+.yr-head .btn { min-height: 44px; }
+.yr-legend { margin: 0; padding: 8px 16px 0; font-size: .85rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.yr-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; vertical-align: -1px; margin-right: 4px; }
+.yr-grid { flex: 1; overflow: auto; padding: 12px 12px calc(16px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: start; }
+@media (min-width: 600px) { .yr-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .yr-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ym { display: block; width: 100%; text-align: left; padding: 8px 6px 6px; border-radius: 14px; border: 2px solid var(--line); background: var(--surface); cursor: pointer; color: var(--ink); }
+.ym.cur { border-color: var(--c); box-shadow: 0 0 0 1px var(--c); }
+.ym-h { display: flex; justify-content: space-between; align-items: baseline; gap: 4px; padding: 0 4px 4px; }
+.ym-h b { font-size: 1rem; color: var(--c); }
+.ym-h small { font-size: .72rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ym-g { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; text-align: center; font-size: .72rem; line-height: 1.75; }
+.ym-g .w { color: var(--muted); font-size: .62rem; }
+.ym-g .w.su { color: var(--red); } .ym-g .w.sa { color: var(--blue); }
+.ym-g span.su, .ym-g span.ho { color: var(--red); }
+.ym-g span.sa { color: var(--blue); }
+.ym-g span.ev { background: color-mix(in srgb, var(--c) 30%, transparent); border-radius: 4px; font-weight: 700; }
+.ym-g span.cd { box-shadow: inset 0 -2px 0 var(--ch); }
+.ym-g span.td { background: var(--red); color: #fff; border-radius: 50%; }
+html[data-size="3"] .ym-g { font-size: .66rem; }
+
+/* ── 말씀 ── */
+.verses { margin-top: 14px; }
+.vs-lead { margin: -.3rem 0 .9rem; }
+.vs-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+@media (min-width: 820px) { .vs-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.vs { border-radius: 16px; border: 1px solid var(--line); background: var(--surface-2); overflow: hidden; }
+.vs.cur { border: 2px solid var(--c); }
+.vs-top { display: flex; align-items: center; gap: 10px; padding: .7rem .9rem; background: var(--bg-c); color: var(--on-c); }
+.vs-m { font-family: var(--pop); font-weight: 300; font-size: 1.7rem; line-height: 1; color: var(--num-c); }
+.vs-fig { font-weight: 800; }
+.vs-th { font-size: .85rem; opacity: .85; }
+.vs-tag { margin-left: auto; font-size: .75rem; font-weight: 800; padding: .15rem .55rem; border-radius: 999px; background: var(--red); color: #fff; white-space: nowrap; }
+.vs-body { padding: .8rem .9rem .9rem; }
+.vs-text { margin: 0 0 .35rem; font-size: 1.15rem; line-height: 1.75; font-weight: 500; }
+.vs-text .w { border-radius: 6px; transition: background .15s; }
+.vs-text .w.h { background: var(--line); color: transparent; cursor: pointer; }
+.vs-ref { margin: 0 0 .7rem; font-weight: 800; color: var(--acc-ink); font-size: .95rem; }
+.vs-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.vs-btns button { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; padding: 0 .85rem; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font-weight: 700; font-size: .95rem; cursor: pointer; color: var(--ink); }
+.vs-btns button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); border-color: var(--primary); }
+.vs-btns svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vs-hint { margin: .5rem 0 0; font-size: .85rem; color: var(--muted); }
 
 /* ── 배경화면 ── */
 .wall { margin-top: 14px; }

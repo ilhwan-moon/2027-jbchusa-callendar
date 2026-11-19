@@ -8,7 +8,7 @@
   var T = {
     ko: {
       church: '생명의말씀선교회 USA', appSub: '2027 선교회 달력', appName: '2027 달력', calendar: '달력', prevMonth: '이전 달', nextMonth: '다음 달',
-      todayBefore: '오늘은 {d}입니다. 2027년 달력은 {n}일 뒤에 시작해요.', todayAfter: '2027년 달력이 끝났습니다.', myChurch: '내 교회', noChurch: '선택 안 함 (선교회 일정만)', churchNote: '교회를 고르면 그 교회 일정이 달력에 다른 색으로 함께 보입니다.', churchSoon: '⏳ {c} 일정은 곧 준비됩니다. 준비되면 이 달력에 자동으로 함께 보입니다.', churchLoading: '교회 일정을 불러오는 중…', churchErr: '교회 일정을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.', churchEmpty: '이달에는 교회 일정이 없습니다.', churchUpdated: '{t} 기준', churchSched: '{c} 일정', subscribe: '내 구글 캘린더에서 구독하기', allDay: '종일', settingsPc: '설정', settings: '언어·글씨 설정', setTitle: '설정', welcome: '처음 오셨네요! 편한 언어와 글씨 크기를 골라 주세요.', langLbl: '언어', screenLbl: '화면', done: '완료', themeShort: { auto: '자동', light: '밝게', dark: '어둡게' }, textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
+      verseTitle: '12달의 말씀', verseLead: '한 달에 한 구절씩, 일 년에 열두 구절을 마음에 새겨 보세요.', thisMonth: '이달', practice: '암송 연습', practiceN: ['조금 가리기', '많이 가리기', '모두 가리기', '다시 보기'], listen: '듣기', stopListen: '멈추기', tapReveal: '가린 곳을 누르면 보입니다.', goMonth: '이 달 보기', yearView: '1년', yearTitle: '2027년 한눈에', yearLegendEv: '선교회 행사', yearLegendHol: '공휴일', yearLegendCh: '내 교회 일정', yearTap: '달을 누르면 그 달로 갑니다', todayBefore: '오늘은 {d}입니다. 2027년 달력은 {n}일 뒤에 시작해요.', todayAfter: '2027년 달력이 끝났습니다.', myChurch: '내 교회', noChurch: '선택 안 함 (선교회 일정만)', churchNote: '교회를 고르면 그 교회 일정이 달력에 다른 색으로 함께 보입니다.', churchSoon: '⏳ {c} 일정은 곧 준비됩니다. 준비되면 이 달력에 자동으로 함께 보입니다.', churchLoading: '교회 일정을 불러오는 중…', churchErr: '교회 일정을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.', churchEmpty: '이달에는 교회 일정이 없습니다.', churchUpdated: '{t} 기준', churchSched: '{c} 일정', subscribe: '내 구글 캘린더에서 구독하기', allDay: '종일', settingsPc: '설정', settings: '언어·글씨 설정', setTitle: '설정', welcome: '처음 오셨네요! 편한 언어와 글씨 크기를 골라 주세요.', langLbl: '언어', screenLbl: '화면', done: '완료', themeShort: { auto: '자동', light: '밝게', dark: '어둡게' }, textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
       themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' }, textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'],
       swipeHint: '옆으로 밀면 다른 달로 넘어갑니다', monthEvents: '이달의 행사', holidays: '공휴일·기념일', upcoming: '다가오는 행사',
       noEvents: '이달에는 선교회 행사가 없습니다.', noDay: '이날은 행사가 없습니다.', today: '오늘', dday: 'D-{n}', ongoing: '진행 중',
@@ -34,14 +34,14 @@
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
       share: '공유', website: '선교회 홈페이지', qr: 'QR 코드', toTop: '맨 위로', close: '닫기', copied: '링크를 복사했습니다', qrTitle: '휴대폰 카메라로 찍으면 달력이 열립니다',
       source: '그림·말씀·행사: 생명의말씀선교회 USA 2027 탁상달력 · 한국어 성경: 개역한글', updatedReload: '최신 버전으로 바뀌었습니다',
-      nav: { cal: '달력', events: '행사', wall: '배경화면', today: '오늘' },
+      nav: { cal: '달력', events: '행사', verse: '말씀', wall: '배경화면' },
       monthName: function (m) { return m + '월'; }, monthTitle: function (m) { return Y + '년 ' + m + '월'; },
       dayTitle: function (m, d, w) { return m + '월 ' + d + '일 (' + '일월화수목금토'[w] + ')'; },
       dow: ['일', '월', '화', '수', '목', '금', '토'],
     },
     en: {
       church: 'Life Word Mission USA', appSub: '2027 Mission Calendar', appName: 'Calendar 2027', calendar: 'Calendar', prevMonth: 'Previous month', nextMonth: 'Next month',
-      todayBefore: 'Today is {d}. The 2027 calendar starts in {n} days.', todayAfter: 'The 2027 calendar has ended.', myChurch: 'My church', noChurch: 'None (mission events only)', churchNote: 'Pick your church to see its events on the calendar in another color.', churchSoon: '⏳ {c} events are coming soon. They’ll appear on this calendar automatically once ready.', churchLoading: 'Loading church events…', churchErr: 'Couldn’t load church events. Please check your connection.', churchEmpty: 'No church events this month.', churchUpdated: 'As of {t}', churchSched: '{c} events', subscribe: 'Subscribe in Google Calendar', allDay: 'All day', settingsPc: 'Settings', settings: 'Language & text settings', setTitle: 'Settings', welcome: 'Welcome! Choose your language and text size.', langLbl: 'Language', screenLbl: 'Screen', done: 'Done', themeShort: { auto: 'Auto', light: 'Light', dark: 'Dark' }, textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
+      verseTitle: 'Verses of the 12 months', verseLead: 'One verse a month — twelve verses to keep in your heart this year.', thisMonth: 'This month', practice: 'Memorize', practiceN: ['Hide some', 'Hide more', 'Hide all', 'Show again'], listen: 'Listen', stopListen: 'Stop', tapReveal: 'Tap a hidden word to reveal it.', goMonth: 'Open month', yearView: 'Year', yearTitle: '2027 at a glance', yearLegendEv: 'Mission events', yearLegendHol: 'Holidays', yearLegendCh: 'My church', yearTap: 'Tap a month to open it', todayBefore: 'Today is {d}. The 2027 calendar starts in {n} days.', todayAfter: 'The 2027 calendar has ended.', myChurch: 'My church', noChurch: 'None (mission events only)', churchNote: 'Pick your church to see its events on the calendar in another color.', churchSoon: '⏳ {c} events are coming soon. They’ll appear on this calendar automatically once ready.', churchLoading: 'Loading church events…', churchErr: 'Couldn’t load church events. Please check your connection.', churchEmpty: 'No church events this month.', churchUpdated: 'As of {t}', churchSched: '{c} events', subscribe: 'Subscribe in Google Calendar', allDay: 'All day', settingsPc: 'Settings', settings: 'Language & text settings', setTitle: 'Settings', welcome: 'Welcome! Choose your language and text size.', langLbl: 'Language', screenLbl: 'Screen', done: 'Done', themeShort: { auto: 'Auto', light: 'Light', dark: 'Dark' }, textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
       themeN: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' }, textSizeN: ['Normal text', 'Large text', 'Extra large text'],
       swipeHint: 'Swipe sideways to change the month', monthEvents: 'Events this month', holidays: 'Holidays', upcoming: 'Coming up',
       noEvents: 'No mission events this month.', noDay: 'No events on this day.', today: 'Today', dday: 'In {n} days', ongoing: 'Happening now',
@@ -67,14 +67,14 @@
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
       share: 'Share', website: 'Mission website', qr: 'QR code', toTop: 'Top', close: 'Close', copied: 'Link copied', qrTitle: 'Scan with your phone camera to open the calendar',
       source: 'Art, verses & events: Life Word Mission USA 2027 desk calendar · Bible: NKJV', updatedReload: 'Updated to the latest version',
-      nav: { cal: 'Calendar', events: 'Events', wall: 'Wallpaper', today: 'Today' },
+      nav: { cal: 'Calendar', events: 'Events', verse: 'Verses', wall: 'Wallpaper' },
       monthName: function (m) { return MONTH_EN[m - 1]; }, monthTitle: function (m) { return MONTH_EN[m - 1] + ' ' + Y; },
       dayTitle: function (m, d, w) { return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][w] + ', ' + MONTH_EN[m - 1] + ' ' + d; },
       dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
     },
     es: {
       church: 'Life Word Mission USA', appSub: 'Calendario 2027 de la Misión', appName: 'Calendario 2027', calendar: 'Calendario', prevMonth: 'Mes anterior', nextMonth: 'Mes siguiente',
-      todayBefore: 'Hoy es {d}. El calendario 2027 empieza en {n} días.', todayAfter: 'El calendario 2027 ha terminado.', myChurch: 'Mi iglesia', noChurch: 'Ninguna (solo eventos de la misión)', churchNote: 'Elija su iglesia para ver sus eventos en otro color.', churchSoon: '⏳ Los eventos de {c} estarán listos pronto. Aparecerán aquí automáticamente.', churchLoading: 'Cargando eventos de la iglesia…', churchErr: 'No se pudieron cargar los eventos de la iglesia. Revise su conexión.', churchEmpty: 'No hay eventos de la iglesia este mes.', churchUpdated: 'Actualizado: {t}', churchSched: 'Eventos de {c}', subscribe: 'Suscribirse en Google Calendar', allDay: 'Todo el día', settingsPc: 'Configuración', settings: 'Idioma y tamaño de letra', setTitle: 'Configuración', welcome: '¡Bienvenido! Elija su idioma y tamaño de letra.', langLbl: 'Idioma', screenLbl: 'Pantalla', done: 'Listo', themeShort: { auto: 'Auto', light: 'Claro', dark: 'Oscuro' }, textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
+      verseTitle: 'Versículos de los 12 meses', verseLead: 'Un versículo al mes: doce versículos para guardar en el corazón este año.', thisMonth: 'Este mes', practice: 'Memorizar', practiceN: ['Ocultar algunas', 'Ocultar más', 'Ocultar todo', 'Mostrar de nuevo'], listen: 'Escuchar', stopListen: 'Detener', tapReveal: 'Toque una palabra oculta para verla.', goMonth: 'Ver mes', yearView: 'Año', yearTitle: '2027 de un vistazo', yearLegendEv: 'Eventos de la misión', yearLegendHol: 'Feriados', yearLegendCh: 'Mi iglesia', yearTap: 'Toque un mes para abrirlo', todayBefore: 'Hoy es {d}. El calendario 2027 empieza en {n} días.', todayAfter: 'El calendario 2027 ha terminado.', myChurch: 'Mi iglesia', noChurch: 'Ninguna (solo eventos de la misión)', churchNote: 'Elija su iglesia para ver sus eventos en otro color.', churchSoon: '⏳ Los eventos de {c} estarán listos pronto. Aparecerán aquí automáticamente.', churchLoading: 'Cargando eventos de la iglesia…', churchErr: 'No se pudieron cargar los eventos de la iglesia. Revise su conexión.', churchEmpty: 'No hay eventos de la iglesia este mes.', churchUpdated: 'Actualizado: {t}', churchSched: 'Eventos de {c}', subscribe: 'Suscribirse en Google Calendar', allDay: 'Todo el día', settingsPc: 'Configuración', settings: 'Idioma y tamaño de letra', setTitle: 'Configuración', welcome: '¡Bienvenido! Elija su idioma y tamaño de letra.', langLbl: 'Idioma', screenLbl: 'Pantalla', done: 'Listo', themeShort: { auto: 'Auto', light: 'Claro', dark: 'Oscuro' }, textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
       themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' }, textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'],
       swipeHint: 'Deslice de lado para cambiar de mes', monthEvents: 'Eventos del mes', holidays: 'Días festivos', upcoming: 'Próximos eventos',
       noEvents: 'No hay eventos de la misión este mes.', noDay: 'No hay eventos este día.', today: 'Hoy', dday: 'En {n} días', ongoing: 'En curso',
@@ -100,14 +100,14 @@
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
       share: 'Compartir', website: 'Sitio de la misión', qr: 'Código QR', toTop: 'Arriba', close: 'Cerrar', copied: 'Enlace copiado', qrTitle: 'Escanee con la cámara del teléfono para abrir el calendario',
       source: 'Arte, versículos y eventos: calendario 2027 de Life Word Mission USA · Biblia: RVR1960', updatedReload: 'Actualizado a la última versión',
-      nav: { cal: 'Calendario', events: 'Eventos', wall: 'Fondo', today: 'Hoy' },
+      nav: { cal: 'Calendario', events: 'Eventos', verse: 'Versículos', wall: 'Fondo' },
       monthName: function (m) { return MONTH_ES[m - 1]; }, monthTitle: function (m) { var s = MONTH_ES[m - 1]; return s[0].toUpperCase() + s.slice(1) + ' ' + Y; },
       dayTitle: function (m, d, w) { return ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'][w] + ', ' + d + ' de ' + MONTH_ES[m - 1]; },
       dow: ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'],
     },
     zh: {
       church: 'Life Word Mission USA', appSub: '2027 宣教会日历', appName: '2027 日历', calendar: '日历', prevMonth: '上个月', nextMonth: '下个月',
-      todayBefore: '今天是{d}。2027年日历还有{n}天开始。', todayAfter: '2027年日历已经结束。', myChurch: '我的教会', noChurch: '不选择（只看宣教会活动）', churchNote: '选择教会后，该教会的活动会以另一种颜色显示在日历上。', churchSoon: '⏳ {c}的日程即将准备好，准备好后会自动显示在这个日历上。', churchLoading: '正在加载教会日程…', churchErr: '无法加载教会日程，请检查网络连接。', churchEmpty: '本月没有教会日程。', churchUpdated: '{t} 更新', churchSched: '{c}日程', subscribe: '在 Google 日历中订阅', allDay: '全天', settingsPc: '设置', settings: '语言和字体设置', setTitle: '设置', welcome: '欢迎！请选择语言和字体大小。', langLbl: '语言', screenLbl: '画面', done: '完成', themeShort: { auto: '自动', light: '明亮', dark: '深色' }, textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
+      verseTitle: '十二个月的经文', verseLead: '每月一节，一年把十二节经文存在心里。', thisMonth: '本月', practice: '背诵练习', practiceN: ['遮住一些', '遮住更多', '全部遮住', '重新显示'], listen: '朗读', stopListen: '停止', tapReveal: '点被遮住的地方即可显示。', goMonth: '查看本月', yearView: '全年', yearTitle: '2027 全年一览', yearLegendEv: '宣教会活动', yearLegendHol: '节假日', yearLegendCh: '我的教会', yearTap: '点月份即可打开', todayBefore: '今天是{d}。2027年日历还有{n}天开始。', todayAfter: '2027年日历已经结束。', myChurch: '我的教会', noChurch: '不选择（只看宣教会活动）', churchNote: '选择教会后，该教会的活动会以另一种颜色显示在日历上。', churchSoon: '⏳ {c}的日程即将准备好，准备好后会自动显示在这个日历上。', churchLoading: '正在加载教会日程…', churchErr: '无法加载教会日程，请检查网络连接。', churchEmpty: '本月没有教会日程。', churchUpdated: '{t} 更新', churchSched: '{c}日程', subscribe: '在 Google 日历中订阅', allDay: '全天', settingsPc: '设置', settings: '语言和字体设置', setTitle: '设置', welcome: '欢迎！请选择语言和字体大小。', langLbl: '语言', screenLbl: '画面', done: '完成', themeShort: { auto: '自动', light: '明亮', dark: '深色' }, textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
       themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' }, textSizeN: ['普通字体', '大字体', '特大字体'],
       swipeHint: '左右滑动可切换月份', monthEvents: '本月活动', holidays: '节假日', upcoming: '即将到来的活动',
       noEvents: '本月没有宣教会活动。', noDay: '这一天没有活动。', today: '今天', dday: '{n}天后', ongoing: '进行中',
@@ -133,7 +133,7 @@
       inappTitle: '请先用 Safari / Chrome 打开', inappSteps: ['点右上角（或下方）的<b>菜单</b>', '点<b>「在浏览器中打开」</b>或<b>「在 Safari 中打开」</b>', '在打开的页面中再点一次这个按钮'],
       share: '分享', website: '宣教会网站', qr: '二维码', toTop: '回到顶部', close: '关闭', copied: '链接已复制', qrTitle: '用手机相机扫描即可打开日历',
       source: '图画·经文·活动：Life Word Mission USA 2027 台历 · 圣经：和合本', updatedReload: '已更新到最新版本',
-      nav: { cal: '日历', events: '活动', wall: '壁纸', today: '今天' },
+      nav: { cal: '日历', events: '活动', verse: '经文', wall: '壁纸' },
       monthName: function (m) { return m + '月'; }, monthTitle: function (m) { return Y + '年' + m + '月'; },
       dayTitle: function (m, d, w) { return m + '月' + d + '日（周' + '日一二三四五六'[w] + '）'; },
       dow: ['日', '一', '二', '三', '四', '五', '六'],
@@ -146,6 +146,10 @@
     image: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M6.5 15l3.5-3.5 3 3 2-2 2 2"/><circle cx="14.5" cy="7.5" r="1.3"/></svg>',
     today: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="2.2"/></svg>',
     church: '<svg viewBox="0 0 24 24"><path d="M12 2.5v4M10 4.5h4M5 21V11l7-4.5 7 4.5v10M3 21h18M10 21v-4a2 2 0 0 1 4 0v4"/></svg>',
+    book: '<svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M12 7v6M9 10h6"/></svg>',
+    speaker: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
+    eye: '<svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
+    grid: '<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
     help: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4"/><circle cx="12" cy="16.8" r=".6" fill="currentColor"/></svg>',
     plus: '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
     download: '<svg viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5"/><path d="M4.5 16.5v3h15v-3"/></svg>',
@@ -198,12 +202,20 @@
   // 주소의 m(보던 달)은 일반 브라우저에서 새로고침할 때만 씀.
   // 홈 화면 앱으로 열면 항상 이번 달로 엽니다 (아이폰은 추가할 때의 주소를 그대로 저장하기 때문).
   var pm = launchedFromHome() ? 0 : Number(params.get('m'));
+  // 내 교회: 저장된 것 → (아이폰 홈 화면 앱처럼 저장 공간이 따로면) 주소의 church
+  function pickChurch() {
+    var ids = (D.CHURCHES || []).map(function (c) { return c.id; });
+    var s = store('cal_church'); if (s === null) { var m = (document.cookie || '').match(/(?:^|;\s*)cal_church=([\w-]*)/); s = m ? m[1] : null; }
+    if (s !== null && (s === '' || ids.indexOf(s) !== -1)) return s;
+    var p = params.get('church'); if (p && ids.indexOf(p) !== -1) { store('cal_church', p); return p; }
+    return '';
+  }
   var state = {
     lang: pickLang(),
     size: Number(store('cal_size') || 1),
     month: pm >= 1 && pm <= 12 ? pm : defaultMonth(),
     day: null,
-    church: store('cal_church') || '',
+    church: pickChurch(),
     dev: store('cal_dev') || (isIOS ? 'iphone' : isAndroid ? 'android' : isMac ? 'mac' : 'win'),
     bg: store('cal_bg') || 'art',
     kind: store('cal_kind') || 'cal',
@@ -242,12 +254,9 @@
       bt.querySelector('.g').textContent = Lg === 'ko' ? '가' : Lg === 'zh' ? '字' : 'A';
     });
     document.documentElement.setAttribute('data-size', String(state.size));
-    $('bottomnav').innerHTML = [['cal', '#sec-cal', 'calendar'], ['events', '#sec-events', 'bell'], ['wall', '#sec-wall', 'image'], ['today', '', 'today']].map(function (n) {
-      return n[0] === 'today'
-        ? '<button type="button" id="navToday"><span class="ico" aria-hidden="true">' + ICONS[n[2]] + '</span><span>' + esc(L().nav[n[0]]) + '</span></button>'
-        : '<a href="' + n[1] + '"><span class="ico" aria-hidden="true">' + ICONS[n[2]] + '</span><span>' + esc(L().nav[n[0]]) + '</span></a>';
+    $('bottomnav').innerHTML = [['cal', '#sec-cal', 'calendar'], ['events', '#sec-events', 'bell'], ['verse', '#sec-verse', 'book'], ['wall', '#sec-wall', 'image']].map(function (n) {
+      return '<a href="' + n[1] + '"><span class="ico" aria-hidden="true">' + ICONS[n[2]] + '</span><span>' + esc(L().nav[n[0]]) + '</span></a>';
     }).join('');
-    $('navToday').addEventListener('click', goToday);
   }
 
   /* ── 달 그리기 ── */
@@ -269,7 +278,7 @@
     root.setProperty('--m-bg', c.bg); root.setProperty('--m-on', c.on); root.setProperty('--m-num', c.num); root.setProperty('--m-acc', c.acc);
     $('monthTitle').textContent = L().monthTitle(m);
     $('prevMonth').disabled = m === 1; $('nextMonth').disabled = m === 12;
-    $('strip').innerHTML = D.MONTHS.map(function (x) {
+    $('strip').innerHTML = '<button type="button" class="yr-chip" id="yearBtn">' + ICONS.grid + esc(t('yearView')) + '</button>' + D.MONTHS.map(function (x) {
       return '<button type="button" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === m) + '" style="--c:' + x.c.acc + '">' + esc(Lg === 'ko' ? x.m + '월' : Lg === 'zh' ? x.m + '月' : (Lg === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3)) + '</button>';
     }).join('');
     var sel = $('strip').querySelector('[aria-selected="true"]');
@@ -289,6 +298,7 @@
     renderDay();
     renderLists();
     renderChurch();
+    renderVerses();
     renderIcsHelp();
     renderWall();
     syncUrl();
@@ -414,6 +424,8 @@
   }
   function setChurch(id) {
     state.church = id; store('cal_church', id);
+    try { document.cookie = 'cal_church=' + id + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
+    syncUrl();
     loadChurch(false); render(); renderSettings();
     var c = curChurch();
     if (c && church.status === 'soon') toast(fmt(t('churchSoon'), { c: chName(c) }));
@@ -731,6 +743,81 @@
     sc.classList.remove('swap-next', 'swap-prev'); void sc.offsetWidth; sc.classList.add(dir);
     window.Wallpaper.preload(m);
   }
+  /* ── 말씀 (12달 + 암송 연습 + 듣기) ── */
+  var vsLevel = {}, speaking = null;
+  function tokens(text, lang) {
+    if (lang === 'zh') return text.match(/[^，。！？；：、……“”]{1,3}[，。！？；：、…“”]*/g) || [text];
+    return text.split(/\s+/);
+  }
+  function verseHTML(m) {
+    var info = D.MONTHS[m - 1], lv = vsLevel[m] || 0, tk = tokens(info.verse[state.lang], state.lang);
+    var sep = state.lang === 'zh' ? '' : ' ';
+    return tk.map(function (w, i) {
+      var hide = lv === 3 ? true : lv === 1 ? (i % 3 === 1) : lv === 2 ? (i % 3 !== 0) : false;
+      if (/^[…\.]+$/.test(w)) hide = false;
+      return '<span class="w' + (hide ? ' h' : '') + '"' + (hide ? ' role="button" tabindex="0"' : '') + '>' + esc(w) + '</span>';
+    }).join(sep);
+  }
+  function renderVerses() {
+    var Lg = L(), cur = todayISO().slice(0, 4) === String(Y) ? +todayISO().slice(5, 7) : state.month;
+    var canSpeak = 'speechSynthesis' in window;
+    $('vsList').innerHTML = D.MONTHS.map(function (x) {
+      var lv = vsLevel[x.m] || 0;
+      return '<li class="vs' + (x.m === cur ? ' cur' : '') + '" id="vs-' + x.m + '" style="--c:' + x.c.acc + ';--bg-c:' + x.c.bg + ';--on-c:' + x.c.on + ';--num-c:' + x.c.num + '">' +
+        '<div class="vs-top"><span class="vs-m">' + pad(x.m) + '</span><span><span class="vs-fig">' + esc(x.fig[state.lang]) + '</span><br><span class="vs-th">' + esc(Lg.monthName(x.m)) + ' · ' + esc(x.theme[state.lang]) + '</span></span>' + (x.m === cur ? '<span class="vs-tag">' + esc(t('thisMonth')) + '</span>' : '') + '</div>' +
+        '<div class="vs-body"><p class="vs-text" data-m="' + x.m + '">' + verseHTML(x.m) + '</p><p class="vs-ref">' + esc(x.ref[state.lang]) + '</p>' +
+        '<div class="vs-btns"><button type="button" data-act="practice" data-m="' + x.m + '" aria-pressed="' + (lv > 0) + '">' + ICONS.eye + esc(Lg.practiceN[lv]) + '</button>' +
+        (canSpeak ? '<button type="button" data-act="speak" data-m="' + x.m + '" aria-pressed="' + (speaking === x.m) + '">' + ICONS.speaker + esc(speaking === x.m ? t('stopListen') : t('listen')) + '</button>' : '') +
+        '<button type="button" data-act="go" data-m="' + x.m + '">' + ICONS.calendar + esc(t('goMonth')) + '</button></div>' +
+        (lv > 0 && lv < 3 || lv === 3 ? '<p class="vs-hint">' + esc(t('tapReveal')) + '</p>' : '') + '</div></li>';
+    }).join('');
+  }
+  function speak(m) {
+    var ss = window.speechSynthesis; if (!ss) return;
+    if (speaking === m) { ss.cancel(); speaking = null; renderVerses(); return; }
+    ss.cancel();
+    var info = D.MONTHS[m - 1], u = new SpeechSynthesisUtterance(info.verse[state.lang].replace(/…/g, ', ') + '. ' + info.ref[state.lang].replace(/(\d+):(\d+)/, state.lang === 'ko' ? '$1장 $2절' : state.lang === 'zh' ? '$1章$2节' : '$1, $2'));
+    u.lang = { ko: 'ko-KR', en: 'en-US', es: 'es-MX', zh: 'zh-CN' }[state.lang]; u.rate = .85;
+    var v = (ss.getVoices() || []).filter(function (x) { return x.lang && x.lang.replace('_', '-').indexOf(u.lang.slice(0, 2)) === 0; })[0]; if (v) u.voice = v;
+    u.onend = u.onerror = function () { if (speaking === m) { speaking = null; renderVerses(); } };
+    speaking = m; renderVerses(); ss.speak(u);
+  }
+  $('vsList').addEventListener('click', function (e) {
+    var w = e.target.closest('.w.h'); if (w) { w.classList.remove('h'); w.removeAttribute('role'); return; }
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var m = +b.getAttribute('data-m'), act = b.getAttribute('data-act');
+    if (act === 'practice') { vsLevel[m] = ((vsLevel[m] || 0) + 1) % 4; renderVerses(); }
+    else if (act === 'speak') speak(m);
+    else if (act === 'go') { setMonth(m); $('sec-cal').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+  $('vsList').addEventListener('keydown', function (e) { var w = e.target.closest('.w.h'); if (w && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); w.classList.remove('h'); } });
+
+  /* ── 1년 보기 ── */
+  function openYear() {
+    var Lg = L(), td = todayISO(), c = curChurch();
+    $('yearTitle').textContent = t('yearTitle');
+    $('yearLegend').innerHTML = '<span><i style="background:color-mix(in srgb,var(--m-acc) 30%,transparent)"></i>' + esc(t('yearLegendEv')) + '</span><span style="color:var(--red)">■ ' + esc(t('yearLegendHol')) + '</span>' +
+      (c ? '<span><i style="background:transparent;box-shadow:inset 0 -3px 0 var(--ch)"></i>' + esc(t('yearLegendCh')) + '</span>' : '') + '<span>· ' + esc(t('yearTap')) + '</span>';
+    var dowS = L().dow.map(function (d) { return d.length > 2 ? d.slice(0, 1) : d; });
+    $('yearGrid').innerHTML = D.MONTHS.map(function (x) {
+      var m = x.m, first = new Date(Y, m - 1, 1).getDay(), days = new Date(Y, m, 0).getDate();
+      var evDays = {}, chDays = {};
+      monthEvents(m).forEach(function (e) { for (var k = Math.max(dn(e.s), dn(iso(m, 1))); k <= Math.min(dn(e.e || e.s), dn(iso(m, days))); k++) evDays[k] = 1; });
+      if (c) chMonth(m).forEach(function (e) { for (var k = Math.max(dn(e.s), dn(iso(m, 1))); k <= Math.min(dn(e.e || e.s), dn(iso(m, days))); k++) chDays[k] = 1; });
+      var cells = dowS.map(function (d, i) { return '<span class="w' + (i === 0 ? ' su' : i === 6 ? ' sa' : '') + '">' + esc(d) + '</span>'; }).join('');
+      for (var i = 0; i < first; i++) cells += '<span></span>';
+      for (var d = 1; d <= days; d++) {
+        var ds = iso(m, d), k = dn(ds), w = (first + d - 1) % 7;
+        cells += '<span class="' + [w === 0 ? 'su' : w === 6 ? 'sa' : '', HOL[ds] ? 'ho' : '', evDays[k] ? 'ev' : '', chDays[k] ? 'cd' : '', ds === td ? 'td' : ''].join(' ').trim() + '">' + d + '</span>';
+      }
+      return '<button type="button" class="ym' + (m === state.month ? ' cur' : '') + '" data-m="' + m + '" style="--c:' + x.c.acc + '" aria-label="' + esc(Lg.monthTitle(m)) + '"><div class="ym-h"><b>' + esc(Lg.monthName(m)) + '</b><small>' + esc(x.fig[state.lang]) + '</small></div><div class="ym-g">' + cells + '</div></button>';
+    }).join('');
+    $('yearDialog').showModal();
+    var cur = $('yearGrid').querySelector('.ym.cur'); if (cur) cur.scrollIntoView({ block: 'center' });
+  }
+  $('yearGrid').addEventListener('click', function (e) { var b = e.target.closest('[data-m]'); if (!b) return; $('yearDialog').close(); setMonth(+b.getAttribute('data-m')); $('sec-cal').scrollIntoView({ block: 'start' }); });
+  $('yearClose').addEventListener('click', function () { $('yearDialog').close(); });
+
   // 「오늘」: 2027년이면 오늘 날짜를 골라 그날 일정 칸으로, 2027년 전이면 남은 날과 다가오는 행사로
   function goToday() {
     var td = todayISO(), y = +td.slice(0, 4);
@@ -754,7 +841,7 @@
   }
   $('prevMonth').addEventListener('click', function () { setMonth(state.month - 1); });
   $('nextMonth').addEventListener('click', function () { setMonth(state.month + 1); });
-  $('strip').addEventListener('click', function (e) { var b = e.target.closest('[data-m]'); if (b) setMonth(+b.getAttribute('data-m')); });
+  $('strip').addEventListener('click', function (e) { if (e.target.closest('#yearBtn')) { openYear(); return; } var b = e.target.closest('[data-m]'); if (b) setMonth(+b.getAttribute('data-m')); });
   $('weeks').addEventListener('click', function (e) {
     var b = e.target.closest('.day'); if (!b) return;
     var ds = b.getAttribute('data-d'), m = +ds.slice(5, 7);
@@ -763,20 +850,22 @@
     if (m !== state.month) { state.month = m; render(); } else { renderGrid(); renderDay(); }
   });
   // 옆으로 밀어 달 넘기기
-  (function () {
-    var sx = 0, sy = 0, on = false, el = $('calCard');
+  // 그림·말씀 머리·달력 어디서든 옆으로 밀면 달 넘김
+  ['artBtn', 'banner', 'calCard'].forEach(function (id) {
+    var sx = 0, sy = 0, on = false, el = $(id);
     el.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) return; on = true; sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
     el.addEventListener('touchend', function (e) {
       if (!on) return; on = false;
       var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-      if (Math.abs(dx) > 60 && Math.abs(dy) < 50) setMonth(state.month + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50 && Math.abs(dy) < Math.abs(dx) * .7) { el._swiped = Date.now(); setMonth(state.month + (dx < 0 ? 1 : -1)); }
     }, { passive: true });
-  })();
+  });
   document.addEventListener('keydown', function (e) {
     if (e.target.closest('input,select,textarea,dialog')) return;
     if (e.key === 'ArrowLeft') setMonth(state.month - 1); else if (e.key === 'ArrowRight') setMonth(state.month + 1);
   });
   $('artBtn').addEventListener('click', function () {
+    if (Date.now() - ($('artBtn')._swiped || 0) < 600) return;   // 밀어서 넘길 때는 크게 보기 열지 않음
     var info = D.MONTHS[state.month - 1];
     $('artFull').src = 'img/art-' + pad(state.month) + '.jpg'; $('artFull').alt = info.fig[state.lang];
     $('artDialog').showModal();
@@ -788,6 +877,7 @@
   function syncUrl() {
     var p = new URLSearchParams(location.search);
     p.set('lang', state.lang); p.delete('source'); p.delete('_v');
+    if (state.church) p.set('church', state.church); else p.delete('church');
     if (state.month !== defaultMonth()) p.set('m', String(state.month)); else p.delete('m');
     try { history.replaceState(null, '', location.pathname + '?' + p.toString() + location.hash); } catch (e) {}
   }
@@ -807,6 +897,7 @@
   function setLang(l) {
     if (l === state.lang) return;
     state.lang = l; saveLang(l); store('cal_setup', '1');
+    if (window.speechSynthesis) { window.speechSynthesis.cancel(); speaking = null; }
     // 카톡 등에서는 언어를 바꾸면 페이지를 다시 여므로, 처음 설정 중이었다면 설정 창을 다시 띄움
     if ($('setDialog').open && !$('setWelcome').hidden) { try { sessionStorage.setItem('cal_reopen', '1'); } catch (e) {} }
     if (goWithLang()) return;
