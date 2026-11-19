@@ -15,7 +15,7 @@
       addAll: '내 휴대폰 달력에 모두 넣기', addAllHint: '아이폰은 「모두 추가」, 안드로이드는 받은 파일을 구글 캘린더로 여세요.',
       days: '{n}일간',
       wallTitle: '배경화면 만들기', wallLead: '{m}의 달력과 말씀으로 휴대폰·컴퓨터 배경화면을 만들어 드립니다. 웹사이트가 배경화면을 직접 바꿀 수는 없어서, <b>이미지를 저장한 뒤 아래 방법대로 설정</b>하시면 됩니다.',
-      device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
+      wallLeadArt: '달력 없이 <b>그림만</b> 휴대폰·컴퓨터 화면 크기에 맞춰 드립니다. 저장한 뒤 아래 방법대로 배경화면으로 설정하세요.', kind: '만들 종류', kindCal: '달력 + 그림', kindArt: '그림만', picture: '그림', picMonth: '이달의 그림', picCover: '표지', picBack: '뒤표지 (별하늘)', fitFill: '화면 가득', fitWhole: '그림 전체 (잘림 없이)', device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
       bgArt: '이달의 그림', bgSharp: '그림 선명하게', bgStars: '별하늘', bgColor: '단색 테마',
       devIphone: '아이폰', devAndroid: '안드로이드', devWin: '윈도우 PC', devMac: '맥',
       saveShare: '사진에 저장하기', download: '이미지 내려받기', making: '만드는 중…', showSafe: '시계·독 자리 보기',
@@ -48,7 +48,7 @@
       addAll: 'Add all to my phone calendar', addAllHint: 'iPhone: tap “Add All”. Android: open the file with Google Calendar.',
       days: '{n} days',
       wallTitle: 'Make a wallpaper', wallLead: 'Create a phone or computer wallpaper with the {m} calendar and verse. A website can’t change your wallpaper directly, so <b>save the image, then set it</b> as shown below.',
-      device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
+      wallLeadArt: 'Get <b>just the artwork</b>, sized for your phone or computer. Save it, then set it as your wallpaper as shown below.', kind: 'Type', kindCal: 'Calendar + art', kindArt: 'Art only', picture: 'Picture', picMonth: 'Monthly art', picCover: 'Cover', picBack: 'Back cover (stars)', fitFill: 'Fill screen', fitWhole: 'Whole picture (no crop)', device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
       bgArt: 'Monthly art', bgSharp: 'Sharp art', bgStars: 'Starry sky', bgColor: 'Color theme',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'Windows PC', devMac: 'Mac',
       saveShare: 'Save to Photos', download: 'Download image', making: 'Making…', showSafe: 'Show clock & dock areas',
@@ -81,7 +81,7 @@
       addAll: 'Agregar todo al calendario del teléfono', addAllHint: 'iPhone: toque «Agregar todo». Android: abra el archivo con Google Calendar.',
       days: '{n} días',
       wallTitle: 'Crear fondo de pantalla', wallLead: 'Cree un fondo para su teléfono o computadora con el calendario y el versículo de {m}. Una página web no puede cambiar el fondo directamente: <b>guarde la imagen y luego configúrela</b> como se indica abajo.',
-      device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
+      wallLeadArt: 'Obtenga <b>solo el arte</b>, del tamaño de su teléfono o computadora. Guárdelo y póngalo como fondo como se indica abajo.', kind: 'Tipo', kindCal: 'Calendario + arte', kindArt: 'Solo el arte', picture: 'Imagen', picMonth: 'Arte del mes', picCover: 'Portada', picBack: 'Contraportada (estrellas)', fitFill: 'Llenar pantalla', fitWhole: 'Imagen completa (sin recortar)', device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
       bgArt: 'Arte del mes', bgSharp: 'Arte nítido', bgStars: 'Cielo estrellado', bgColor: 'Color del mes',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'PC Windows', devMac: 'Mac',
       saveShare: 'Guardar en Fotos', download: 'Descargar imagen', making: 'Creando…', showSafe: 'Ver zonas del reloj y dock',
@@ -167,6 +167,9 @@
     day: null,
     dev: store('cal_dev') || (isIOS ? 'iphone' : isAndroid ? 'android' : isMac ? 'mac' : 'win'),
     bg: store('cal_bg') || 'art',
+    kind: store('cal_kind') || 'cal',
+    pic: store('cal_pic') || 'month',
+    fit: store('cal_fit') || 'fill',
   };
   function L() { return T[state.lang]; }
   function t(k) { var v = L()[k]; return v == null ? T.ko[k] : v; }
@@ -345,11 +348,17 @@
   }
   function renderWallControls() {
     var Lg = L();
-    $('wallLead').innerHTML = fmt(Lg.wallLead, { m: esc(Lg.monthName(state.month)) });
+    $('wallLead').innerHTML = state.kind === 'art' ? Lg.wallLeadArt : fmt(Lg.wallLead, { m: esc(Lg.monthName(state.month)) });
     $('devSeg').innerHTML = [['iphone', 'devIphone'], ['android', 'devAndroid'], ['win', 'devWin'], ['mac', 'devMac']].map(function (d) {
       return '<button type="button" data-dev="' + d[0] + '" aria-pressed="' + (state.dev === d[0]) + '">' + esc(t(d[1])) + '</button>';
     }).join('');
     var phoneDev = state.dev === 'iphone' || state.dev === 'android';
+    function seg(list, cur, attr) { return list.map(function (d) { return '<button type="button" data-' + attr + '="' + d[0] + '" aria-pressed="' + (cur === d[0]) + '">' + esc(t(d[1])) + '</button>'; }).join(''); }
+    $('kindSeg').innerHTML = seg([['cal', 'kindCal'], ['art', 'kindArt']], state.kind, 'kind');
+    $('picSeg').innerHTML = seg([['month', 'picMonth'], ['cover', 'picCover'], ['back', 'picBack']], state.pic, 'pic');
+    $('fitSeg').innerHTML = seg([['fill', 'fitFill'], ['whole', 'fitWhole']], state.fit, 'fit');
+    var artOnly = state.kind === 'art';
+    $('picOpt').hidden = !artOnly; $('bgOpt').hidden = artOnly; $('incOpt').hidden = artOnly;
     if (!phoneDev && state.bg === 'artSharp') state.bg = 'art';
     $('bgSeg').innerHTML = [['art', 'bgArt']].concat(phoneDev ? [['artSharp', 'bgSharp']] : [], [['stars', 'bgStars'], ['color', 'bgColor']]).map(function (d) {
       return '<button type="button" data-bg="' + d[0] + '" aria-pressed="' + (state.bg === d[0]) + '">' + esc(t(d[1])) + '</button>';
@@ -403,9 +412,9 @@
   }
   function wallOpts() {
     var s = wallSize();
-    return { w: s.w, h: s.h, month: state.month, lang: state.lang, bg: state.bg, verse: $('optVerse').checked, events: $('optEvents').checked, logo: $('optLogo').checked };
+    return { w: s.w, h: s.h, month: state.month, lang: state.lang, kind: state.kind, pic: state.pic, fit: state.fit, bg: state.bg, verse: $('optVerse').checked, events: $('optEvents').checked, logo: $('optLogo').checked };
   }
-  function wallName(o) { return '2027-' + pad(o.month) + '-' + state.dev + '-' + o.w + 'x' + o.h + '.jpg'; }
+  function wallName(o) { return '2027-' + (o.kind === 'art' ? (o.pic === 'month' ? pad(o.month) + '-art' : o.pic) : pad(o.month)) + '-' + state.dev + '-' + o.w + 'x' + o.h + '.jpg'; }
   var wallVisible = false;
   function renderWall() {
     renderWallControls();
@@ -453,6 +462,12 @@
   $('bgSeg').addEventListener('click', function (e) {
     var b = e.target.closest('[data-bg]'); if (!b) return;
     state.bg = b.getAttribute('data-bg'); store('cal_bg', state.bg); renderWall();
+  });
+  [['kindSeg', 'kind'], ['picSeg', 'pic'], ['fitSeg', 'fit']].forEach(function (x) {
+    $(x[0]).addEventListener('click', function (e) {
+      var b = e.target.closest('[data-' + x[1] + ']'); if (!b) return;
+      state[x[1]] = b.getAttribute('data-' + x[1]); store('cal_' + x[1], state[x[1]]); renderWall();
+    });
   });
   $('sizeSel').addEventListener('change', function () { wall.size = $('sizeSel').value; store('cal_wsize', wall.size); renderWall(); });
   ['optVerse', 'optEvents', 'optLogo'].forEach(function (id) { $(id).addEventListener('change', renderWall); });

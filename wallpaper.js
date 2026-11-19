@@ -140,6 +140,27 @@
   function draw(o) {
     var W = o.w, H = o.h, M = monthModel(o.month), info = D.MONTHS[o.month - 1];
     o.c = info.c;
+    if (o.kind === 'art') {
+      // 그림만 (달력 없이)
+      var src = o.pic === 'cover' ? 'img/cover.jpg' : o.pic === 'back' ? 'img/back.jpg' : 'img/art-' + String(o.month).padStart(2, '0') + '.jpg';
+      var fx = o.pic === 'cover' ? .32 : o.pic === 'back' ? .5 : info.focus;
+      return loadImg(src).then(function (im) {
+        var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+        var ctx = cv.getContext('2d'); ctx.imageSmoothingQuality = 'high';
+        if (o.fit === 'whole') {
+          // 그림 전체가 보이게: 남는 곳은 같은 그림을 흐리게 채움
+          blurCover(ctx, im, 0, 0, W, H, fx, .5);
+          ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.fillRect(0, 0, W, H);
+          var k = Math.min(W / im.width, H / im.height), dw = im.width * k, dh = im.height * k;
+          var dy = H > W ? Math.min(H - dh, Math.max(0, H * .56 - dh / 2)) : (H - dh) / 2;
+          ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = Math.round(Math.max(W, H) * .015);
+          ctx.drawImage(im, (W - dw) / 2, dy, dw, dh); ctx.restore();
+        } else {
+          cover(ctx, im, 0, 0, W, H, fx, .5);
+        }
+        return cv;
+      });
+    }
     return loadFonts().then(function () {
       var need = [loadImg('logo.png')];
       if (o.bg === 'art' || o.bg === 'artSharp') need.push(loadImg('img/art-' + String(o.month).padStart(2, '0') + '.jpg'));

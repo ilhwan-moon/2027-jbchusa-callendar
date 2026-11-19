@@ -133,6 +133,11 @@
       <div class="wall-grid">
         <div class="wall-opts">
           <fieldset class="opt">
+            <legend data-i18n="kind"></legend>
+            <div class="chips" id="kindSeg"></div>
+          </fieldset>
+
+          <fieldset class="opt">
             <legend data-i18n="device"></legend>
             <div class="chips" id="devSeg"></div>
             <label class="sel"><span data-i18n="size"></span>
@@ -140,12 +145,18 @@
             </label>
           </fieldset>
 
-          <fieldset class="opt">
+          <fieldset class="opt" id="picOpt">
+            <legend data-i18n="picture"></legend>
+            <div class="chips" id="picSeg"></div>
+            <div class="chips fit" id="fitSeg"></div>
+          </fieldset>
+
+          <fieldset class="opt" id="bgOpt">
             <legend data-i18n="background"></legend>
             <div class="chips" id="bgSeg"></div>
           </fieldset>
 
-          <fieldset class="opt">
+          <fieldset class="opt" id="incOpt">
             <legend data-i18n="include"></legend>
             <label class="chk"><input type="checkbox" id="optVerse" checked><span data-i18n="optVerse"></span></label>
             <label class="chk"><input type="checkbox" id="optEvents" checked><span data-i18n="optEvents"></span></label>
