@@ -7,7 +7,7 @@
 
   var T = {
     ko: {
-      church: 'LA 중앙교회', appSub: '2027 교회 달력', appName: '2027 달력', calendar: '달력', prevMonth: '이전 달', nextMonth: '다음 달',
+      church: '생명의말씀선교회 USA', appSub: '2027 선교회 달력', appName: '2027 달력', calendar: '달력', prevMonth: '이전 달', nextMonth: '다음 달',
       textSize: '글씨 크기', sizeHint: '글씨가 작으신가요? 오른쪽 위 큰 「가」를 누르세요.', ok: '알겠어요',
       themeN: { auto: '화면: 자동', light: '화면: 밝게', dark: '화면: 어둡게' }, textSizeN: ['보통 글씨', '큰 글씨', '아주 큰 글씨'],
       swipeHint: '옆으로 밀면 다른 달로 넘어갑니다', monthEvents: '이달의 행사', holidays: '공휴일·기념일', upcoming: '다가오는 행사',
@@ -32,7 +32,7 @@
       iosTitle: '🍎 아이폰: 홈 화면에 추가하기', iosSteps: ['사파리 아래 <b>주소창 왼쪽 아이콘</b> {menu} 을 누르세요', '메뉴에서 <b>「공유」</b>를 누르세요', '목록을 위로 올려 <b>「홈 화면에 추가」</b>를 누르세요', '오른쪽 위 <b>「추가」</b>를 누르면 끝!'],
       andTitle: '🤖 안드로이드: 홈 화면에 추가하기', andSteps: ['크롬 오른쪽 위 <b>⋮ (점 3개)</b> 를 누르세요', '<b>「홈 화면에 추가」</b> 또는 <b>「앱 설치」</b>를 누르세요', '<b>「설치」</b>(또는 「추가」)를 누르면 끝!'],
       inappTitle: '먼저 사파리/크롬으로 열어 주세요', inappSteps: ['오른쪽 위(또는 아래) <b>메뉴</b>를 누르세요', '<b>「다른 브라우저로 열기」</b> 또는 <b>「Safari로 열기」</b>를 누르세요', '열린 화면에서 이 버튼을 다시 누르세요'],
-      share: '공유', qr: 'QR 코드', toTop: '맨 위로', close: '닫기', copied: '링크를 복사했습니다', qrTitle: '휴대폰 카메라로 찍으면 달력이 열립니다',
+      share: '공유', website: '선교회 홈페이지', qr: 'QR 코드', toTop: '맨 위로', close: '닫기', copied: '링크를 복사했습니다', qrTitle: '휴대폰 카메라로 찍으면 달력이 열립니다',
       source: '그림·말씀·행사: 생명의말씀선교회 USA 2027 탁상달력 · 한국어 성경: 개역한글', updatedReload: '최신 버전으로 바뀌었습니다',
       nav: { cal: '달력', events: '행사', wall: '배경화면', today: '오늘' },
       monthName: function (m) { return m + '월'; }, monthTitle: function (m) { return Y + '년 ' + m + '월'; },
@@ -40,7 +40,7 @@
       dow: ['일', '월', '화', '수', '목', '금', '토'],
     },
     en: {
-      church: 'LA Central Church', appSub: '2027 Church Calendar', appName: 'Calendar 2027', calendar: 'Calendar', prevMonth: 'Previous month', nextMonth: 'Next month',
+      church: 'Life Word Mission USA', appSub: '2027 Mission Calendar', appName: 'Calendar 2027', calendar: 'Calendar', prevMonth: 'Previous month', nextMonth: 'Next month',
       textSize: 'Text size', sizeHint: 'Text too small? Tap a bigger “A” at the top right.', ok: 'Got it',
       themeN: { auto: 'Theme: auto', light: 'Theme: light', dark: 'Theme: dark' }, textSizeN: ['Normal text', 'Large text', 'Extra large text'],
       swipeHint: 'Swipe sideways to change the month', monthEvents: 'Events this month', holidays: 'Holidays', upcoming: 'Coming up',
@@ -65,7 +65,7 @@
       iosTitle: '🍎 iPhone: Add to Home Screen', iosSteps: ['Tap the <b>icon on the left of the address bar</b> {menu} at the bottom of Safari', 'Tap <b>“Share”</b> in the menu', 'Scroll up and tap <b>“Add to Home Screen”</b>', 'Tap <b>“Add”</b> at the top right. Done!'],
       andTitle: '🤖 Android: Add to Home Screen', andSteps: ['Tap <b>⋮ (3 dots)</b> at the top right of Chrome', 'Tap <b>“Add to Home screen”</b> or <b>“Install app”</b>', 'Tap <b>“Install”</b> (or “Add”). Done!'],
       inappTitle: 'Please open in Safari/Chrome first', inappSteps: ['Tap the <b>menu</b> at the top (or bottom) right', 'Tap <b>“Open in browser”</b> or <b>“Open in Safari”</b>', 'Then tap this button again'],
-      share: 'Share', qr: 'QR code', toTop: 'Top', close: 'Close', copied: 'Link copied', qrTitle: 'Scan with your phone camera to open the calendar',
+      share: 'Share', website: 'Mission website', qr: 'QR code', toTop: 'Top', close: 'Close', copied: 'Link copied', qrTitle: 'Scan with your phone camera to open the calendar',
       source: 'Art, verses & events: Life Word Mission USA 2027 desk calendar · Bible: NKJV', updatedReload: 'Updated to the latest version',
       nav: { cal: 'Calendar', events: 'Events', wall: 'Wallpaper', today: 'Today' },
       monthName: function (m) { return MONTH_EN[m - 1]; }, monthTitle: function (m) { return MONTH_EN[m - 1] + ' ' + Y; },
@@ -73,7 +73,7 @@
       dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
     },
     es: {
-      church: 'LA Central Church', appSub: 'Calendario 2027', appName: 'Calendario 2027', calendar: 'Calendario', prevMonth: 'Mes anterior', nextMonth: 'Mes siguiente',
+      church: 'Life Word Mission USA', appSub: 'Calendario 2027 de la Misión', appName: 'Calendario 2027', calendar: 'Calendario', prevMonth: 'Mes anterior', nextMonth: 'Mes siguiente',
       textSize: 'Tamaño de letra', sizeHint: '¿Letra pequeña? Toque una “A” más grande arriba a la derecha.', ok: 'Entendido',
       themeN: { auto: 'Tema: automático', light: 'Tema: claro', dark: 'Tema: oscuro' }, textSizeN: ['Letra normal', 'Letra grande', 'Letra muy grande'],
       swipeHint: 'Deslice de lado para cambiar de mes', monthEvents: 'Eventos del mes', holidays: 'Días festivos', upcoming: 'Próximos eventos',
@@ -98,7 +98,7 @@
       iosTitle: '🍎 iPhone: Agregar a inicio', iosSteps: ['Toque el <b>ícono a la izquierda de la barra de dirección</b> {menu} abajo en Safari', 'Toque <b>«Compartir»</b> en el menú', 'Deslice y toque <b>«Agregar a inicio»</b>', 'Toque <b>«Agregar»</b> arriba a la derecha. ¡Listo!'],
       andTitle: '🤖 Android: Agregar a inicio', andSteps: ['Toque <b>⋮ (3 puntos)</b> arriba a la derecha en Chrome', 'Toque <b>«Agregar a la pantalla principal»</b> o <b>«Instalar app»</b>', 'Toque <b>«Instalar»</b> (o «Agregar»). ¡Listo!'],
       inappTitle: 'Primero ábralo en Safari/Chrome', inappSteps: ['Toque el <b>menú</b> arriba (o abajo) a la derecha', 'Toque <b>«Abrir en el navegador»</b> o <b>«Abrir en Safari»</b>', 'Luego toque este botón otra vez'],
-      share: 'Compartir', qr: 'Código QR', toTop: 'Arriba', close: 'Cerrar', copied: 'Enlace copiado', qrTitle: 'Escanee con la cámara del teléfono para abrir el calendario',
+      share: 'Compartir', website: 'Sitio de la misión', qr: 'Código QR', toTop: 'Arriba', close: 'Cerrar', copied: 'Enlace copiado', qrTitle: 'Escanee con la cámara del teléfono para abrir el calendario',
       source: 'Arte, versículos y eventos: calendario 2027 de Life Word Mission USA · Biblia: RVR1960', updatedReload: 'Actualizado a la última versión',
       nav: { cal: 'Calendario', events: 'Eventos', wall: 'Fondo', today: 'Hoy' },
       monthName: function (m) { return MONTH_ES[m - 1]; }, monthTitle: function (m) { var s = MONTH_ES[m - 1]; return s[0].toUpperCase() + s.slice(1) + ' ' + Y; },
@@ -117,6 +117,7 @@
     phone: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>',
     share: '<svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6"/></svg>',
     qr: '<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM18 14h2.5M14 18v2.5"/></svg>',
+    globe: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 2.5 14.4 0 17M12 3.5c-2.5 2.6-2.5 14.4 0 17"/></svg>',
     up: '<svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
     sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>',
     moon: '<svg viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></svg>',
@@ -482,7 +483,7 @@
     function d8(s) { return s.replace(/-/g, ''); }
     function next(s) { var d = new Date(dn(s) * 864e5 + 864e5); return d.toISOString().slice(0, 10).replace(/-/g, ''); }
     function escI(s) { return String(s).replace(/([,;\\])/g, '\\$1'); }
-    var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//LA Central Church//Calendar 2027//EN', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:' + escI(t('appSub'))];
+    var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Life Word Mission USA//Calendar 2027//EN', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:' + escI(t('appSub'))];
     D.EVENTS.forEach(function (e, i) {
       lines.push('BEGIN:VEVENT', 'UID:lwm2027-' + i + '-' + d8(e.s) + '@jbchusa', 'DTSTAMP:' + now, 'DTSTART;VALUE=DATE:' + d8(e.s), 'DTEND;VALUE=DATE:' + next(e.e || e.s),
         'SUMMARY:' + escI(e[Lg]), 'DESCRIPTION:' + escI(subName(e) + ' · Life Word Mission USA'), 'END:VEVENT');

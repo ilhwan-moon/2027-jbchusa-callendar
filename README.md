@@ -1,6 +1,6 @@
-# LA 중앙교회 2027 모바일 달력
+# 생명의말씀선교회 USA 2027 모바일 달력
 
-생명의말씀선교회 USA 2027 탁상달력을 휴대폰·PC에서 보는 3개 언어(한국어·English·Español) 달력입니다.
+생명의말씀선교회 USA(https://www.jbchusa.org/) 2027 탁상달력의 **미주 전체 일정**을 휴대폰·PC에서 보는 3개 언어(한국어·English·Español) 달력입니다.
 달력 그림으로 **휴대폰·컴퓨터 배경화면**도 만들 수 있습니다. GitHub Pages로 **무료** 운영합니다.
 
 - 주소: https://ilhwan-moon.github.io/2027-jbchusa-callendar/
