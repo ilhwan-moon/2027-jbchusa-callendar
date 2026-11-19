@@ -278,8 +278,10 @@
     root.setProperty('--m-bg', c.bg); root.setProperty('--m-on', c.on); root.setProperty('--m-num', c.num); root.setProperty('--m-acc', c.acc);
     $('monthTitle').textContent = L().monthTitle(m);
     $('prevMonth').disabled = m === 1; $('nextMonth').disabled = m === 12;
-    $('strip').innerHTML = '<button type="button" class="yr-chip" id="yearBtn">' + ICONS.grid + esc(t('yearView')) + '</button>' + D.MONTHS.map(function (x) {
-      return '<button type="button" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === m) + '" style="--c:' + x.c.acc + '">' + esc(Lg === 'ko' ? x.m + '월' : Lg === 'zh' ? x.m + '月' : (Lg === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3)) + '</button>';
+    // 월 고르기: 그 달 그림을 동그랗게 (선택한 달은 테마색 테두리)
+    $('strip').innerHTML = '<button type="button" class="mo yr" id="yearBtn"><span class="mo-pic">' + ICONS.grid + '</span><span class="mo-l">' + esc(t('yearView')) + '</span></button>' + D.MONTHS.map(function (x) {
+      var lbl = Lg === 'ko' ? x.m + '월' : Lg === 'zh' ? x.m + '月' : (Lg === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3);
+      return '<button type="button" class="mo" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === m) + '" aria-label="' + esc(L().monthTitle(x.m) + ' · ' + x.fig[state.lang]) + '" style="--c:' + x.c.acc + '"><span class="mo-pic"><img src="img/th-' + pad(x.m) + '.jpg" alt="" width="66" height="66" loading="lazy"></span><span class="mo-l">' + esc(lbl.charAt(0).toUpperCase() + lbl.slice(1)) + '</span></button>';
     }).join('');
     var sel = $('strip').querySelector('[aria-selected="true"]');
     if (sel) { var st = $('strip'); st.scrollLeft = sel.offsetLeft - st.clientWidth / 2 + sel.offsetWidth / 2; }
