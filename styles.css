@@ -305,11 +305,18 @@ html[data-size="3"] .ym-g { font-size: .66rem; }
 @media (min-width: 820px) { .vs-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .vs { border-radius: 16px; border: 1px solid var(--line); background: var(--surface-2); overflow: hidden; }
 .vs.cur { border: 2px solid var(--c); }
-.vs-top { display: flex; align-items: center; gap: 10px; padding: .7rem .9rem; background: var(--bg-c); color: var(--on-c); }
+.vs-top { display: flex; width: 100%; border: 0; text-align: left; font: inherit; cursor: pointer; min-height: 64px; align-items: center; gap: 10px; padding: .7rem .9rem; background: var(--bg-c); color: var(--on-c);}
 .vs-m { font-family: var(--pop); font-weight: 300; font-size: 1.7rem; line-height: 1; color: var(--num-c); }
 .vs-fig { font-weight: 800; }
 .vs-th { font-size: .85rem; opacity: .85; }
-.vs-tag { margin-left: auto; font-size: .75rem; font-weight: 800; padding: .15rem .55rem; border-radius: 999px; background: var(--red); color: #fff; white-space: nowrap; }
+.vs-tt { flex: 1; min-width: 0; }
+.vs-chev { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: color-mix(in srgb, var(--on-c) 14%, transparent); flex: none; transition: transform .2s; }
+.vs-chev svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.vs-top[aria-expanded="true"] .vs-chev { transform: rotate(180deg); }
+.vs-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: -.3rem 0 .9rem; flex-wrap: wrap; }
+.vs-bar .vs-lead { margin: 0; flex: 1 1 14rem; }
+.vs-all { min-height: 44px; padding: 0 1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); font-weight: 700; color: var(--acc-ink); cursor: pointer; white-space: nowrap; }
+.vs-tag { font-size: .75rem; font-weight: 800; padding: .15rem .55rem; border-radius: 999px; background: var(--red); color: #fff; white-space: nowrap; }
 .vs-body { padding: .8rem .9rem .9rem; }
 .vs-text { margin: 0 0 .35rem; font-size: 1.15rem; line-height: 1.75; font-weight: 500; }
 .vs-text .w { border-radius: 6px; transition: background .15s; }
