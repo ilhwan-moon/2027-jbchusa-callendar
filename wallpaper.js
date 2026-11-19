@@ -282,6 +282,8 @@
       var iw = H * bgImg.width / bgImg.height, sx0 = Math.min(0, (W * .52) - iw * .5 - W * .2);
       ctx.drawImage(bgImg, sx0, 0, iw, H);
       ctx.save(); ctx.translate(sx0 + iw * 2, 0); ctx.scale(-1, 1); ctx.drawImage(bgImg, 0, 0, iw, H); ctx.restore();
+      var eg = ctx.createLinearGradient(sx0 + iw * .98, 0, W, 0); eg.addColorStop(0, 'rgba(8,20,90,0)'); eg.addColorStop(.25, 'rgba(8,20,90,.55)'); eg.addColorStop(1, 'rgba(8,20,90,.7)');
+      ctx.fillStyle = eg; ctx.fillRect(sx0 + iw * .98, 0, W, H);
       panelX = W * .56;
     } else {
       paintColorBg(ctx, 0, 0, W, H, c);

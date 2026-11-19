@@ -95,9 +95,9 @@ a { color: var(--primary); }
 
 /* ── 본문 ── */
 main { padding-top: 10px; }
-.grid { display: grid; gap: 14px; }
-.col-main, .col-side { display: grid; gap: 14px; align-content: start; }
-@media (min-width: 900px) { .grid { grid-template-columns: 1.35fr 1fr; gap: 20px; } }
+.grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.col-main, .col-side { display: grid; gap: 14px; align-content: start; min-width: 0; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 20px; } }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.1rem 1.2rem; box-shadow: var(--shadow); }
 .eyebrow { display: flex; align-items: center; gap: .45rem; margin: 0 0 .7rem; font-size: 1.1rem; font-weight: 800; color: var(--ink); }
 .eyebrow .ico { color: var(--acc-ink); }
@@ -109,7 +109,11 @@ main { padding-top: 10px; }
 .btn.wide { width: 100%; }
 
 /* 이달의 그림 */
-#sec-cal { display: grid; gap: 0; }
+#sec-cal { display: grid; gap: 0; grid-template-columns: minmax(0, 1fr); }
+#sec-cal.swap-next { animation: swapN .28s ease-out; }
+#sec-cal.swap-prev { animation: swapP .28s ease-out; }
+@keyframes swapN { from { opacity: .3; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes swapP { from { opacity: .3; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
 .art { display: block; position: relative; padding: 0; border: 0; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; cursor: zoom-in; background: var(--m-bg); }
 .art img { display: block; width: 100%; height: auto; aspect-ratio: 1400 / 913; object-fit: cover; }
 .art-zoom { position: absolute; right: 10px; top: 10px; width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,.45); color: #fff; display: grid; place-items: center; }
@@ -118,9 +122,9 @@ main { padding-top: 10px; }
 /* 달 머리 (탁상달력 디자인) */
 .banner { background: var(--m-bg); color: var(--m-on); padding: 1rem 1.15rem 1.2rem; border-radius: 0 0 var(--radius) var(--radius); margin-bottom: 14px; }
 .banner-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
-.bn-num { font-family: var(--pop); font-weight: 200; font-size: 4.6rem; line-height: .9; color: var(--m-num); letter-spacing: -.02em; }
+.bn-num { font-family: var(--pop); font-weight: 200; font-size: min(4.6rem, 21vw); line-height: .9; color: var(--m-num); letter-spacing: -.02em; }
 .bn-script { text-align: right; line-height: 1; color: var(--m-on); }
-.bn-script span:first-child { display: block; font-family: var(--script); font-size: 2.8rem; color: var(--m-num); }
+.bn-script span:first-child { display: block; font-family: var(--script); font-size: min(2.8rem, 12.5vw); color: var(--m-num); }
 .bn-year { font-family: var(--pop); font-weight: 300; font-size: 1.5rem; }
 .bn-theme { margin: .8rem 0 .2rem; font-size: .98rem; opacity: .9; }
 .bn-verse { margin: .3rem 0 .3rem; font-size: 1.22rem; line-height: 1.7; font-weight: 500; }
@@ -188,9 +192,10 @@ html[data-size="3"] .bar span { font-size: .62rem; }
 /* ── 배경화면 ── */
 .wall { margin-top: 14px; }
 .wall-lead { margin: 0 0 1rem; color: var(--ink-2); }
-.wall-grid { display: grid; gap: 18px; }
-@media (min-width: 820px) { .wall-grid { grid-template-columns: 1fr 1.1fr; align-items: start; } }
-.opt { border: 0; padding: 0; margin: 0 0 1rem; }
+.wall-grid { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.wall-opts { min-width: 0; }
+@media (min-width: 820px) { .wall-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; } }
+.opt { border: 0; padding: 0; margin: 0 0 1rem; min-width: 0; }
 .opt legend { font-weight: 800; margin-bottom: .45rem; padding: 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button { min-height: 48px; padding: 0 1rem; border-radius: 12px; border: 2px solid var(--line); background: var(--surface-2); font-weight: 700; cursor: pointer; color: var(--ink-2); }
@@ -198,7 +203,8 @@ html[data-size="3"] .bar span { font-size: .62rem; }
 .chips.fit button { min-height: 44px; font-size: .95rem; }
 .chips button[aria-pressed="true"] { border-color: var(--primary); background: var(--primary); color: var(--primary-ink); }
 .sel { display: grid; gap: .3rem; margin-top: .6rem; font-size: .92rem; color: var(--ink-2); font-weight: 600; }
-.sel select { min-height: 48px; padding: 0 .7rem; border-radius: 12px; border: 2px solid var(--line); background: var(--surface-2); font-size: 1rem; color: var(--ink); }
+.monthsel { margin: 0 0 1rem; font-weight: 800; font-size: 1rem; color: var(--ink); }
+.sel select { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis;  min-height: 48px; padding: 0 .7rem; border-radius: 12px; border: 2px solid var(--line); background: var(--surface-2); font-size: 1rem; color: var(--ink); }
 .chk { display: flex; align-items: center; gap: .6rem; min-height: 46px; font-weight: 600; cursor: pointer; }
 .chk input { width: 24px; height: 24px; accent-color: var(--primary); flex: none; }
 .chk.small { min-height: 40px; font-size: .9rem; color: var(--ink-2); justify-content: center; }

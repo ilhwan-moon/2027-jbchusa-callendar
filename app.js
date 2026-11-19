@@ -15,7 +15,7 @@
       addAll: '내 휴대폰 달력에 모두 넣기', addAllHint: '아이폰은 「모두 추가」, 안드로이드는 받은 파일을 구글 캘린더로 여세요.',
       days: '{n}일간',
       wallTitle: '배경화면 만들기', wallLead: '{m}의 달력과 말씀으로 휴대폰·컴퓨터 배경화면을 만들어 드립니다. 웹사이트가 배경화면을 직접 바꿀 수는 없어서, <b>이미지를 저장한 뒤 아래 방법대로 설정</b>하시면 됩니다.',
-      wallLeadArt: '달력 없이 <b>그림만</b> 휴대폰·컴퓨터 화면 크기에 맞춰 드립니다. 저장한 뒤 아래 방법대로 배경화면으로 설정하세요.', posTitle: '그림 위치 조정', posHint: '미리보기 그림을 손가락(마우스)으로 끌어서 옮길 수도 있어요.', posX: '좌우', posY: '위아래', posZ: '확대', posReset: '처음대로', posYHint: '「확대」를 키우면 위아래로도 움직일 수 있어요. 아래쪽 글씨를 화면 밖으로 밀어낼 수 있습니다.', kind: '만들 종류', kindCal: '달력 + 그림', kindArt: '그림만', picture: '그림', picMonth: '이달의 그림', picCover: '표지', picBack: '뒤표지 (별하늘)', fitFill: '화면 가득', fitWhole: '그림 전체 (잘림 없이)', device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
+      wallLeadArt: '달력 없이 <b>그림만</b> 휴대폰·컴퓨터 화면 크기에 맞춰 드립니다. 저장한 뒤 아래 방법대로 배경화면으로 설정하세요.', posTitle: '그림 위치 조정', posHint: '미리보기 그림을 손가락(마우스)으로 끌어서 옮길 수도 있어요.', posX: '좌우', posY: '위아래', posZ: '확대', posReset: '처음대로', posYHint: '「확대」를 키우면 위아래로도 움직일 수 있어요. 아래쪽 글씨를 화면 밖으로 밀어낼 수 있습니다.', whichMonth: '어느 달 배경화면', noUpcoming: '남은 행사가 없습니다.', kind: '만들 종류', kindCal: '달력 + 그림', kindArt: '그림만', picture: '그림', picMonth: '이달의 그림', picCover: '표지', picBack: '뒤표지 (별하늘)', fitFill: '화면 가득', fitWhole: '그림 전체 (잘림 없이)', device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
       bgArt: '이달의 그림', bgSharp: '그림 선명하게', bgStars: '별하늘', bgColor: '단색 테마',
       devIphone: '아이폰', devAndroid: '안드로이드', devWin: '윈도우 PC', devMac: '맥',
       saveShare: '사진에 저장하기', download: '이미지 내려받기', making: '만드는 중…', showSafe: '시계·독 자리 보기',
@@ -48,7 +48,7 @@
       addAll: 'Add all to my phone calendar', addAllHint: 'iPhone: tap “Add All”. Android: open the file with Google Calendar.',
       days: '{n} days',
       wallTitle: 'Make a wallpaper', wallLead: 'Create a phone or computer wallpaper with the {m} calendar and verse. A website can’t change your wallpaper directly, so <b>save the image, then set it</b> as shown below.',
-      wallLeadArt: 'Get <b>just the artwork</b>, sized for your phone or computer. Save it, then set it as your wallpaper as shown below.', posTitle: 'Adjust position', posHint: 'You can also drag the preview with your finger (or mouse).', posX: 'Left/Right', posY: 'Up/Down', posZ: 'Zoom', posReset: 'Reset', posYHint: 'Increase “Zoom” to move up and down too — you can push the text at the bottom off the screen.', kind: 'Type', kindCal: 'Calendar + art', kindArt: 'Art only', picture: 'Picture', picMonth: 'Monthly art', picCover: 'Cover', picBack: 'Back cover (stars)', fitFill: 'Fill screen', fitWhole: 'Whole picture (no crop)', device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
+      wallLeadArt: 'Get <b>just the artwork</b>, sized for your phone or computer. Save it, then set it as your wallpaper as shown below.', posTitle: 'Adjust position', posHint: 'You can also drag the preview with your finger (or mouse).', posX: 'Left/Right', posY: 'Up/Down', posZ: 'Zoom', posReset: 'Reset', posYHint: 'Increase “Zoom” to move up and down too — you can push the text at the bottom off the screen.', whichMonth: 'Which month', noUpcoming: 'No more events this year.', kind: 'Type', kindCal: 'Calendar + art', kindArt: 'Art only', picture: 'Picture', picMonth: 'Monthly art', picCover: 'Cover', picBack: 'Back cover (stars)', fitFill: 'Fill screen', fitWhole: 'Whole picture (no crop)', device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
       bgArt: 'Monthly art', bgSharp: 'Sharp art', bgStars: 'Starry sky', bgColor: 'Color theme',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'Windows PC', devMac: 'Mac',
       saveShare: 'Save to Photos', download: 'Download image', making: 'Making…', showSafe: 'Show clock & dock areas',
@@ -81,7 +81,7 @@
       addAll: 'Agregar todo al calendario del teléfono', addAllHint: 'iPhone: toque «Agregar todo». Android: abra el archivo con Google Calendar.',
       days: '{n} días',
       wallTitle: 'Crear fondo de pantalla', wallLead: 'Cree un fondo para su teléfono o computadora con el calendario y el versículo de {m}. Una página web no puede cambiar el fondo directamente: <b>guarde la imagen y luego configúrela</b> como se indica abajo.',
-      wallLeadArt: 'Obtenga <b>solo el arte</b>, del tamaño de su teléfono o computadora. Guárdelo y póngalo como fondo como se indica abajo.', posTitle: 'Ajustar posición', posHint: 'También puede arrastrar la vista previa con el dedo (o el ratón).', posX: 'Izq./Der.', posY: 'Arriba/Abajo', posZ: 'Zoom', posReset: 'Restablecer', posYHint: 'Aumente el «Zoom» para moverla también arriba y abajo; así puede sacar de la pantalla el texto de abajo.', kind: 'Tipo', kindCal: 'Calendario + arte', kindArt: 'Solo el arte', picture: 'Imagen', picMonth: 'Arte del mes', picCover: 'Portada', picBack: 'Contraportada (estrellas)', fitFill: 'Llenar pantalla', fitWhole: 'Imagen completa (sin recortar)', device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
+      wallLeadArt: 'Obtenga <b>solo el arte</b>, del tamaño de su teléfono o computadora. Guárdelo y póngalo como fondo como se indica abajo.', posTitle: 'Ajustar posición', posHint: 'También puede arrastrar la vista previa con el dedo (o el ratón).', posX: 'Izq./Der.', posY: 'Arriba/Abajo', posZ: 'Zoom', posReset: 'Restablecer', posYHint: 'Aumente el «Zoom» para moverla también arriba y abajo; así puede sacar de la pantalla el texto de abajo.', whichMonth: '¿Qué mes?', noUpcoming: 'No quedan eventos este año.', kind: 'Tipo', kindCal: 'Calendario + arte', kindArt: 'Solo el arte', picture: 'Imagen', picMonth: 'Arte del mes', picCover: 'Portada', picBack: 'Contraportada (estrellas)', fitFill: 'Llenar pantalla', fitWhole: 'Imagen completa (sin recortar)', device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
       bgArt: 'Arte del mes', bgSharp: 'Arte nítido', bgStars: 'Cielo estrellado', bgColor: 'Color del mes',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'PC Windows', devMac: 'Mac',
       saveShare: 'Guardar en Fotos', download: 'Descargar imagen', making: 'Creando…', showSafe: 'Ver zonas del reloj y dock',
@@ -249,6 +249,7 @@
     $('bnVerse').textContent = info.verse[Lg];
     $('bnRef').textContent = info.ref[Lg];
 
+    [m - 1, m + 1].forEach(function (k) { if (k >= 1 && k <= 12) { var im = new Image(); im.src = 'img/art-' + pad(k) + '-s.jpg'; } });
     renderGrid();
     renderDay();
     renderLists();
@@ -325,6 +326,7 @@
       var tag = s <= dn(td) ? '<span class="dday now">' + esc(t('ongoing')) + '</span>' : '<span class="dday">' + esc(fmt(t('dday'), { n: n })) + '</span>';
       return evItem(e, tag);
     }).join('');
+    if (!up.length) $('upList').innerHTML = '<li class="empty">' + esc(t('noUpcoming')) + '</li>';
   }
 
   /* ── 배경화면 ── */
@@ -355,6 +357,7 @@
     $('devSeg').innerHTML = [['iphone', 'devIphone'], ['android', 'devAndroid'], ['win', 'devWin'], ['mac', 'devMac']].map(function (d) {
       return '<button type="button" data-dev="' + d[0] + '" aria-pressed="' + (state.dev === d[0]) + '">' + esc(t(d[1])) + '</button>';
     }).join('');
+    $('wallMonth').innerHTML = D.MONTHS.map(function (x) { return '<option value="' + x.m + '"' + (x.m === state.month ? ' selected' : '') + '>' + esc(Lg.monthTitle(x.m) + ' · ' + x.fig[state.lang]) + '</option>'; }).join('');
     var phoneDev = state.dev === 'iphone' || state.dev === 'android';
     function seg(list, cur, attr) { return list.map(function (d) { return '<button type="button" data-' + attr + '="' + d[0] + '" aria-pressed="' + (cur === d[0]) + '">' + esc(t(d[1])) + '</button>'; }).join(''); }
     $('kindSeg').innerHTML = seg([['cal', 'kindCal'], ['art', 'kindArt']], state.kind, 'kind');
@@ -539,6 +542,12 @@
       state[x[1]] = b.getAttribute('data-' + x[1]); store('cal_' + x[1], state[x[1]]); renderWall();
     });
   });
+  $('wallMonth').addEventListener('change', function () {
+    // 달을 바꿔도 보고 있던 자리(배경화면 칸)가 그대로 있도록
+    var el = $('wallMonth'), before = el.getBoundingClientRect().top;
+    setMonth(+el.value);
+    window.scrollBy({ top: el.getBoundingClientRect().top - before, behavior: 'instant' });
+  });
   $('sizeSel').addEventListener('change', function () { wall.size = $('sizeSel').value; store('cal_wsize', wall.size); renderWall(); });
   ['optVerse', 'optEvents', 'optLogo'].forEach(function (id) { $(id).addEventListener('change', renderWall); });
   $('optSafe').addEventListener('change', function () { $('safe').hidden = !$('optSafe').checked; });
@@ -571,14 +580,17 @@
   /* ── 이동 ── */
   function setMonth(m, keepDay) {
     if (m < 1 || m > 12 || m === state.month) return;
+    var dir = m > state.month ? 'swap-next' : 'swap-prev', sc = $('sec-cal');
     state.month = m; if (!keepDay) state.day = null;
+    if (!keepDay && todayISO().slice(0, 7) === iso(m, 1).slice(0, 7)) state.day = todayISO();
     render();
+    sc.classList.remove('swap-next', 'swap-prev'); void sc.offsetWidth; sc.classList.add(dir);
     window.Wallpaper.preload(m);
   }
   function goToday() {
     var td = todayISO(), p = td.split('-');
     if (+p[0] === Y) { state.month = +p[1]; state.day = td; render(); }
-    else { state.month = defaultMonth(); state.day = null; render(); }
+    else { state.month = defaultMonth(); state.day = todayISO().slice(0, 4) === String(Y) ? todayISO() : null; render(); }
     $('sec-cal').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   $('prevMonth').addEventListener('click', function () { setMonth(state.month - 1); });
@@ -685,7 +697,7 @@
     if (document.hidden) return;
     lastResume = Date.now();
     // 날짜가 바뀌었으면(예: 1월 31일 → 2월 1일) 이번 달로 이동하고 오늘 표시도 갱신
-    if (todayISO() !== lastDay) { lastDay = todayISO(); state.month = defaultMonth(); state.day = null; render(); }
+    if (todayISO() !== lastDay) { lastDay = todayISO(); state.month = defaultMonth(); state.day = todayISO().slice(0, 4) === String(Y) ? todayISO() : null; render(); }
     readSigs().then(function (sig) {
       if (!sig.replace(/\|/g, '')) return;
       if (fileSigs === null) { fileSigs = sig; return; }
@@ -723,6 +735,7 @@
   }
 
   if (goWithLang()) return;
+  if (todayISO().slice(0, 7) === iso(state.month, 1).slice(0, 7)) state.day = todayISO();   // 이번 달이면 오늘 일정을 바로 보여 줌
   renderStatic();
   render();
   measure();
