@@ -79,6 +79,9 @@ a { color: var(--primary); }
 .sizeseg button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; border-radius: 8px; background: transparent; color: var(--primary); cursor: pointer; font-weight: 800; line-height: 1; padding: 0; }
 .sizeseg .g1 { font-size: 12px; } .sizeseg .g2 { font-size: 15px; } .sizeseg .g3 { font-size: 19px; }
 .sizeseg button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); }
+.set-cog, .set-txt { display: none; }
+.set-cog svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; }
+@media (min-width: 720px) { .set-btn { display: inline-flex; order: 2; } .set-flag, .set-g, .set-gear { display: none; } .set-cog, .set-txt { display: inline-flex; } .set-txt { font-size: .9rem; } }
 .set-btn { display: none; align-items: center; gap: 6px; flex: none; height: 40px; padding: 0 8px 0 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); color: var(--primary); cursor: pointer; font-weight: 800; }
 .set-flag .flag { width: 24px; height: 16px; }
 .set-g { font-size: 17px; line-height: 1; }
@@ -110,6 +113,27 @@ dialog.sheet[open] { animation: sheetUp .22s ease-out; }
 .set-themes button { flex-direction: column; gap: 2px; font-size: .9rem; }
 .set-themes svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .set-langs button[aria-pressed="true"], .set-sizes button[aria-pressed="true"], .set-themes button[aria-pressed="true"] { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); box-shadow: 0 0 0 1px var(--primary); }
+.set-church { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.set-church button { display: flex; align-items: center; gap: .6rem; min-height: 54px; padding: .4rem .9rem; border-radius: 14px; border: 2px solid var(--line); background: var(--surface-2); color: var(--ink); font-weight: 700; font-size: 1.02rem; cursor: pointer; text-align: left; }
+.set-church button[aria-pressed="true"] { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); box-shadow: 0 0 0 1px var(--primary); }
+.set-church .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; background: var(--line); }
+.sheet-note { margin: .4rem 0 0; font-size: .88rem; color: var(--muted); }
+/* 교회 일정 */
+.bar.ch { background: color-mix(in srgb, var(--ch) 22%, var(--surface)); border-left-color: var(--ch); }
+.bar.ch span { color: color-mix(in srgb, var(--ch) 75%, #000); }
+:root[data-theme="dark"] .bar.ch span { color: color-mix(in srgb, var(--ch) 55%, #fff); }
+.chdots { position: absolute; left: 0; right: 0; bottom: .3rem; display: flex; justify-content: center; gap: 3px; pointer-events: none; }
+.chdots i { width: 6px; height: 6px; border-radius: 50%; background: var(--ch); }
+@media (min-width: 520px) { .chdots { justify-content: flex-start; padding-left: .45rem; } }
+.church .eyebrow .ico { color: var(--ch); }
+.ch-status { margin: -.2rem 0 .6rem; font-size: .9rem; color: var(--muted); }
+.ch-status.soon, .sheet-note.soon { padding: .7rem .85rem; border-radius: 12px; background: color-mix(in srgb, var(--ch) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--ch) 35%, transparent); color: var(--ink); font-weight: 600; font-size: .98rem; line-height: 1.5; }
+.sheet-note.soon { margin-top: .5rem; }
+.ch-list .ev-date { background: var(--ch); }
+.ch-time { font-family: var(--pop); font-weight: 600; font-size: .85rem; color: color-mix(in srgb, var(--ch) 75%, var(--ink)); }
+.dd-list li.ch { border-left: 4px solid var(--ch); }
+.dd-sub { margin: .7rem 0 .35rem; font-size: .95rem; color: var(--ch); font-weight: 800; }
+#churchSub { margin-top: .8rem; }
 #setDone { margin-top: 1rem; min-height: 54px; font-size: 1.1rem; }
 .size-hint { position: sticky; top: var(--topbar-h, 66px); z-index: 18; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 16px; background: #fff3c4; color: #3b2f00; font-weight: 700; font-size: 16px; line-height: 1.4; border-bottom: 1px solid #e6d58a; }
 .size-hint button { flex: none; min-height: 40px; padding: 0 14px; border-radius: 10px; border: 0; background: #3b2f00; color: #fff3c4; font-weight: 800; cursor: pointer; }

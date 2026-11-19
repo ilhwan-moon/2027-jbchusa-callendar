@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="build" content="20261119092827">
+  <meta name="build" content="20261119093509">
   <meta name="theme-color" content="#1f2a44">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -24,16 +24,16 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="2027 달력">
+  <meta name="apple-mobile-web-app-title" content="JBCHUSA">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@400;500;700;800&family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261119092827">
+  <link rel="stylesheet" href="styles.css?v=20261119093509">
   <script>
     (function () { try { var m = localStorage.getItem('cal_theme') || ((document.cookie.match(/(?:^|;\s*)cal_theme=(light|dark)/) || [])[1]); if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m); } catch (e) {} })();
   </script>
-  <script src="data.js?v=20261119092827"></script>
+  <script src="data.js?v=20261119093509"></script>
 </head>
 <body>
   <a class="skip" href="#main">본문으로</a>
@@ -44,10 +44,10 @@
         <img src="logo.png" alt="" width="38" height="38">
         <div>
           <div class="brand-name" data-i18n="church"></div>
-          <div class="brand-sub" data-i18n="appSub"></div>
+          <div class="brand-sub" id="brandSub"></div>
         </div>
       </div>
-      <button type="button" class="set-btn" id="setBtn" aria-haspopup="dialog"><span class="set-flag" id="setFlag"></span><span class="set-g" id="setG">가</span><span class="set-gear" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
+      <button type="button" class="set-btn" id="setBtn" aria-haspopup="dialog"><span class="set-flag" id="setFlag"></span><span class="set-g" id="setG">가</span><span class="set-gear" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span><span class="set-cog" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg></span><span class="set-txt" id="setTxt"></span></button>
       <div class="controls">
         <div class="seg" role="group" aria-label="Language" id="langSeg">
           <button type="button" data-lang="ko" lang="ko" aria-label="한국어" title="한국어"><svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g transform="translate(15 10) rotate(33.7)"><path d="M-5 0a5 5 0 0 1 10 0z" fill="#cd2e3a"/><path d="M-5 0a5 5 0 0 0 10 0z" fill="#0047a0"/><circle cx="-2.5" r="2.5" fill="#cd2e3a"/><circle cx="2.5" r="2.5" fill="#0047a0"/></g><g fill="#111"><g transform="translate(6.3 4.3) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g><g transform="translate(23.7 15.7) rotate(-56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(23.7 4.3) rotate(56.3)"><rect x="-2.2" y="-1.6" width="1.9" height=".8"/><rect x=".3" y="-1.6" width="1.9" height=".8"/><rect x="-2.2" y="-0.3" width="4.4" height=".8"/><rect x="-2.2" y="1.0" width="1.9" height=".8"/><rect x=".3" y="1.0" width="1.9" height=".8"/></g><g transform="translate(6.3 15.7) rotate(56.3)"><rect x="-2.2" y="-1.6" width="4.4" height=".8"/><rect x="-2.2" y="-0.3" width="1.9" height=".8"/><rect x=".3" y="-0.3" width="1.9" height=".8"/><rect x="-2.2" y="1.0" width="4.4" height=".8"/></g></g></svg></button>
@@ -114,6 +114,13 @@
             <h3 class="sub2" data-i18n="holidays"></h3>
             <ul class="hol-list" id="holList"></ul>
           </div>
+        </section>
+
+        <section class="card church" id="sec-church" aria-labelledby="h-church" hidden>
+          <h2 class="eyebrow" id="h-church"><span class="ico" data-ico="church"></span><span id="churchTitle"></span></h2>
+          <p class="ch-status" id="churchStatus"></p>
+          <ul class="ev-list ch-list" id="churchList"></ul>
+          <a class="btn wide" id="churchSub" target="_blank" rel="noopener" hidden><span class="ico" data-ico="plus"></span><span data-i18n="subscribe"></span></a>
         </section>
 
         <section class="card" id="sec-upcoming" aria-labelledby="h-up">
@@ -237,6 +244,9 @@
       <div class="sheet-grip" aria-hidden="true"></div>
       <p class="sheet-title" id="setTitle"></p>
       <p class="sheet-welcome" id="setWelcome" hidden></p>
+      <h3 class="sheet-h" id="setHChurch"></h3>
+      <div class="set-church" id="setChurch"></div>
+      <p class="sheet-note" id="setChurchNote"></p>
       <h3 class="sheet-h" id="setHLang"></h3>
       <div class="set-langs" id="setLangs"></div>
       <h3 class="sheet-h" id="setHSize"></h3>
@@ -257,8 +267,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="icshelp.js?v=20261119092827"></script>
-  <script src="wallpaper.js?v=20261119092827"></script>
-  <script src="app.js?v=20261119092827"></script>
+  <script src="icshelp.js?v=20261119093509"></script>
+  <script src="wallpaper.js?v=20261119093509"></script>
+  <script src="app.js?v=20261119093509"></script>
 </body>
 </html>

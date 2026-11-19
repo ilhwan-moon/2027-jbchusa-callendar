@@ -102,6 +102,20 @@ window.CAL_DATA = {
     { s: '2027-12-17', e: '2027-12-19', ko: '북서부/하와이 동계수련회', en: 'NWR / Hawaii Winter Retreat', es: 'Retiro de invierno NWR / Hawái', zh: '西北部/夏威夷冬季修养会' },
   ],
 
+  // 내 교회 (설정에서 고르면 그 교회 일정이 함께 보임)
+  // calendar: 구글 캘린더 ID 또는 공개 링크 (예: xxxx@group.calendar.google.com) — 「구독하기」 버튼에 씀
+  // 일정 읽어 오기: apps-script/ChurchCalendar.gs 를 배포한 웹앱 주소를 CHURCH_API 에 넣으면 모든 교회가 함께 씀
+  //   (교회마다 따로 쓰려면 그 교회에 api: '주소' 를 넣으면 됨)
+  // 시간은 교회 현지 시간으로 표시 (기본 미국 서부. 다르면 tz: 'America/Denver' 처럼 넣음)
+  CHURCH_API: '',
+  CHURCHES: [
+    { id: 'la-central', name: 'LA Central', color: '#1f8a70', calendar: '' },
+    { id: 'la', name: 'LA', color: '#2f6fd0', calendar: '' },
+    { id: 'la-corona', name: 'LA Corona', color: '#d9822b', calendar: '' },
+    { id: 'san-francisco', name: 'San Francisco', color: '#b0417a', calendar: '' },
+    { id: 'las-vegas', name: 'Las Vegas', color: '#7a5bc4', calendar: '' },
+  ],
+
   // 공휴일·기념일 (빨간 글씨)
   HOLIDAYS: [
     { d: '2027-01-01', ko: '신정', en: "New Year's Day", es: 'Año Nuevo', zh: '元旦' },
