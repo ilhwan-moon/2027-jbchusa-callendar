@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   var D = window.CAL_DATA, Y = D.YEAR;
-  var LANGS = ['ko', 'en', 'es'];
+  var LANGS = ['ko', 'en', 'es', 'zh'];
   var MONTH_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var MONTH_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
@@ -105,6 +105,39 @@
       dayTitle: function (m, d, w) { return ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'][w] + ', ' + d + ' de ' + MONTH_ES[m - 1]; },
       dow: ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'],
     },
+    zh: {
+      church: 'Life Word Mission USA', appSub: '2027 宣教会日历', appName: '2027 日历', calendar: '日历', prevMonth: '上个月', nextMonth: '下个月',
+      textSize: '字体大小', sizeHint: '字太小吗？请点右上角较大的「字」。', ok: '知道了',
+      themeN: { auto: '画面：自动', light: '画面：明亮', dark: '画面：深色' }, textSizeN: ['普通字体', '大字体', '特大字体'],
+      swipeHint: '左右滑动可切换月份', monthEvents: '本月活动', holidays: '节假日', upcoming: '即将到来的活动',
+      noEvents: '本月没有宣教会活动。', noDay: '这一天没有活动。', today: '今天', dday: '{n}天后', ongoing: '进行中',
+      addAll: '全部加入我的手机日历', addAllHint: 'iPhone：点「全部添加」。Android：用 Google 日历打开下载的文件。',
+      days: '{n}天',
+      wallTitle: '制作壁纸', wallLead: '用{m}的日历和经文为手机或电脑制作壁纸。网页无法直接更换壁纸，请<b>先保存图片，再按下面的方法设置</b>。',
+      wallLeadArt: '不带日历，<b>只保存图画</b>，按手机或电脑的屏幕大小制作。保存后按下面的方法设为壁纸。', posTitle: '调整图片位置', posHint: '也可以用手指（或鼠标）拖动预览图。', posX: '左右', posY: '上下', posZ: '放大', posReset: '还原', posYHint: '放大后也可以上下移动，可以把下方的文字移到屏幕外。', whichMonth: '哪个月的壁纸', noUpcoming: '今年已没有其他活动。', kind: '制作类型', kindCal: '日历 + 图画', kindArt: '只要图画', picture: '图画', picMonth: '本月图画', picCover: '封面', picBack: '封底（星空）', fitFill: '铺满屏幕', fitWhole: '完整图画（不裁切）', device: '设备', size: '屏幕大小', background: '背景', include: '包含内容', optVerse: '本月经文', optEvents: '标示活动', optLogo: '宣教会标志',
+      bgArt: '本月图画', bgSharp: '清晰图画', bgStars: '星空', bgColor: '单色主题',
+      devIphone: 'iPhone', devAndroid: '安卓', devWin: 'Windows 电脑', devMac: 'Mac',
+      saveShare: '存储到照片', download: '下载图片', making: '制作中…', showSafe: '显示时钟和程序坞位置',
+      saveHintPhone: '出现共享菜单时，请点<b>「存储图像」</b>。若不行，请<b>长按</b>上面的图片，选择「存储到照片」。',
+      saveHintPc: '文件会保存在「下载」文件夹。',
+      saved: '已保存', guideTitle: '在{d}上设置壁纸的方法',
+      guide: {
+        iphone: ['打开<b>照片</b> App，点刚才保存的日历图片', '点左下角的<b>共享</b> {share} 按钮', '向上滑动，点<b>「用作墙纸」</b>', '调整位置后点右上角<b>「添加」</b> → <b>「设为墙纸组合」</b>即可！'],
+        android: ['在<b>相册</b>（或 Google 相册）中打开日历图片', '点右上角（或下方）的<b>⋮</b>', '点<b>「设为壁纸」</b>（Google 相册：「用作」→ 壁纸）', '选择<b>锁定屏幕 / 主屏幕 / 两者</b>，再点<b>「完成」</b>'],
+        win: ['在<b>下载</b>文件夹中找到图片', '用<b>鼠标右键</b>点图片', '选择<b>「设置为桌面背景」</b>即可！', '或：设置 → 个性化 → 背景 → <b>「浏览照片」</b>'],
+        mac: ['打开<b>系统设置</b> {apple} → <b>墙纸</b>', '点<b>「添加照片…」</b>或「添加文件夹…」', '在<b>下载</b>文件夹中选择日历图片', '如果用 Safari，也可以<b>右键点预览图 → 「将图像用作桌面图片」</b>'],
+      },
+      installTitle: '把日历添加到主屏幕', installSub: '像 App 一样直接打开', installed: '已添加到主屏幕',
+      iosTitle: '🍎 iPhone：添加到主屏幕', iosSteps: ['点 Safari 下方<b>地址栏左边的图标</b> {menu}', '在菜单中点<b>「共享」</b>', '向上滑动，点<b>「添加到主屏幕」</b>', '点右上角<b>「添加」</b>即可！'],
+      andTitle: '🤖 安卓：添加到主屏幕', andSteps: ['点 Chrome 右上角的<b>⋮（三个点）</b>', '点<b>「添加到主屏幕」</b>或<b>「安装应用」</b>', '点<b>「安装」</b>（或「添加」）即可！'],
+      inappTitle: '请先用 Safari / Chrome 打开', inappSteps: ['点右上角（或下方）的<b>菜单</b>', '点<b>「在浏览器中打开」</b>或<b>「在 Safari 中打开」</b>', '在打开的页面中再点一次这个按钮'],
+      share: '分享', website: '宣教会网站', qr: '二维码', toTop: '回到顶部', close: '关闭', copied: '链接已复制', qrTitle: '用手机相机扫描即可打开日历',
+      source: '图画·经文·活动：Life Word Mission USA 2027 台历 · 圣经：和合本', updatedReload: '已更新到最新版本',
+      nav: { cal: '日历', events: '活动', wall: '壁纸', today: '今天' },
+      monthName: function (m) { return m + '月'; }, monthTitle: function (m) { return Y + '年' + m + '月'; },
+      dayTitle: function (m, d, w) { return m + '月' + d + '日（周' + '日一二三四五六'[w] + '）'; },
+      dow: ['日', '一', '二', '三', '四', '五', '六'],
+    },
   };
 
   var ICONS = {
@@ -112,6 +145,7 @@
     bell: '<svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>',
     image: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M6.5 15l3.5-3.5 3 3 2-2 2 2"/><circle cx="14.5" cy="7.5" r="1.3"/></svg>',
     today: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="2.2"/></svg>',
+    help: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4"/><circle cx="12" cy="16.8" r=".6" fill="currentColor"/></svg>',
     plus: '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
     download: '<svg viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5"/><path d="M4.5 16.5v3h15v-3"/></svg>',
     phone: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>',
@@ -149,7 +183,7 @@
   function saveLang(l) { store('cal_lang', l); try { document.cookie = 'cal_lang=' + l + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {} }
   function savedLang() {
     var s = store('cal_lang'); if (LANGS.indexOf(s) !== -1) return s;
-    var m = (document.cookie || '').match(/(?:^|;\s*)cal_lang=(ko|en|es)/); return m ? m[1] : null;
+    var m = (document.cookie || '').match(/(?:^|;\s*)cal_lang=(ko|en|es|zh)/); return m ? m[1] : null;
   }
   function launchedFromHome() { return params.get('source') === 'home' || (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true; }
   function pickLang() {
@@ -203,7 +237,7 @@
     document.querySelectorAll('#sizeSeg button').forEach(function (bt) {
       var n = Number(bt.getAttribute('data-size'));
       bt.setAttribute('aria-pressed', String(n === state.size)); bt.setAttribute('aria-label', L().textSizeN[n - 1]);
-      bt.querySelector('.g').textContent = Lg === 'ko' ? '가' : 'A';
+      bt.querySelector('.g').textContent = Lg === 'ko' ? '가' : Lg === 'zh' ? '字' : 'A';
     });
     $('sizeHintText').textContent = L().sizeHint;
     document.documentElement.setAttribute('data-size', String(state.size));
@@ -226,7 +260,7 @@
     if (!e.e) return f;
     var x = e.e.split('-'); return f + ' – ' + (+x[1] === +s[1] ? +x[2] : +x[1] + '/' + +x[2]);
   }
-  function subName(e) { var k = state.lang === 'ko' ? 'en' : state.lang === 'en' ? 'ko' : 'en'; return e[k]; }
+  function subName(e) { var k = state.lang === 'en' ? 'ko' : 'en'; return e[k]; }
 
   function render() {
     var m = state.month, info = D.MONTHS[m - 1], c = info.c, Lg = state.lang;
@@ -235,7 +269,7 @@
     $('monthTitle').textContent = L().monthTitle(m);
     $('prevMonth').disabled = m === 1; $('nextMonth').disabled = m === 12;
     $('strip').innerHTML = D.MONTHS.map(function (x) {
-      return '<button type="button" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === m) + '" style="--c:' + x.c.acc + '">' + esc(Lg === 'ko' ? x.m + '월' : (Lg === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3)) + '</button>';
+      return '<button type="button" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === m) + '" style="--c:' + x.c.acc + '">' + esc(Lg === 'ko' ? x.m + '월' : Lg === 'zh' ? x.m + '月' : (Lg === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3)) + '</button>';
     }).join('');
     var sel = $('strip').querySelector('[aria-selected="true"]');
     if (sel) { var st = $('strip'); st.scrollLeft = sel.offsetLeft - st.clientWidth / 2 + sel.offsetWidth / 2; }
@@ -253,6 +287,7 @@
     renderGrid();
     renderDay();
     renderLists();
+    renderIcsHelp();
     renderWall();
     syncUrl();
   }
@@ -393,25 +428,25 @@
       iphone: [
         '<div class="ga ga-phone"><div class="ga-photos">' + '<i></i><i></i><i class="hl"></i><i></i><i></i><i></i>' + '</div></div>',
         '<div class="ga ga-phone"><div class="ga-pic"></div><div class="ga-bar"><span class="hl">' + ICONS.iosShare + '</span><span>♡</span><span>ⓘ</span><span>🗑</span></div></div>',
-        '<div class="ga ga-sheet"><p>' + esc({ ko: '복사', en: 'Copy', es: 'Copiar' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면으로 사용', en: 'Use as Wallpaper', es: 'Usar como fondo de pantalla' }[Lg]) + '</p><p>' + esc({ ko: '파일에 저장', en: 'Save to Files', es: 'Guardar en Archivos' }[Lg]) + '</p></div>',
-        '<div class="ga ga-sheet"><p class="hl">' + esc({ ko: '배경화면 쌍으로 설정', en: 'Set as Wallpaper Pair', es: 'Definir como par de fondos' }[Lg]) + '</p><p>' + esc({ ko: '홈 화면 사용자화', en: 'Customize Home Screen', es: 'Personalizar inicio' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p>' + esc({ ko: '복사', en: 'Copy', es: 'Copiar', zh: '复制' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면으로 사용', en: 'Use as Wallpaper', es: 'Usar como fondo de pantalla', zh: '用作墙纸' }[Lg]) + '</p><p>' + esc({ ko: '파일에 저장', en: 'Save to Files', es: 'Guardar en Archivos', zh: '存储到“文件”' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p class="hl">' + esc({ ko: '배경화면 쌍으로 설정', en: 'Set as Wallpaper Pair', es: 'Definir como par de fondos', zh: '设为墙纸组合' }[Lg]) + '</p><p>' + esc({ ko: '홈 화면 사용자화', en: 'Customize Home Screen', es: 'Personalizar inicio', zh: '自定主屏幕' }[Lg]) + '</p></div>',
       ],
       android: [
         '<div class="ga ga-phone"><div class="ga-photos"><i class="hl"></i><i></i><i></i><i></i><i></i><i></i></div></div>',
         '<div class="ga ga-phone"><div class="ga-pic"></div><div class="ga-bar"><span>♡</span><span>✎</span><span>⇪</span><span class="hl">⋮</span></div></div>',
-        '<div class="ga ga-sheet"><p>' + esc({ ko: '세부 정보', en: 'Details', es: 'Detalles' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면으로 설정', en: 'Set as wallpaper', es: 'Establecer como fondo' }[Lg]) + '</p><p>' + esc({ ko: '인쇄', en: 'Print', es: 'Imprimir' }[Lg]) + '</p></div>',
-        '<div class="ga ga-sheet"><p>' + esc({ ko: '잠금화면', en: 'Lock screen', es: 'Pantalla de bloqueo' }[Lg]) + '</p><p>' + esc({ ko: '홈 화면', en: 'Home screen', es: 'Pantalla de inicio' }[Lg]) + '</p><p class="hl">' + esc({ ko: '잠금화면 및 홈 화면', en: 'Lock and Home screens', es: 'Bloqueo e inicio' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p>' + esc({ ko: '세부 정보', en: 'Details', es: 'Detalles', zh: '详细信息' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면으로 설정', en: 'Set as wallpaper', es: 'Establecer como fondo', zh: '设为壁纸' }[Lg]) + '</p><p>' + esc({ ko: '인쇄', en: 'Print', es: 'Imprimir', zh: '打印' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p>' + esc({ ko: '잠금화면', en: 'Lock screen', es: 'Pantalla de bloqueo', zh: '锁定屏幕' }[Lg]) + '</p><p>' + esc({ ko: '홈 화면', en: 'Home screen', es: 'Pantalla de inicio', zh: '主屏幕' }[Lg]) + '</p><p class="hl">' + esc({ ko: '잠금화면 및 홈 화면', en: 'Lock and Home screens', es: 'Bloqueo e inicio', zh: '锁定屏幕和主屏幕' }[Lg]) + '</p></div>',
       ],
       win: [
-        '<div class="ga ga-win"><p>📁 ' + esc({ ko: '다운로드', en: 'Downloads', es: 'Descargas' }[Lg]) + '</p><p class="hl">🖼 2027-' + pad(state.month) + '.jpg</p></div>',
-        '<div class="ga ga-win"><p class="hl">🖱 ' + esc({ ko: '오른쪽 클릭', en: 'Right-click', es: 'Clic derecho' }[Lg]) + '</p></div>',
-        '<div class="ga ga-sheet"><p>' + esc({ ko: '열기', en: 'Open', es: 'Abrir' }[Lg]) + '</p><p class="hl">' + esc({ ko: '바탕 화면 배경으로 설정', en: 'Set as desktop background', es: 'Establecer como fondo de escritorio' }[Lg]) + '</p><p>' + esc({ ko: '회전', en: 'Rotate', es: 'Girar' }[Lg]) + '</p></div>',
+        '<div class="ga ga-win"><p>📁 ' + esc({ ko: '다운로드', en: 'Downloads', es: 'Descargas', zh: '下载' }[Lg]) + '</p><p class="hl">🖼 2027-' + pad(state.month) + '.jpg</p></div>',
+        '<div class="ga ga-win"><p class="hl">🖱 ' + esc({ ko: '오른쪽 클릭', en: 'Right-click', es: 'Clic derecho', zh: '右键单击' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p>' + esc({ ko: '열기', en: 'Open', es: 'Abrir', zh: '打开' }[Lg]) + '</p><p class="hl">' + esc({ ko: '바탕 화면 배경으로 설정', en: 'Set as desktop background', es: 'Establecer como fondo de escritorio', zh: '设置为桌面背景' }[Lg]) + '</p><p>' + esc({ ko: '회전', en: 'Rotate', es: 'Girar', zh: '旋转' }[Lg]) + '</p></div>',
         '',
       ],
       mac: [
-        '<div class="ga ga-sheet"><p>' + esc({ ko: '일반', en: 'General', es: 'General' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면', en: 'Wallpaper', es: 'Fondo de pantalla' }[Lg]) + '</p><p>' + esc({ ko: '디스플레이', en: 'Displays', es: 'Pantallas' }[Lg]) + '</p></div>',
-        '<div class="ga ga-sheet"><p class="hl">' + esc({ ko: '사진 추가…', en: 'Add Photo…', es: 'Añadir foto…' }[Lg]) + '</p><p>' + esc({ ko: '폴더 추가…', en: 'Add Folder…', es: 'Añadir carpeta…' }[Lg]) + '</p></div>',
-        '<div class="ga ga-win"><p>📁 ' + esc({ ko: '다운로드', en: 'Downloads', es: 'Descargas' }[Lg]) + '</p><p class="hl">🖼 2027-' + pad(state.month) + '.jpg</p></div>',
+        '<div class="ga ga-sheet"><p>' + esc({ ko: '일반', en: 'General', es: 'General', zh: '通用' }[Lg]) + '</p><p class="hl">' + esc({ ko: '배경화면', en: 'Wallpaper', es: 'Fondo de pantalla', zh: '墙纸' }[Lg]) + '</p><p>' + esc({ ko: '디스플레이', en: 'Displays', es: 'Pantallas', zh: '显示器' }[Lg]) + '</p></div>',
+        '<div class="ga ga-sheet"><p class="hl">' + esc({ ko: '사진 추가…', en: 'Add Photo…', es: 'Añadir foto…', zh: '添加照片…' }[Lg]) + '</p><p>' + esc({ ko: '폴더 추가…', en: 'Add Folder…', es: 'Añadir carpeta…', zh: '添加文件夹…' }[Lg]) + '</p></div>',
+        '<div class="ga ga-win"><p>📁 ' + esc({ ko: '다운로드', en: 'Downloads', es: 'Descargas', zh: '下载' }[Lg]) + '</p><p class="hl">🖼 2027-' + pad(state.month) + '.jpg</p></div>',
         '',
       ],
     };
@@ -569,6 +604,22 @@
     lines.push('END:VCALENDAR');
     return lines.join('\r\n');
   }
+  /* 내 달력에 넣기: 자세한 설명 (버튼을 누르면 펼침) */
+  var icsTab = isIOS ? 'ios' : isAndroid ? 'android' : isMac ? 'mac' : 'google';
+  function renderIcsHelp() {
+    var H = window.ICS_HELP[state.lang] || window.ICS_HELP.en, open = !$('icsHelp').hidden;
+    $('icsHelpTxt').textContent = open ? H.close : H.open;
+    $('icsHelpBtn').setAttribute('aria-expanded', String(open));
+    if (!open) return;
+    $('icsHelp').innerHTML = '<p>' + fmt(H.intro, { n: D.EVENTS.length }) + '</p>' +
+      '<div class="ics-tabs" role="tablist">' + Object.keys(H.tabs).map(function (k) {
+        return '<button type="button" role="tab" data-tab="' + k + '" aria-selected="' + (k === icsTab) + '">' + esc(H.tabs[k].label) + '</button>';
+      }).join('') + '</div>' +
+      '<ol class="ics-steps">' + H.tabs[icsTab].steps.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol>' +
+      '<ul class="ics-notes">' + H.notes.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+  }
+  $('icsHelpBtn').addEventListener('click', function () { $('icsHelp').hidden = !$('icsHelp').hidden; renderIcsHelp(); });
+  $('icsHelp').addEventListener('click', function (e) { var b = e.target.closest('[data-tab]'); if (b) { icsTab = b.getAttribute('data-tab'); renderIcsHelp(); } });
   $('icsBtn').addEventListener('click', function () {
     var blob = new Blob([icsFile()], { type: 'text/calendar;charset=utf-8' });
     var url = URL.createObjectURL(blob), a = document.createElement('a');
@@ -686,7 +737,7 @@
   window.addEventListener('resize', measure);
 
   /* ── 다시 열었을 때 사이트가 바뀌었으면 새로고침 (ETag 확인) ── */
-  var APP_FILES = ['index.html', 'app.js', 'styles.css', 'data.js', 'wallpaper.js'];
+  var APP_FILES = ['index.html', 'app.js', 'styles.css', 'data.js', 'wallpaper.js', 'icshelp.js'];
   var fileSigs = null, lastResume = Date.now(), lastDay = todayISO();
   function readSigs() {
     return Promise.all(APP_FILES.map(function (f) {

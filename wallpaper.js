@@ -23,9 +23,9 @@
   }
 
   var MONTH_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var DOW = { ko: ['일', '월', '화', '수', '목', '금', '토'], en: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'], es: ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'] };
+  var DOW = { ko: ['일', '월', '화', '수', '목', '금', '토'], en: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'], es: ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'], zh: ['日', '一', '二', '三', '四', '五', '六'] };
   var RED = '#c42d47', BLUE = '#2f55a4';
-  var SANS = '"Noto Sans KR", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif';
+  var SANS = '"Noto Sans KR", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "PingFang SC", "Microsoft YaHei", sans-serif';
   var POP = 'Poppins, ' + SANS;
 
   function iso(y, m, d) { return y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0'); }
@@ -64,9 +64,11 @@
   }
   // 줄바꿈 (한국어는 띄어쓰기 단위, 너무 긴 단어는 글자 단위)
   function wrap(ctx, text, maxW) {
-    var words = String(text).split(/\s+/), lines = [], cur = '';
+    // 중국어처럼 띄어쓰기가 없는 글은 글자 단위로 나눔
+    var t0 = String(text), cjk = /[\u4e00-\u9fff]/.test(t0) && !/[\uac00-\ud7a3]/.test(t0);
+    var words = cjk ? t0.match(/[^\s]([，。、；：！？”’）]*)|\s+/g).filter(function (x) { return x.trim(); }) : t0.split(/\s+/), lines = [], cur = '', sep = cjk ? '' : ' ';
     words.forEach(function (w) {
-      var t = cur ? cur + ' ' + w : w;
+      var t = cur ? cur + sep + w : w;
       if (ctx.measureText(t).width <= maxW || !cur) cur = t; else { lines.push(cur); cur = w; }
     });
     if (cur) lines.push(cur);
@@ -89,7 +91,7 @@
     var cw = w / 7, L = o.lang, acc = o.c.acc;
     var dow = DOW[L] || DOW.en;
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.font = '600 ' + Math.round(ch * .34) + 'px ' + (L === 'ko' ? SANS : POP);
+    ctx.font = '600 ' + Math.round(ch * .34) + 'px ' + (L === 'ko' || L === 'zh' ? SANS : POP);
     dow.forEach(function (d, i) { ctx.fillStyle = i === 0 ? RED : i === 6 ? BLUE : o.ink2; ctx.fillText(d, x + cw * (i + .5), y + ch * .4); });
     ctx.fillStyle = hexA(acc, .9); ctx.fillRect(x, y + ch * .8, w, Math.max(2, ch * .03));
     var gy = y + ch * 1.05;

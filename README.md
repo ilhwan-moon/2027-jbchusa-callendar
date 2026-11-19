@@ -1,10 +1,10 @@
 # 생명의말씀선교회 USA 2027 모바일 달력
 
-생명의말씀선교회 USA(https://www.jbchusa.org/) 2027 탁상달력의 **미주 전체 일정**을 휴대폰·PC에서 보는 3개 언어(한국어·English·Español) 달력입니다.
+생명의말씀선교회 USA(https://www.jbchusa.org/) 2027 탁상달력의 **미주 전체 일정**을 휴대폰·PC에서 보는 4개 언어(한국어·English·Español·中文) 달력입니다.
 달력 그림으로 **휴대폰·컴퓨터 배경화면**도 만들 수 있습니다. GitHub Pages로 **무료** 운영합니다.
 
 - 주소: https://ilhwan-moon.github.io/2027-jbchusa-callendar/
-- 언어별 링크: `/ko/` `/en/` `/es/` (또는 `?lang=ko|en|es`)
+- 언어별 링크: `/ko/` `/en/` `/es/` `/zh/` (또는 `?lang=ko|en|es|zh`)
 - 검색엔진에는 나오지 않습니다(noindex). 링크를 받은 분만 볼 수 있습니다.
 
 ## 화면
@@ -26,7 +26,7 @@
 `data.js`만 고치면 됩니다.
 - `EVENTS`: `{ s: '시작일', e: '끝나는 날', ko: '한국어', en: 'English', es: 'Español' }`
 - `HOLIDAYS`: `{ d: '날짜', ko, en, es }`
-- `MONTHS`: 달마다 인물, 주제, 말씀(개역한글 / NKJV / RVR1960), 테마색, 배경화면에서 그림을 자를 가로 위치(`focus`)
+- `MONTHS`: 달마다 인물, 주제, 말씀(개역한글 / NKJV / RVR1960 / 和合本), 테마색, 배경화면에서 그림을 자를 가로 위치(`focus`)
 
 ## 파일
 | 파일 | 내용 |
