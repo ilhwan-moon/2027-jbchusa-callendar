@@ -180,7 +180,7 @@
   function dn(s) { var p = s.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]) / 864e5; }
   function defaultMonth() { var t = new Date(); return t.getFullYear() < Y ? 1 : t.getFullYear() > Y ? 12 : t.getMonth() + 1; }
 
-  /* ── 언어 (소식지와 같은 규칙) ── */
+  /* ── 언어: 주소의 lang → 전에 고른 언어 → 휴대폰 언어 ── */
   function saveLang(l) { store('cal_lang', l); try { document.cookie = 'cal_lang=' + l + '; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {} }
   function savedLang() {
     var s = store('cal_lang'); if (LANGS.indexOf(s) !== -1) return s;

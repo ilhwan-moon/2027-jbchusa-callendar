@@ -81,11 +81,12 @@ a { color: var(--primary); }
 .sizeseg button[aria-pressed="true"] { background: var(--primary); color: var(--primary-ink); }
 .set-cog, .set-txt { display: none; }
 .set-cog svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; }
-@media (min-width: 720px) { .set-btn { display: inline-flex; order: 2; } .set-flag, .set-g, .set-gear { display: none; } .set-cog, .set-txt { display: inline-flex; } .set-txt { font-size: .9rem; } }
 .set-btn { display: none; align-items: center; gap: 6px; flex: none; height: 40px; padding: 0 8px 0 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); color: var(--primary); cursor: pointer; font-weight: 800; }
 .set-flag .flag { width: 24px; height: 16px; }
 .set-g { font-size: 17px; line-height: 1; }
 .set-gear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; display: block; }
+/* PC: 상단에 언어·글씨 버튼이 펼쳐져 있으므로 설정 버튼은 톱니 + 「설정」(내 교회 고르기) */
+@media (min-width: 720px) { .set-btn { display: inline-flex; order: 2; } .set-flag, .set-g, .set-gear { display: none; } .set-cog, .set-txt { display: inline-flex; } .set-txt { font-size: .9rem; } }
 @media (max-width: 719px) {
   .controls { display: none; }
   .set-btn { display: inline-flex; }
