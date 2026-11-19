@@ -160,7 +160,9 @@
     return LANGS.indexOf(n) !== -1 ? n : 'ko';
   }
 
-  var pm = Number(params.get('m'));
+  // 주소의 m(보던 달)은 일반 브라우저에서 새로고침할 때만 씀.
+  // 홈 화면 앱으로 열면 항상 이번 달로 엽니다 (아이폰은 추가할 때의 주소를 그대로 저장하기 때문).
+  var pm = launchedFromHome() ? 0 : Number(params.get('m'));
   var state = {
     lang: pickLang(),
     size: Number(store('cal_size') || 1),
@@ -682,11 +684,12 @@
   function onResume() {
     if (document.hidden) return;
     lastResume = Date.now();
+    // 날짜가 바뀌었으면(예: 1월 31일 → 2월 1일) 이번 달로 이동하고 오늘 표시도 갱신
+    if (todayISO() !== lastDay) { lastDay = todayISO(); state.month = defaultMonth(); state.day = null; render(); }
     readSigs().then(function (sig) {
       if (!sig.replace(/\|/g, '')) return;
       if (fileSigs === null) { fileSigs = sig; return; }
       if (sig !== fileSigs) { store('cal_updated', '1'); location.reload(); return; }
-      if (todayISO() !== lastDay) { lastDay = todayISO(); render(); }   // 날짜가 바뀌면 오늘 표시 갱신
     });
   }
   document.addEventListener('visibilitychange', onResume);
