@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2027 달력</title>
+  <meta name="description" content="2027 Church Calendar · Wallpapers">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LA Central Church">
+  <meta property="og:title" content="2027 Church Calendar">
+  <meta property="og:description" content="Monthly verses, events and phone wallpapers">
+  <meta property="og:url" content="https://ilhwan-moon.github.io/2027-jbchusa-callendar/">
+  <meta property="og:image" content="https://ilhwan-moon.github.io/2027-jbchusa-callendar/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1f2a44">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="2027 달력">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@400;500;700;800&family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () { try { var m = localStorage.getItem('cal_theme') || ((document.cookie.match(/(?:^|;\s*)cal_theme=(light|dark)/) || [])[1]); if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m); } catch (e) {} })();
+  </script>
+  <script src="data.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로</a>
+
+  <header class="topbar" id="top">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="logo.png" alt="" width="38" height="38">
+        <div>
+          <div class="brand-name" data-i18n="church"></div>
+          <div class="brand-sub" data-i18n="appSub"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Language" id="langSeg">
+          <button type="button" data-lang="ko" lang="ko">한국어</button>
+          <button type="button" data-lang="en" lang="en">EN</button>
+          <button type="button" data-lang="es" lang="es">ES</button>
+        </div>
+        <button type="button" class="theme-btn" id="themeBtn"><span class="ico" id="themeIco" aria-hidden="true"></span><span class="sr" id="themeLabel"></span></button>
+        <div class="sizeseg" role="group" id="sizeSeg">
+          <button type="button" data-size="1"><span class="g g1" aria-hidden="true">가</span></button>
+          <button type="button" data-size="2"><span class="g g2" aria-hidden="true">가</span></button>
+          <button type="button" data-size="3"><span class="g g3" aria-hidden="true">가</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="size-hint" id="sizeHint" hidden>
+    <span id="sizeHintText"></span>
+    <button type="button" id="sizeHintClose" data-i18n="ok"></button>
+  </div>
+
+  <div class="monthbar">
+    <div class="monthbar-inner">
+      <button type="button" class="mb-arrow" id="prevMonth"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="sr" data-i18n="prevMonth"></span></button>
+      <div class="mb-center">
+        <div class="mb-title" id="monthTitle">&nbsp;</div>
+      </div>
+      <button type="button" class="mb-arrow" id="nextMonth"><span class="sr" data-i18n="nextMonth"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <main id="main" class="wrap">
+    <div class="strip" id="strip" role="tablist"></div>
+    <div class="grid">
+      <div class="col-main">
+        <section id="sec-cal" aria-labelledby="h-cal">
+          <h2 class="sr" id="h-cal" data-i18n="calendar"></h2>
+          <button type="button" class="art" id="artBtn">
+            <img id="artImg" alt="" width="1400" height="913">
+            <span class="art-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M8.5 11h5M11 8.5v5"/></svg></span>
+          </button>
+          <div class="banner" id="banner">
+            <div class="banner-top">
+              <div class="bn-num" id="bnNum">01</div>
+              <div class="bn-script"><span id="bnScript">January</span><span class="bn-year">2027</span></div>
+            </div>
+            <p class="bn-theme"><b id="bnFig"></b> · <span id="bnTheme"></span></p>
+            <blockquote class="bn-verse" id="bnVerse"></blockquote>
+            <p class="bn-ref" id="bnRef"></p>
+          </div>
+
+          <div class="card calcard" id="calCard">
+            <div class="dow" id="dow"></div>
+            <div class="weeks" id="weeks"></div>
+            <p class="swipe-hint" data-i18n="swipeHint"></p>
+          </div>
+
+          <div class="card daydetail" id="dayDetail" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <div class="col-side">
+        <section class="card" id="sec-events" aria-labelledby="h-events">
+          <h2 class="eyebrow" id="h-events"><span class="ico" data-ico="calendar"></span><span data-i18n="monthEvents"></span></h2>
+          <ul class="ev-list" id="evList"></ul>
+          <div id="holBlock">
+            <h3 class="sub2" data-i18n="holidays"></h3>
+            <ul class="hol-list" id="holList"></ul>
+          </div>
+        </section>
+
+        <section class="card" id="sec-upcoming" aria-labelledby="h-up">
+          <h2 class="eyebrow" id="h-up"><span class="ico" data-ico="bell"></span><span data-i18n="upcoming"></span></h2>
+          <ul class="ev-list up" id="upList"></ul>
+          <button type="button" class="btn wide" id="icsBtn"><span class="ico" data-ico="plus"></span><span data-i18n="addAll"></span></button>
+          <p class="hint" data-i18n="addAllHint"></p>
+        </section>
+      </div>
+    </div>
+
+    <!-- 배경화면 만들기 -->
+    <section class="card wall" id="sec-wall" aria-labelledby="h-wall">
+      <h2 class="eyebrow" id="h-wall"><span class="ico" data-ico="image"></span><span data-i18n="wallTitle"></span></h2>
+      <p class="wall-lead" id="wallLead"></p>
+
+      <div class="wall-grid">
+        <div class="wall-opts">
+          <fieldset class="opt">
+            <legend data-i18n="device"></legend>
+            <div class="chips" id="devSeg"></div>
+            <label class="sel"><span data-i18n="size"></span>
+              <select id="sizeSel"></select>
+            </label>
+          </fieldset>
+
+          <fieldset class="opt">
+            <legend data-i18n="background"></legend>
+            <div class="chips" id="bgSeg"></div>
+          </fieldset>
+
+          <fieldset class="opt">
+            <legend data-i18n="include"></legend>
+            <label class="chk"><input type="checkbox" id="optVerse" checked><span data-i18n="optVerse"></span></label>
+            <label class="chk"><input type="checkbox" id="optEvents" checked><span data-i18n="optEvents"></span></label>
+            <label class="chk"><input type="checkbox" id="optLogo" checked><span data-i18n="optLogo"></span></label>
+          </fieldset>
+
+          <div class="wall-actions">
+            <button type="button" class="btn primary wide" id="saveBtn"><span class="ico" data-ico="download"></span><span id="saveTxt"></span></button>
+            <button type="button" class="btn wide" id="dlBtn" hidden><span class="ico" data-ico="download"></span><span data-i18n="download"></span></button>
+            <p class="hint" id="saveHint"></p>
+          </div>
+        </div>
+
+        <div class="wall-preview">
+          <div class="frame" id="frame">
+            <img id="wallImg" alt="">
+            <div class="safe" id="safe" aria-hidden="true">
+              <div class="safe-clock"><small id="safeDate"></small><b>9:41</b></div>
+              <div class="safe-dock"></div>
+            </div>
+            <div class="wall-loading" id="wallLoading" data-i18n="making"></div>
+          </div>
+          <label class="chk small"><input type="checkbox" id="optSafe" checked><span data-i18n="showSafe"></span></label>
+        </div>
+      </div>
+
+      <div class="guide" id="guide"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <button type="button" class="install-btn" id="installBtn" hidden>
+        <span class="ico" data-ico="phone"></span>
+        <span class="install-txt"><b data-i18n="installTitle"></b><small data-i18n="installSub"></small></span>
+      </button>
+      <div class="foot-actions">
+        <button type="button" class="btn" id="shareBtn"><span class="ico" data-ico="share"></span><span data-i18n="share"></span></button>
+        <button type="button" class="btn" id="qrBtn"><span class="ico" data-ico="qr"></span><span data-i18n="qr"></span></button>
+        <a class="btn" href="#top"><span class="ico" data-ico="up"></span><span data-i18n="toTop"></span></a>
+      </div>
+      <p class="foot-meta" data-i18n="source"></p>
+    </div>
+  </footer>
+
+  <nav class="bottomnav" id="bottomnav" aria-label="Menu"></nav>
+
+  <dialog id="artDialog" class="artdlg">
+    <img id="artFull" alt="">
+    <button type="button" class="btn" id="artClose" data-i18n="close"></button>
+  </dialog>
+
+  <dialog id="qrDialog">
+    <div class="qr-box">
+      <p class="qr-title" data-i18n="qrTitle"></p>
+      <div id="qrCode"></div>
+      <p class="qr-url" id="qrUrl"></p>
+      <button type="button" class="btn" id="qrClose" data-i18n="close"></button>
+    </div>
+  </dialog>
+
+  <dialog id="installDialog">
+    <div class="ins-box">
+      <p class="ins-title" id="insTitle"></p>
+      <ol class="ins-steps" id="insSteps"></ol>
+      <button type="button" class="btn primary" id="insClose" data-i18n="ok"></button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="wallpaper.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
