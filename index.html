@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="build" content="20261119094654">
+  <meta name="build" content="20261119180951">
   <meta name="theme-color" content="#1f2a44">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -29,11 +29,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@400;500;700;800&family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261119094654">
+  <link rel="stylesheet" href="styles.css?v=20261119180951">
   <script>
     (function () { try { var m = localStorage.getItem('cal_theme') || ((document.cookie.match(/(?:^|;\s*)cal_theme=(light|dark)/) || [])[1]); if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m); } catch (e) {} })();
   </script>
-  <script src="data.js?v=20261119094654"></script>
+  <script src="data.js?v=20261119180951"></script>
 </head>
 <body>
   <a class="skip" href="#main">본문으로</a>
@@ -133,12 +133,6 @@
     </div>
 
     <!-- 배경화면 만들기 -->
-    <section class="card verses" id="sec-verse" aria-labelledby="h-verse">
-      <h2 class="eyebrow" id="h-verse"><span class="ico" data-ico="book"></span><span data-i18n="verseTitle"></span></h2>
-      <p class="hint vs-lead" data-i18n="verseLead"></p>
-      <ol class="vs-list" id="vsList"></ol>
-    </section>
-
     <section class="card wall" id="sec-wall" aria-labelledby="h-wall">
       <h2 class="eyebrow" id="h-wall"><span class="ico" data-ico="image"></span><span data-i18n="wallTitle"></span></h2>
       <p class="wall-lead" id="wallLead"></p>
@@ -147,16 +141,17 @@
         <div class="wall-opts">
           <fieldset class="opt">
             <legend data-i18n="kind"></legend>
-            <div class="chips" id="kindSeg"></div>
+            <div class="tiles two" id="kindSeg"></div>
           </fieldset>
 
-          <label class="sel monthsel"><span data-i18n="whichMonth"></span>
-            <select id="wallMonth"></select>
-          </label>
+          <fieldset class="opt">
+            <legend data-i18n="whichMonth"></legend>
+            <div class="strip wallmo" id="wallMo" role="tablist"></div>
+          </fieldset>
 
           <fieldset class="opt">
             <legend data-i18n="device"></legend>
-            <div class="chips" id="devSeg"></div>
+            <div class="tiles four" id="devSeg"></div>
             <label class="sel"><span data-i18n="size"></span>
               <select id="sizeSel"></select>
             </label>
@@ -164,20 +159,22 @@
 
           <fieldset class="opt" id="picOpt">
             <legend data-i18n="picture"></legend>
-            <div class="chips" id="picSeg"></div>
-            <div class="chips fit" id="fitSeg"></div>
+            <div class="tiles three" id="picSeg"></div>
+            <div class="seg2" id="fitSeg"></div>
           </fieldset>
 
           <fieldset class="opt" id="bgOpt">
             <legend data-i18n="background"></legend>
-            <div class="chips" id="bgSeg"></div>
+            <div class="tiles four sw" id="bgSeg"></div>
           </fieldset>
 
           <fieldset class="opt" id="incOpt">
             <legend data-i18n="include"></legend>
-            <label class="chk"><input type="checkbox" id="optVerse" checked><span data-i18n="optVerse"></span></label>
-            <label class="chk"><input type="checkbox" id="optEvents" checked><span data-i18n="optEvents"></span></label>
-            <label class="chk"><input type="checkbox" id="optLogo" checked><span data-i18n="optLogo"></span></label>
+            <div class="tgs">
+              <label class="tg"><span class="ico" data-ico="book"></span><span class="tg-t" data-i18n="optVerse"></span><input type="checkbox" id="optVerse" checked><span class="tg-sw" aria-hidden="true"></span></label>
+              <label class="tg"><span class="ico" data-ico="calendar"></span><span class="tg-t" data-i18n="optEvents"></span><input type="checkbox" id="optEvents" checked><span class="tg-sw" aria-hidden="true"></span></label>
+              <label class="tg"><span class="ico" data-ico="globe"></span><span class="tg-t" data-i18n="optLogo"></span><input type="checkbox" id="optLogo" checked><span class="tg-sw" aria-hidden="true"></span></label>
+            </div>
           </fieldset>
 
           <div class="wall-actions">
@@ -196,7 +193,7 @@
             </div>
             <div class="wall-loading" id="wallLoading" data-i18n="making"></div>
           </div>
-          <label class="chk small"><input type="checkbox" id="optSafe" checked><span data-i18n="showSafe"></span></label>
+          <label class="tg sm"><span class="tg-t" data-i18n="showSafe"></span><input type="checkbox" id="optSafe" checked><span class="tg-sw" aria-hidden="true"></span></label>
           <div class="pos" id="posBox" hidden>
             <p class="pos-title"><b data-i18n="posTitle"></b><button type="button" class="pos-reset" id="posReset" data-i18n="posReset"></button></p>
             <p class="hint" data-i18n="posHint"></p>
@@ -209,6 +206,12 @@
       </div>
 
       <div class="guide" id="guide"></div>
+    </section>
+
+    <section class="card verses" id="sec-verse" aria-labelledby="h-verse">
+      <h2 class="eyebrow" id="h-verse"><span class="ico" data-ico="book"></span><span data-i18n="verseTitle"></span></h2>
+      <p class="hint vs-lead" data-i18n="verseLead"></p>
+      <ol class="vs-list" id="vsList"></ol>
     </section>
   </main>
 
@@ -278,8 +281,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="icshelp.js?v=20261119094654"></script>
-  <script src="wallpaper.js?v=20261119094654"></script>
-  <script src="app.js?v=20261119094654"></script>
+  <script src="icshelp.js?v=20261119180951"></script>
+  <script src="wallpaper.js?v=20261119180951"></script>
+  <script src="app.js?v=20261119180951"></script>
 </body>
 </html>

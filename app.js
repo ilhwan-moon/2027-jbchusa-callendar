@@ -150,6 +150,15 @@
     speaker: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
     eye: '<svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
     grid: '<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
+    iphone: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.3 5.3h3.4M10.5 18.8h3"/></svg>',
+    android: '<svg viewBox="0 0 24 24"><path d="M5.5 15.5a6.5 6.5 0 0 1 13 0z"/><path d="M8.2 6.2l1.6 2.6M15.8 6.2l-1.6 2.6"/><circle cx="9.5" cy="12.8" r=".7" fill="currentColor"/><circle cx="14.5" cy="12.8" r=".7" fill="currentColor"/><path d="M6 18.8h12"/></svg>',
+    windows: '<svg viewBox="0 0 24 24"><path d="M3.5 5.8l7-1V11h-7zM12.5 4.6l8-1.2V11h-8zM3.5 13h7v6.2l-7-1zM12.5 13h8v7.6l-8-1.2z"/></svg>',
+    laptop: '<svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="10.5" rx="1.6"/><path d="M2.5 18.8h19"/></svg>',
+    mail: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7.2l8 6 8-6"/></svg>',
+    kindCal: '<svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><rect x="8.3" y="7.5" width="7.4" height="8" rx="1"/><path d="M8.3 10.5h7.4M10.5 6v3M13.5 6v3"/></svg>',
+    kindArt: '<svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M8.2 17.5l3-4.2 2.2 2.7 1.6-1.9 1 3.4z"/><circle cx="14.6" cy="9.3" r="1.3"/></svg>',
+    fitFill: '<svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+    fitWhole: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><rect x="8" y="9" width="8" height="6" rx="1"/></svg>',
     help: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4"/><circle cx="12" cy="16.8" r=".6" fill="currentColor"/></svg>',
     plus: '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
     download: '<svg viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5"/><path d="M4.5 16.5v3h15v-3"/></svg>',
@@ -254,7 +263,7 @@
       bt.querySelector('.g').textContent = Lg === 'ko' ? '가' : Lg === 'zh' ? '字' : 'A';
     });
     document.documentElement.setAttribute('data-size', String(state.size));
-    $('bottomnav').innerHTML = [['cal', '#sec-cal', 'calendar'], ['events', '#sec-events', 'bell'], ['verse', '#sec-verse', 'book'], ['wall', '#sec-wall', 'image']].map(function (n) {
+    $('bottomnav').innerHTML = [['cal', '#sec-cal', 'calendar'], ['events', '#sec-events', 'bell'], ['wall', '#sec-wall', 'image'], ['verse', '#sec-verse', 'book']].map(function (n) {
       return '<a href="' + n[1] + '"><span class="ico" aria-hidden="true">' + ICONS[n[2]] + '</span><span>' + esc(L().nav[n[0]]) + '</span></a>';
     }).join('');
   }
@@ -496,21 +505,33 @@
   function renderWallControls() {
     var Lg = L();
     $('wallLead').innerHTML = state.kind === 'art' ? Lg.wallLeadArt : fmt(Lg.wallLead, { m: esc(Lg.monthName(state.month)) });
-    $('devSeg').innerHTML = [['iphone', 'devIphone'], ['android', 'devAndroid'], ['win', 'devWin'], ['mac', 'devMac']].map(function (d) {
-      return '<button type="button" data-dev="' + d[0] + '" aria-pressed="' + (state.dev === d[0]) + '">' + esc(t(d[1])) + '</button>';
-    }).join('');
-    $('wallMonth').innerHTML = D.MONTHS.map(function (x) { return '<option value="' + x.m + '"' + (x.m === state.month ? ' selected' : '') + '>' + esc(Lg.monthTitle(x.m) + ' · ' + x.fig[state.lang]) + '</option>'; }).join('');
     var phoneDev = state.dev === 'iphone' || state.dev === 'android';
-    function seg(list, cur, attr) { return list.map(function (d) { return '<button type="button" data-' + attr + '="' + d[0] + '" aria-pressed="' + (cur === d[0]) + '">' + esc(t(d[1])) + '</button>'; }).join(''); }
-    $('kindSeg').innerHTML = seg([['cal', 'kindCal'], ['art', 'kindArt']], state.kind, 'kind');
-    $('picSeg').innerHTML = seg([['month', 'picMonth'], ['cover', 'picCover'], ['back', 'picBack']], state.pic, 'pic');
-    $('fitSeg').innerHTML = seg([['fill', 'fitFill'], ['whole', 'fitWhole']], state.fit, 'fit');
+    var mm = pad(state.month), cc = D.MONTHS[state.month - 1].c;
+    function tile(attr, val, label, cur, visual, cls) {
+      return '<button type="button" class="tile' + (cls ? ' ' + cls : '') + '" data-' + attr + '="' + val + '" aria-pressed="' + (cur === val) + '">' + visual + '<span class="tile-l">' + esc(label) + '</span></button>';
+    }
+    function ic(n) { return '<span class="ico" aria-hidden="true">' + ICONS[n] + '</span>'; }
+    function pic(src, extra, inner) { return '<span class="tile-pic' + (extra ? ' ' + extra : '') + '"><img src="' + src + '" alt="" width="66" height="66" loading="lazy">' + (inner || '') + '</span>'; }
+    var card = '<i class="mini-card" aria-hidden="true"></i>';
+    $('kindSeg').innerHTML = tile('kind', 'cal', t('kindCal'), state.kind, ic('kindCal'), 'big') + tile('kind', 'art', t('kindArt'), state.kind, ic('kindArt'), 'big');
+    $('devSeg').innerHTML = [['iphone', 'devIphone', 'iphone'], ['android', 'devAndroid', 'android'], ['win', 'devWin', 'windows'], ['mac', 'devMac', 'laptop']].map(function (d) { return tile('dev', d[0], t(d[1]), state.dev, ic(d[2])); }).join('');
+    $('wallMo').innerHTML = D.MONTHS.map(function (x) {
+      var lbl = state.lang === 'ko' ? x.m + '월' : state.lang === 'zh' ? x.m + '月' : (state.lang === 'en' ? MONTH_EN[x.m - 1] : MONTH_ES[x.m - 1]).slice(0, 3);
+      return '<button type="button" class="mo" role="tab" data-m="' + x.m + '" aria-selected="' + (x.m === state.month) + '" aria-label="' + esc(Lg.monthTitle(x.m) + ' · ' + x.fig[state.lang]) + '" style="--c:' + x.c.acc + '"><span class="mo-pic"><img src="img/th-' + pad(x.m) + '.jpg" alt="" width="66" height="66" loading="lazy"></span><span class="mo-l">' + esc(lbl.charAt(0).toUpperCase() + lbl.slice(1)) + '</span></button>';
+    }).join('');
+    var wsel = $('wallMo').querySelector('[aria-selected="true"]'); if (wsel) { var wc = $('wallMo'); wc.scrollLeft = wsel.offsetLeft - wc.clientWidth / 2 + wsel.offsetWidth / 2; }
+    $('picSeg').innerHTML = tile('pic', 'month', t('picMonth'), state.pic, pic('img/th-' + mm + '.jpg')) + tile('pic', 'cover', t('picCover'), state.pic, pic('img/th-cover.jpg')) + tile('pic', 'back', t('picBack'), state.pic, pic('img/th-back.jpg'));
+    $('fitSeg').innerHTML = [['fill', 'fitFill', 'fitFill'], ['whole', 'fitWhole', 'fitWhole']].map(function (d) {
+      return '<button type="button" data-fit="' + d[0] + '" aria-pressed="' + (state.fit === d[0]) + '">' + ic(d[2]) + '<span>' + esc(t(d[1])) + '</span></button>';
+    }).join('');
     var artOnly = state.kind === 'art';
     $('picOpt').hidden = !artOnly; $('bgOpt').hidden = artOnly; $('incOpt').hidden = artOnly;
     if (!phoneDev && state.bg === 'artSharp') state.bg = 'art';
-    $('bgSeg').innerHTML = [['art', 'bgArt']].concat(phoneDev ? [['artSharp', 'bgSharp']] : [], [['stars', 'bgStars'], ['color', 'bgColor']]).map(function (d) {
-      return '<button type="button" data-bg="' + d[0] + '" aria-pressed="' + (state.bg === d[0]) + '">' + esc(t(d[1])) + '</button>';
-    }).join('');
+    var bgList = [['art', 'bgArt', pic('img/th-' + mm + '.jpg', 'blur', card)]];
+    if (phoneDev) bgList.push(['artSharp', 'bgSharp', pic('img/th-' + mm + '.jpg', '', card)]);
+    bgList.push(['stars', 'bgStars', pic('img/th-back.jpg', '', card)]);
+    bgList.push(['color', 'bgColor', '<span class="tile-pic" style="background:linear-gradient(160deg,' + cc.bg + ',' + cc.acc + ')">' + card + '</span>']);
+    $('bgSeg').innerHTML = bgList.map(function (d) { return tile('bg', d[0], t(d[1]), state.bg, d[2]); }).join('');
     wallSize();
     $('sizeSel').innerHTML = DEVICES[state.dev].map(function (x) {
       return '<option value="' + x[0] + '"' + (x[0] === wall.size ? ' selected' : '') + '>' + x[1] + ' (' + x[0].replace('x', '×') + ')</option>';
@@ -684,10 +705,11 @@
       state[x[1]] = b.getAttribute('data-' + x[1]); store('cal_' + x[1], state[x[1]]); renderWall();
     });
   });
-  $('wallMonth').addEventListener('change', function () {
+  $('wallMo').addEventListener('click', function (e) {
+    var bt = e.target.closest('[data-m]'); if (!bt) return;
     // 달을 바꿔도 보고 있던 자리(배경화면 칸)가 그대로 있도록
-    var el = $('wallMonth'), before = el.getBoundingClientRect().top;
-    setMonth(+el.value);
+    var el = $('wallMo'), before = el.getBoundingClientRect().top;
+    setMonth(+bt.getAttribute('data-m'));
     window.scrollBy({ top: el.getBoundingClientRect().top - before, behavior: 'instant' });
   });
   $('sizeSel').addEventListener('change', function () { wall.size = $('sizeSel').value; store('cal_wsize', wall.size); renderWall(); });
@@ -720,7 +742,7 @@
     if (!open) return;
     $('icsHelp').innerHTML = '<p>' + fmt(H.intro, { n: D.EVENTS.length }) + '</p>' +
       '<div class="ics-tabs" role="tablist">' + Object.keys(H.tabs).map(function (k) {
-        return '<button type="button" role="tab" data-tab="' + k + '" aria-selected="' + (k === icsTab) + '">' + esc(H.tabs[k].label) + '</button>';
+        return '<button type="button" role="tab" data-tab="' + k + '" aria-selected="' + (k === icsTab) + '"><span class="ico" aria-hidden="true">' + ICONS[{ ios: 'iphone', android: 'android', google: 'calendar', outlook: 'mail', mac: 'laptop' }[k] || 'calendar'] + '</span>' + esc(H.tabs[k].label) + '</button>';
       }).join('') + '</div>' +
       '<ol class="ics-steps">' + H.tabs[icsTab].steps.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol>' +
       '<ul class="ics-notes">' + H.notes.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
