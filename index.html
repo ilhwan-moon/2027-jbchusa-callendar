@@ -180,6 +180,14 @@
             <div class="wall-loading" id="wallLoading" data-i18n="making"></div>
           </div>
           <label class="chk small"><input type="checkbox" id="optSafe" checked><span data-i18n="showSafe"></span></label>
+          <div class="pos" id="posBox" hidden>
+            <p class="pos-title"><b data-i18n="posTitle"></b><button type="button" class="pos-reset" id="posReset" data-i18n="posReset"></button></p>
+            <p class="hint" data-i18n="posHint"></p>
+            <label class="rng"><span data-i18n="posX"></span><input type="range" id="posX" min="0" max="100" step="1"></label>
+            <label class="rng"><span data-i18n="posZ"></span><input type="range" id="posZ" min="100" max="250" step="5"></label>
+            <label class="rng" id="posYRow"><span data-i18n="posY"></span><input type="range" id="posY" min="0" max="100" step="1"></label>
+            <p class="hint" id="posYHint" data-i18n="posYHint"></p>
+          </div>
         </div>
       </div>
 

@@ -15,7 +15,7 @@
       addAll: '내 휴대폰 달력에 모두 넣기', addAllHint: '아이폰은 「모두 추가」, 안드로이드는 받은 파일을 구글 캘린더로 여세요.',
       days: '{n}일간',
       wallTitle: '배경화면 만들기', wallLead: '{m}의 달력과 말씀으로 휴대폰·컴퓨터 배경화면을 만들어 드립니다. 웹사이트가 배경화면을 직접 바꿀 수는 없어서, <b>이미지를 저장한 뒤 아래 방법대로 설정</b>하시면 됩니다.',
-      wallLeadArt: '달력 없이 <b>그림만</b> 휴대폰·컴퓨터 화면 크기에 맞춰 드립니다. 저장한 뒤 아래 방법대로 배경화면으로 설정하세요.', kind: '만들 종류', kindCal: '달력 + 그림', kindArt: '그림만', picture: '그림', picMonth: '이달의 그림', picCover: '표지', picBack: '뒤표지 (별하늘)', fitFill: '화면 가득', fitWhole: '그림 전체 (잘림 없이)', device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
+      wallLeadArt: '달력 없이 <b>그림만</b> 휴대폰·컴퓨터 화면 크기에 맞춰 드립니다. 저장한 뒤 아래 방법대로 배경화면으로 설정하세요.', posTitle: '그림 위치 조정', posHint: '미리보기 그림을 손가락(마우스)으로 끌어서 옮길 수도 있어요.', posX: '좌우', posY: '위아래', posZ: '확대', posReset: '처음대로', posYHint: '「확대」를 키우면 위아래로도 움직일 수 있어요. 아래쪽 글씨를 화면 밖으로 밀어낼 수 있습니다.', kind: '만들 종류', kindCal: '달력 + 그림', kindArt: '그림만', picture: '그림', picMonth: '이달의 그림', picCover: '표지', picBack: '뒤표지 (별하늘)', fitFill: '화면 가득', fitWhole: '그림 전체 (잘림 없이)', device: '기기', size: '화면 크기', background: '배경', include: '넣을 내용', optVerse: '이달의 말씀', optEvents: '행사 표시', optLogo: '선교회 로고',
       bgArt: '이달의 그림', bgSharp: '그림 선명하게', bgStars: '별하늘', bgColor: '단색 테마',
       devIphone: '아이폰', devAndroid: '안드로이드', devWin: '윈도우 PC', devMac: '맥',
       saveShare: '사진에 저장하기', download: '이미지 내려받기', making: '만드는 중…', showSafe: '시계·독 자리 보기',
@@ -48,7 +48,7 @@
       addAll: 'Add all to my phone calendar', addAllHint: 'iPhone: tap “Add All”. Android: open the file with Google Calendar.',
       days: '{n} days',
       wallTitle: 'Make a wallpaper', wallLead: 'Create a phone or computer wallpaper with the {m} calendar and verse. A website can’t change your wallpaper directly, so <b>save the image, then set it</b> as shown below.',
-      wallLeadArt: 'Get <b>just the artwork</b>, sized for your phone or computer. Save it, then set it as your wallpaper as shown below.', kind: 'Type', kindCal: 'Calendar + art', kindArt: 'Art only', picture: 'Picture', picMonth: 'Monthly art', picCover: 'Cover', picBack: 'Back cover (stars)', fitFill: 'Fill screen', fitWhole: 'Whole picture (no crop)', device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
+      wallLeadArt: 'Get <b>just the artwork</b>, sized for your phone or computer. Save it, then set it as your wallpaper as shown below.', posTitle: 'Adjust position', posHint: 'You can also drag the preview with your finger (or mouse).', posX: 'Left/Right', posY: 'Up/Down', posZ: 'Zoom', posReset: 'Reset', posYHint: 'Increase “Zoom” to move up and down too — you can push the text at the bottom off the screen.', kind: 'Type', kindCal: 'Calendar + art', kindArt: 'Art only', picture: 'Picture', picMonth: 'Monthly art', picCover: 'Cover', picBack: 'Back cover (stars)', fitFill: 'Fill screen', fitWhole: 'Whole picture (no crop)', device: 'Device', size: 'Screen size', background: 'Background', include: 'Include', optVerse: 'Verse of the month', optEvents: 'Mark events', optLogo: 'Mission logo',
       bgArt: 'Monthly art', bgSharp: 'Sharp art', bgStars: 'Starry sky', bgColor: 'Color theme',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'Windows PC', devMac: 'Mac',
       saveShare: 'Save to Photos', download: 'Download image', making: 'Making…', showSafe: 'Show clock & dock areas',
@@ -81,7 +81,7 @@
       addAll: 'Agregar todo al calendario del teléfono', addAllHint: 'iPhone: toque «Agregar todo». Android: abra el archivo con Google Calendar.',
       days: '{n} días',
       wallTitle: 'Crear fondo de pantalla', wallLead: 'Cree un fondo para su teléfono o computadora con el calendario y el versículo de {m}. Una página web no puede cambiar el fondo directamente: <b>guarde la imagen y luego configúrela</b> como se indica abajo.',
-      wallLeadArt: 'Obtenga <b>solo el arte</b>, del tamaño de su teléfono o computadora. Guárdelo y póngalo como fondo como se indica abajo.', kind: 'Tipo', kindCal: 'Calendario + arte', kindArt: 'Solo el arte', picture: 'Imagen', picMonth: 'Arte del mes', picCover: 'Portada', picBack: 'Contraportada (estrellas)', fitFill: 'Llenar pantalla', fitWhole: 'Imagen completa (sin recortar)', device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
+      wallLeadArt: 'Obtenga <b>solo el arte</b>, del tamaño de su teléfono o computadora. Guárdelo y póngalo como fondo como se indica abajo.', posTitle: 'Ajustar posición', posHint: 'También puede arrastrar la vista previa con el dedo (o el ratón).', posX: 'Izq./Der.', posY: 'Arriba/Abajo', posZ: 'Zoom', posReset: 'Restablecer', posYHint: 'Aumente el «Zoom» para moverla también arriba y abajo; así puede sacar de la pantalla el texto de abajo.', kind: 'Tipo', kindCal: 'Calendario + arte', kindArt: 'Solo el arte', picture: 'Imagen', picMonth: 'Arte del mes', picCover: 'Portada', picBack: 'Contraportada (estrellas)', fitFill: 'Llenar pantalla', fitWhole: 'Imagen completa (sin recortar)', device: 'Dispositivo', size: 'Tamaño de pantalla', background: 'Fondo', include: 'Incluir', optVerse: 'Versículo del mes', optEvents: 'Marcar eventos', optLogo: 'Logo de la misión',
       bgArt: 'Arte del mes', bgSharp: 'Arte nítido', bgStars: 'Cielo estrellado', bgColor: 'Color del mes',
       devIphone: 'iPhone', devAndroid: 'Android', devWin: 'PC Windows', devMac: 'Mac',
       saveShare: 'Guardar en Fotos', download: 'Descargar imagen', making: 'Creando…', showSafe: 'Ver zonas del reloj y dock',
@@ -380,6 +380,7 @@
       return '<li><span class="g-n">' + (i + 1) + '</span><span class="g-t">' + s.replace('{share}', '<span class="ins-ico">' + ICONS.iosShare + '</span>').replace('{apple}', '<span class="ins-ico">' + ICONS.apple + '</span>') + '</span>' + guideArt(state.dev, i) + '</li>';
     }).join('') + '</ol>';
   }
+  // (위치 조정 칸 표시는 renderWall 에서)
   // 단계별 작은 그림 (실제 메뉴 모양을 흉내 낸 그림)
   function guideArt(dev, i) {
     var Lg = state.lang;
@@ -411,14 +412,80 @@
     };
     return (W[dev] && W[dev][i]) || '';
   }
+  /* ── 그림 위치 조정 (가로 위치·위아래·확대) ── */
+  var adjMap = {};
+  try { adjMap = JSON.parse(store('cal_adj') || '{}') || {}; } catch (e) { adjMap = {}; }
+  function isPhoneDev() { return state.dev === 'iphone' || state.dev === 'android'; }
+  function adjustable() { return (state.kind === 'art' && state.fit === 'fill') || (state.kind === 'cal' && state.bg === 'artSharp' && isPhoneDev()); }
+  function adjKey() { return (isPhoneDev() ? 'p' : 'd') + '-' + (state.kind === 'art' ? state.pic + (state.pic === 'month' ? state.month : '') : 'm' + state.month); }
+  function adjGeom() {
+    var s = wallSize(), inf = window.Wallpaper.info({ kind: state.kind, pic: state.pic, month: state.month });
+    var a = adjMap[adjKey()] || {}, z = a.z || 1, r = s.w / s.h;
+    var visX = Math.min(1, r / inf.ar) / z, visY = Math.min(1, inf.ar / r) / z;
+    function cl(v, vis) { return vis >= 1 ? .5 : Math.max(vis / 2, Math.min(1 - vis / 2, v)); }
+    return { z: z, visX: visX, visY: visY, fx: cl(a.x != null ? a.x : inf.fx, visX), fy: cl(a.y != null ? a.y : .5, visY), cl: cl };
+  }
+  function setAdj(p) {
+    var k = adjKey(), a = adjMap[k] || {}; Object.keys(p).forEach(function (x) { a[x] = p[x]; }); adjMap[k] = a;
+    store('cal_adj', JSON.stringify(adjMap));
+  }
+  function syncPos() {
+    var on = adjustable();
+    $('posBox').hidden = !on; $('frame').classList.toggle('adj', on);
+    if (!on) return;
+    var g = adjGeom();
+    $('posX').disabled = g.visX >= 1; $('posY').disabled = g.visY >= 1;
+    $('posX').value = g.visX >= 1 ? 50 : Math.round((g.fx - g.visX / 2) / (1 - g.visX) * 100);
+    $('posY').value = g.visY >= 1 ? 50 : Math.round((g.fy - g.visY / 2) / (1 - g.visY) * 100);
+    $('posZ').value = Math.round(g.z * 100);
+    $('posYHint').hidden = g.visY < 1;
+  }
+  function posFromSliders() {
+    var z = +$('posZ').value / 100; setAdj({ z: z });
+    var g = adjGeom();
+    var p = { z: z };
+    if (g.visX < 1) p.x = g.visX / 2 + (+$('posX').value / 100) * (1 - g.visX);
+    if (g.visY < 1) p.y = g.visY / 2 + (+$('posY').value / 100) * (1 - g.visY);
+    setAdj(p); syncPos(); renderWall();
+  }
+  ['posX', 'posY', 'posZ'].forEach(function (id) { $(id).addEventListener('input', posFromSliders); });
+  $('posReset').addEventListener('click', function () { delete adjMap[adjKey()]; store('cal_adj', JSON.stringify(adjMap)); syncPos(); renderWall(); });
+  // 미리보기를 끌어서 옮기기
+  (function () {
+    var fr = $('frame'), img = $('wallImg'), st = null;
+    fr.addEventListener('pointerdown', function (e) {
+      if (!adjustable()) return;
+      st = { x: e.clientX, y: e.clientY, g: adjGeom(), w: fr.clientWidth, h: fr.clientHeight };
+      fr.classList.add('dragging'); try { fr.setPointerCapture(e.pointerId); } catch (er) {}
+      e.preventDefault();
+    });
+    fr.addEventListener('pointermove', function (e) {
+      if (!st) return;
+      var g = st.g, dx = e.clientX - st.x, dy = e.clientY - st.y;
+      // 움직일 수 있는 만큼만 따라 움직임
+      var nx = g.cl(g.fx - dx / st.w * g.visX, g.visX), ny = g.cl(g.fy - dy / st.h * g.visY, g.visY);
+      var px = -(nx - g.fx) / g.visX * st.w, py = -(ny - g.fy) / g.visY * st.h;
+      img.style.transform = 'translate(' + px + 'px,' + py + 'px)';
+      st.nx = nx; st.ny = ny;
+    });
+    function end() {
+      if (!st) return;
+      fr.classList.remove('dragging');
+      if (st.nx != null) { var p = {}; if (st.g.visX < 1) p.x = st.nx; if (st.g.visY < 1) p.y = st.ny; setAdj(p); syncPos(); renderWall(); }
+      else img.style.transform = '';
+      st = null;
+    }
+    fr.addEventListener('pointerup', end); fr.addEventListener('pointercancel', end);
+  })();
   function wallOpts() {
     var s = wallSize();
-    return { w: s.w, h: s.h, month: state.month, lang: state.lang, kind: state.kind, pic: state.pic, fit: state.fit, bg: state.bg, verse: $('optVerse').checked, events: $('optEvents').checked, logo: $('optLogo').checked };
+    var adj = adjustable() ? adjGeom() : null;
+    return { fx: adj ? adj.fx : null, fy: adj ? adj.fy : null, z: adj ? adj.z : 1, w: s.w, h: s.h, month: state.month, lang: state.lang, kind: state.kind, pic: state.pic, fit: state.fit, bg: state.bg, verse: $('optVerse').checked, events: $('optEvents').checked, logo: $('optLogo').checked };
   }
   function wallName(o) { return '2027-' + (o.kind === 'art' ? (o.pic === 'month' ? pad(o.month) + '-art' : o.pic) : pad(o.month)) + '-' + state.dev + '-' + o.w + 'x' + o.h + '.jpg'; }
   var wallVisible = false;
   function renderWall() {
-    renderWallControls();
+    renderWallControls(); syncPos();
     if (!wallVisible) return;
     clearTimeout(wall.timer);
     wall.timer = setTimeout(makeWall, 60);
@@ -436,7 +503,7 @@
         wall.blob = blob; wall.url = URL.createObjectURL(blob);
         try { wall.file = new File([blob], wallName(o), { type: 'image/jpeg' }); } catch (e) { wall.file = null; }
         wall.name = wallName(o);
-        $('wallImg').src = wall.url;
+        $('wallImg').src = wall.url; $('wallImg').style.transform = '';
         $('wallLoading').hidden = true;
       }, 'image/jpeg', 0.92);
     }).catch(function () { $('wallLoading').hidden = true; });

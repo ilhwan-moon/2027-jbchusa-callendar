@@ -46,8 +46,8 @@
     ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
     ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
   }
-  function cover(ctx, im, x, y, w, h, fx, fy) {
-    var s = Math.max(w / im.width, h / im.height), sw = w / s, sh = h / s;
+  function cover(ctx, im, x, y, w, h, fx, fy, z) {
+    var s = Math.max(w / im.width, h / im.height) * (z || 1), sw = w / s, sh = h / s;
     var sx = Math.max(0, Math.min(im.width - sw, im.width * fx - sw / 2));
     var sy = Math.max(0, Math.min(im.height - sh, im.height * fy - sh / 2));
     ctx.drawImage(im, sx, sy, sw, sh, x, y, w, h);
@@ -156,7 +156,7 @@
           ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = Math.round(Math.max(W, H) * .015);
           ctx.drawImage(im, (W - dw) / 2, dy, dw, dh); ctx.restore();
         } else {
-          cover(ctx, im, 0, 0, W, H, fx, .5);
+          cover(ctx, im, 0, 0, W, H, o.fx != null ? o.fx : fx, o.fy != null ? o.fy : .5, o.z);
         }
         return cv;
       });
@@ -187,7 +187,8 @@
     var S = W / 1179, L = o.lang;
     if (bgImg) {
       if (o.bg === 'art') blurCover(ctx, bgImg, 0, 0, W, H, info.focus, .5);
-      else cover(ctx, bgImg, 0, 0, W, H, o.bg === 'artSharp' ? info.focus : .5, .5);
+      else if (o.bg === 'artSharp') cover(ctx, bgImg, 0, 0, W, H, o.fx != null ? o.fx : info.focus, o.fy != null ? o.fy : .5, o.z);
+      else cover(ctx, bgImg, 0, 0, W, H, .5, .5);
       var g = ctx.createLinearGradient(0, 0, 0, H);
       g.addColorStop(0, 'rgba(0,0,0,.30)'); g.addColorStop(.3, 'rgba(0,0,0,.05)');
       g.addColorStop(.55, 'rgba(0,0,0,.25)'); g.addColorStop(1, 'rgba(0,0,0,.6)');
@@ -344,5 +345,11 @@
     if (o.logo) { ctx.save(); if (!darkText) { ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 8 * S; } drawLogo(ctx, logo, cx + cw, H * .9, 34 * S, onBg, 'right'); ctx.restore(); }
   }
 
-  window.Wallpaper = { draw: draw, preload: function (m) { loadFonts(); loadImg('img/art-' + String(m).padStart(2, '0') + '.jpg').catch(function () {}); } };
+  // 위치 조정용: 기본 가로 위치와 그림 비율
+  function info(o) {
+    if (o.kind === 'art' && o.pic === 'cover') return { fx: .32, ar: 4000 / 2947 };
+    if (o.kind === 'art' && o.pic === 'back') return { fx: .5, ar: 4000 / 2947 };
+    return { fx: D.MONTHS[o.month - 1].focus, ar: 3000 / 1956 };
+  }
+  window.Wallpaper = { draw: draw, info: info, preload: function (m) { loadFonts(); loadImg('img/art-' + String(m).padStart(2, '0') + '.jpg').catch(function () {}); } };
 })();
